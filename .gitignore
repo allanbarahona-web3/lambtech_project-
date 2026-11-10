@@ -1,0 +1,61 @@
+# Dependencies
+node_modules/
+
+# Next.js and build output
+.next/
+out/
+dist/
+build/
+*.tsbuildinfo
+.turbo/
+
+# Test and coverage output
+coverage/
+.nyc_output/
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local environment and secrets
+.env
+.env.*
+.env.local
+
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*.der
+*.jks
+*.keystore
+*.dump
+*.bak
+*.backup
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Local documentation notes; retain repository README files
+**/*.md
+!**/README.md
+# Local database exports and backups
+/backups/
+/dumps/
+
+# Local design references
+/index.html
+/index2.html

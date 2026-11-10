@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "title": "Sobre LAMBTECH | LAMBTECH LLC",
+    "description": "LAMBTECH conecta búsqueda internacional de tecnología, coordinación comercial y desarrollo de mercados en América Latina."
+  },
+  "introduction": {
+    "eyebrow": "Sobre LAMBTECH",
+    "title": "Tecnología internacional para oportunidades de mercado en América Latina.",
+    "description": "LAMBTECH LLC es una empresa internacional de tecnología y desarrollo comercial organizada en Wyoming. Conectamos fabricantes especializados, requerimientos de abastecimiento internacional y oportunidades en mercados de América Latina.",
+    "mediaAlt": "Área de media editorial para tecnología internacional y colaboración comercial.",
+    "mediaFallback": "Media editorial aprobada para Sobre LAMBTECH pendiente",
+    "mediaCaption": "Media futura: fotografía auténtica y aprobada de colaboración tecnológica, aplicación industrial o coordinación comercial internacional."
+  },
+  "identity": {
+    "eyebrow": "01 — Identidad empresarial",
+    "title": "Un modelo comercial construido alrededor de relevancia técnica y conocimiento de mercado.",
+    "description": "Reunimos el trabajo necesario para evaluar requerimientos de tecnología especializada y conectar proveedores internacionales con demanda en América Latina.",
+    "items": [
+      "Abastecimiento internacional y búsqueda de tecnología",
+      "Relaciones con fabricantes y coordinación comercial",
+      "Iniciativas de desarrollo de mercados en América Latina",
+      "Comercio internacional cuando la oportunidad y las condiciones comerciales sean apropiadas"
+    ]
+  },
+  "model": {
+    "title": "Un modelo operativo que alinea tecnología, oportunidad y mercado.",
+    "description": "Organizamos nuestro trabajo alrededor de la relación entre tecnología, oportunidad de mercado y las condiciones comerciales necesarias para avanzar.",
+    "steps": [
+      { "number": "01", "title": "Fabricantes internacionales", "copy": "Tecnologías especializadas y las necesidades de mercado que pueden atender." },
+      { "number": "02", "title": "Oportunidades tecnológicas", "copy": "Requerimientos, aplicaciones y opciones de proveedores para evaluación." },
+      { "number": "03", "title": "Mercados de América Latina", "copy": "Condiciones de mercado regionales, necesidades de clientes y relaciones empresariales." }
+    ]
+  },
+  "principles": {
+    "eyebrow": "02 — Principios de trabajo",
+    "title": "Las relaciones comerciales se benefician de la claridad antes de escalar.",
+    "description": "Nos enfocamos en las condiciones prácticas que respaldan decisiones sólidas de tecnología y desarrollo de mercados.",
+    "items": [
+      { "title": "Relevancia técnica", "copy": "Comenzamos con la aplicación, las condiciones operativas y el requerimiento tecnológico." },
+      { "title": "Claridad comercial", "copy": "Definimos la información que cada parte necesita para evaluar la oportunidad." },
+      { "title": "Relaciones con proveedores", "copy": "Coordinamos la relación con fabricantes y proveedores alrededor de un requerimiento definido." },
+      { "title": "Entendimiento regional", "copy": "Consideramos las condiciones de mercado, canal y cliente que dan forma a la oportunidad." },
+      { "title": "Relaciones de largo plazo", "copy": "Construimos relaciones empresariales mediante una alineación adecuada en el tiempo." }
+    ]
+  },
+  "future": {
+    "eyebrow": "03 — Mirada al futuro",
+    "title": "Un modelo diseñado para mantener su relevancia a medida que evoluciona la tecnología.",
+    "description": "Las tecnologías conectadas, IoT, plataformas de datos y servicios habilitados por software pueden convertirse en áreas futuras de desarrollo cuando las oportunidades comerciales y técnicas que las sustentan estén definidas."
+  },
+  "cta": {
+    "title": "Explore la ruta adecuada para su mercado o requerimiento tecnológico.",
+    "label": "Contáctanos"
+  }
+}

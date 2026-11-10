@@ -1,0 +1,10 @@
+{
+  "eyebrow": "What we do",
+  "title": "Three ways we connect technology with market opportunity.",
+  "description": "We support manufacturers and businesses that need a clearer path between specialized technology, commercial requirements and practical applications.",
+  "items": [
+    { "number": "01", "title": "International Procurement", "copy": "We define the application need, identify international supplier options and coordinate sourcing for industrial and infrastructure requirements." },
+    { "number": "02", "title": "LATAM Market Development", "copy": "We help manufacturers assess market opportunities, identify suitable channels and develop routes into Latin American markets." },
+    { "number": "03", "title": "Technology Solutions", "copy": "We connect specialized technologies with water, energy, infrastructure and industrial applications." }
+  ]
+}

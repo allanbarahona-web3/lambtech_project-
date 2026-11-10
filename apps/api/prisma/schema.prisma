@@ -1,0 +1,219 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("MIGRATION_DATABASE_URL")
+}
+
+enum LeadSourceSite {
+  FORMATION
+  TECHNOLOGY
+
+  @@map("lead_source_site")
+}
+
+enum LeadLocale {
+  EN
+  ES
+
+  @@map("lead_locale")
+}
+
+enum LeadInterest {
+  COMPANY_FORMATION
+  TAX_SERVICES
+  ANNUAL_COMPLIANCE
+  BANKING_AND_PAYMENTS
+  TECHNOLOGY_AND_DIGITAL
+  IN_PERSON_WORKSHOP
+  OTHER
+
+  @@map("lead_interest")
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  QUALIFIED
+  CONVERTED
+  CLOSED
+
+  @@map("lead_status")
+}
+
+enum EmailDeliveryStatus {
+  PENDING
+  SENT
+  FAILED
+
+  @@map("email_delivery_status")
+}
+
+enum LeadEmailTaskType {
+  INTERNAL_NOTIFICATION
+  VISITOR_CONFIRMATION
+
+  @@map("lead_email_task_type")
+}
+
+enum LeadEmailTaskStatus {
+  PENDING
+  PROCESSING
+  SENT
+  FAILED
+
+  @@map("lead_email_task_status")
+}
+
+enum PrivacyRequestType {
+  ACCESS
+  CORRECTION
+  DELETION
+  WITHDRAW_CONSENT
+  INFORMATION
+  OTHER
+
+  @@map("privacy_request_type")
+}
+
+enum PrivacyRequestStatus {
+  RECEIVED
+  IDENTITY_VERIFICATION_REQUIRED
+  IN_REVIEW
+  COMPLETED
+  DECLINED
+  CLOSED
+
+  @@map("privacy_request_status")
+}
+
+enum PrivacyRequestEmailTaskType {
+  INTERNAL_NOTIFICATION
+  VISITOR_CONFIRMATION
+
+  @@map("privacy_request_email_task_type")
+}
+
+model Lead {
+  id                         String              @id @default(uuid()) @db.Uuid
+  sourceSite                 LeadSourceSite      @map("source_site")
+  locale                     LeadLocale          @map("locale")
+  interest                   LeadInterest        @map("interest")
+  status                     LeadStatus          @default(NEW) @map("status")
+  fullName                   String              @map("full_name") @db.VarChar(160)
+  email                      String              @map("email") @db.VarChar(320)
+  phone                      String?             @map("phone") @db.VarChar(40)
+  country                    String              @map("country") @db.VarChar(100)
+  company                    String?             @map("company") @db.VarChar(160)
+  message                    String              @map("message") @db.VarChar(2000)
+  privacyConsentAt           DateTime            @map("privacy_consent_at") @db.Timestamptz(3)
+  campaign                   String?             @map("campaign") @db.VarChar(255)
+  utmSource                  String?             @map("utm_source") @db.VarChar(255)
+  utmMedium                  String?             @map("utm_medium") @db.VarChar(255)
+  utmCampaign                String?             @map("utm_campaign") @db.VarChar(255)
+  internalNotificationStatus EmailDeliveryStatus @default(PENDING) @map("internal_notification_status")
+  visitorConfirmationStatus  EmailDeliveryStatus @default(PENDING) @map("visitor_confirmation_status")
+  createdAt                  DateTime            @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt                  DateTime            @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  submission                 LeadSubmission?
+  emailTasks                 LeadEmailTask[]
+
+  @@index([status, createdAt], map: "leads_status_created_at_idx")
+  @@index([sourceSite, createdAt], map: "leads_source_site_created_at_idx")
+  @@index([interest, createdAt], map: "leads_interest_created_at_idx")
+  @@index([email], map: "leads_email_idx")
+  @@map("leads")
+}
+
+model LeadSubmission {
+  id             String   @id @default(uuid()) @db.Uuid
+  idempotencyKey String   @unique @map("idempotency_key") @db.VarChar(128)
+  contentHash    String   @map("content_hash") @db.Char(64)
+  leadId         String   @unique @map("lead_id") @db.Uuid
+  lead           Lead     @relation(fields: [leadId], references: [id], onDelete: Restrict)
+  createdAt      DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  @@map("lead_submissions")
+}
+
+model LeadEmailTask {
+  id             String              @id @default(uuid()) @db.Uuid
+  leadId         String              @map("lead_id") @db.Uuid
+  lead           Lead                @relation(fields: [leadId], references: [id], onDelete: Restrict)
+  type           LeadEmailTaskType   @map("type")
+  status         LeadEmailTaskStatus @default(PENDING) @map("status")
+  attempts       Int                 @default(0) @map("attempts")
+  availableAt    DateTime            @default(now()) @map("available_at") @db.Timestamptz(3)
+  leasedAt       DateTime?           @map("leased_at") @db.Timestamptz(3)
+  leaseExpiresAt DateTime?           @map("lease_expires_at") @db.Timestamptz(3)
+  leaseToken     String?             @map("lease_token") @db.Uuid
+  completedAt    DateTime?           @map("completed_at") @db.Timestamptz(3)
+  lastErrorCode  String?             @map("last_error_code") @db.VarChar(80)
+  createdAt      DateTime            @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt      DateTime            @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  @@unique([leadId, type], map: "lead_email_tasks_lead_id_type_key")
+  @@index([status, availableAt], map: "lead_email_tasks_status_available_at_idx")
+  @@index([status, leaseExpiresAt], map: "lead_email_tasks_status_lease_expires_at_idx")
+  @@map("lead_email_tasks")
+}
+
+model PrivacyRequest {
+  id                         String               @id @default(uuid()) @db.Uuid
+  locale                     LeadLocale           @map("locale")
+  requestType                PrivacyRequestType   @map("request_type")
+  status                     PrivacyRequestStatus @default(RECEIVED) @map("status")
+  email                      String               @map("email") @db.VarChar(320)
+  message                    String?              @map("message") @db.VarChar(1000)
+  privacyNoticeAcceptedAt    DateTime             @map("privacy_notice_accepted_at") @db.Timestamptz(3)
+  internalNotificationStatus EmailDeliveryStatus  @default(PENDING) @map("internal_notification_status")
+  visitorConfirmationStatus  EmailDeliveryStatus  @default(PENDING) @map("visitor_confirmation_status")
+  createdAt                  DateTime             @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt                  DateTime             @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  submission                 PrivacyRequestSubmission?
+  emailTasks                 PrivacyRequestEmailTask[]
+
+  @@index([status, createdAt], map: "privacy_requests_status_created_at_idx")
+  @@index([requestType, createdAt], map: "privacy_requests_request_type_created_at_idx")
+  @@index([email], map: "privacy_requests_email_idx")
+  @@index([createdAt], map: "privacy_requests_created_at_idx")
+  @@map("privacy_requests")
+}
+
+model PrivacyRequestSubmission {
+  id               String         @id @default(uuid()) @db.Uuid
+  idempotencyKey   String         @unique @map("idempotency_key") @db.VarChar(128)
+  contentHash      String         @map("content_hash") @db.Char(64)
+  privacyRequestId String         @unique @map("privacy_request_id") @db.Uuid
+  privacyRequest   PrivacyRequest @relation(fields: [privacyRequestId], references: [id], onDelete: Restrict)
+  createdAt        DateTime       @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  @@map("privacy_request_submissions")
+}
+
+model PrivacyRequestEmailTask {
+  id               String                      @id @default(uuid()) @db.Uuid
+  privacyRequestId String                      @map("privacy_request_id") @db.Uuid
+  privacyRequest   PrivacyRequest              @relation(fields: [privacyRequestId], references: [id], onDelete: Restrict)
+  type             PrivacyRequestEmailTaskType @map("type")
+  status           LeadEmailTaskStatus         @default(PENDING) @map("status")
+  attempts         Int                         @default(0) @map("attempts")
+  availableAt      DateTime                    @default(now()) @map("available_at") @db.Timestamptz(3)
+  leasedAt         DateTime?                   @map("leased_at") @db.Timestamptz(3)
+  leaseExpiresAt   DateTime?                   @map("lease_expires_at") @db.Timestamptz(3)
+  leaseToken       String?                     @map("lease_token") @db.Uuid
+  completedAt      DateTime?                   @map("completed_at") @db.Timestamptz(3)
+  lastErrorCode    String?                     @map("last_error_code") @db.VarChar(80)
+  createdAt        DateTime                    @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt        DateTime                    @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  @@unique([privacyRequestId, type], map: "privacy_request_email_tasks_privacy_request_id_type_key")
+  @@index([status, availableAt], map: "privacy_request_email_tasks_status_available_at_idx")
+  @@index([status, leaseExpiresAt], map: "privacy_request_email_tasks_status_lease_expires_at_idx")
+  @@map("privacy_request_email_tasks")
+}

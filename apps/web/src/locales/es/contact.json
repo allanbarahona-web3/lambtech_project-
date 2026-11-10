@@ -1,0 +1,19 @@
+{
+  "eyebrow": "Contacto",
+  "title": "Elija la ruta adecuada para su consulta.",
+  "description": "Cuéntenos de qué trata su consulta. El formulario en línea aún no está habilitado; utilice los datos de contacto a continuación.",
+  "paths": [
+    { "id": "manufacturers", "label": "Para fabricantes", "title": "Expandirse a América Latina", "copy": "Converse sobre evaluación de mercado, desarrollo de canales y posicionamiento tecnológico." },
+    { "id": "customers", "label": "Para empresas latinoamericanas", "title": "Encontrar tecnología", "copy": "Comparta su aplicación o requerimiento para la búsqueda de tecnología." },
+    { "id": "general", "label": "Consultas generales", "title": "Contacte a LAMBTECH", "copy": "Use esta ruta para una consulta fuera de los dos caminos principales." }
+  ],
+  "details": { "email": "Correo electrónico", "phone": "Teléfono", "fax": "Fax", "address": "Dirección postal", "whatsapp": "Conversar por WhatsApp" },
+  "form": {
+    "title": "Detalles de la consulta",
+    "notice": "El formulario en línea aún no está habilitado. Puede comunicarse con nosotros por correo electrónico, teléfono o WhatsApp.",
+    "name": "Nombre", "company": "Empresa", "email": "Correo laboral", "country": "País o mercado", "message": "Mensaje", "required": "Obligatorio", "submit": "Enviar consulta", "inactive": "El envío del formulario aún no está disponible. Utilice los datos de contacto proporcionados.",
+    "validationSummary": "Complete los campos obligatorios para revisar su consulta.",
+    "errors": { "name": "Ingrese su nombre.", "email": "Ingrese un correo laboral válido.", "message": "Ingrese un mensaje." },
+    "honeypot": "Deje este campo vacío"
+  }
+}

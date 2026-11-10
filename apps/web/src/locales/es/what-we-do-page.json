@@ -1,0 +1,93 @@
+{
+  "metadata": {
+    "title": "Qué hacemos | LAMBTECH LLC",
+    "description": "Abastecimiento internacional, búsqueda de tecnología y desarrollo de mercados en América Latina para aplicaciones industriales y de infraestructura especializadas."
+  },
+  "introduction": {
+    "eyebrow": "Qué hacemos",
+    "title": "Un puente comercial entre la tecnología y el mercado.",
+    "description": "Conectamos tecnología internacional, abastecimiento y desarrollo de mercados con requerimientos definidos de industria e infraestructura.",
+    "mediaAlt": "Área de media editorial para tecnología internacional y coordinación comercial.",
+    "mediaFallback": "Media editorial aprobada para Qué hacemos pendiente",
+    "mediaCaption": "Una futura imagen en este espacio debe mostrar colaboración técnica auténtica, abastecimiento o un contexto de aplicación industrial."
+  },
+  "procurement": {
+    "eyebrow": "01 — Abastecimiento internacional",
+    "title": "Comenzar por la aplicación y aclarar la ruta de suministro.",
+    "description": "Para requerimientos especializados, comenzamos por definir la aplicación y evaluar opciones internacionales de tecnología y proveedores.",
+    "items": [
+      "Búsqueda de tecnología e identificación de fabricantes",
+      "Evaluación técnica y comercial de proveedores",
+      "Relación y coordinación con proveedores internacionales",
+      "Negociación comercial y coordinación de compras",
+      "Coordinación de suministro y logística internacional",
+      "Desarrollo de nuevas oportunidades tecnológicas"
+    ]
+  },
+  "process": {
+    "title": "Una secuencia disciplinada de abastecimiento.",
+    "description": "Una secuencia estructurada desde la definición del requerimiento hasta la relación con proveedores, la negociación y la coordinación del suministro.",
+    "steps": [
+      { "number": "01", "title": "Identificar", "copy": "Aclaramos la necesidad tecnológica e identificamos proveedores relevantes." },
+      { "number": "02", "title": "Calificar", "copy": "Revisamos el ajuste técnico y comercial de las opciones disponibles." },
+      { "number": "03", "title": "Buscar", "copy": "Nos relacionamos con el proveedor internacional a partir de la aplicación definida." },
+      { "number": "04", "title": "Negociar", "copy": "Coordinamos condiciones comerciales y de suministro." },
+      { "number": "05", "title": "Coordinar", "copy": "Alineamos la ruta de compra y suministro internacional." },
+      { "number": "06", "title": "Entregar", "copy": "Coordinamos la ruta de suministro con el cliente, canal o socio adecuado en América Latina." }
+    ]
+  },
+  "marketDevelopment": {
+    "eyebrow": "02 — Desarrollo de mercados en América Latina",
+    "title": "Convertir la información de mercado en una decisión comercial más informada.",
+    "description": "Ayudamos a los fabricantes a evaluar opciones de entrada a mercado, identificar canales y priorizar oportunidades de desarrollo en América Latina.",
+    "items": [
+      "Investigación de mercado y evaluación de oportunidades",
+      "Consideraciones de entrada a mercado y posicionamiento técnico",
+      "Identificación de distribuidores, integradores y socios locales",
+      "Apoyo al desarrollo de canales y negocios",
+      "Identificación de posibles clientes y proyectos",
+      "Coordinación de relaciones comerciales locales"
+    ]
+  },
+  "partnerships": {
+    "eyebrow": "03 — Alianzas tecnológicas",
+    "title": "Crear las condiciones para una colaboración comercial bien definida.",
+    "description": "Alineamos fabricantes de tecnología, oportunidades de mercado y relaciones empresariales locales alrededor de roles y objetivos claramente definidos.",
+    "items": [
+      "Desarrollo de relaciones con fabricantes",
+      "Colaboración comercial e introducción de tecnología",
+      "Planificación de desarrollo de canales regionales",
+      "Coordinación con socios empresariales locales"
+    ]
+  },
+  "trading": {
+    "eyebrow": "04 — Comercio internacional",
+    "title": "Coordinar tecnología especializada entre fronteras.",
+    "description": "Cuando las condiciones comerciales y legales sean apropiadas, podemos coordinar el abastecimiento y comercio internacional de tecnologías especializadas para clientes o distribuidores en América Latina.",
+    "items": [
+      "Abastecimiento alineado con un requerimiento específico",
+      "Condiciones comerciales definidas para cada oportunidad",
+      "Coordinación entre proveedores internacionales y demanda regional",
+      "Alineación comercial para la oportunidad definida"
+    ]
+  },
+  "solutions": {
+    "eyebrow": "05 — Soluciones tecnológicas",
+    "title": "Conectar la tecnología con el contexto real de aplicación.",
+    "description": "Aplicamos la búsqueda internacional de tecnología y la coordinación comercial a requerimientos de agua, infraestructura, energía e industria.",
+    "items": [
+      "Evaluación tecnológica guiada por la aplicación",
+      "Requerimientos industriales y de infraestructura",
+      "Evaluación técnica y comercial previa a la selección de proveedor",
+      "Coordinación entre abastecimiento internacional y ejecución local"
+    ],
+    "mediaAlt": "Área de media editorial para aplicaciones tecnológicas industriales y de infraestructura.",
+    "mediaFallback": "Media editorial complementaria aprobada pendiente",
+    "mediaCaption": "Una futura imagen debe ser auténtica, licenciada y pertinente para una aplicación industrial o de infraestructura."
+  },
+  "cta": {
+    "title": "Elija la ruta comercial que mejor corresponde a su punto de partida.",
+    "manufacturer": "Expandirse a Latinoamérica",
+    "technology": "Encontrar tecnología"
+  }
+}

@@ -1,0 +1,19 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+
+allowBuilds:
+  # Prisma generation is always explicit via `pnpm prisma:generate`.
+  '@prisma/client': false
+  '@prisma/engines': true
+  prisma: false
+  unrs-resolver: false
+
+overrides:
+  body-parser: 2.4.0
+  deepmerge-ts: 8.0.0
+  effect: 3.20.0
+  multer: 2.5.0
+  proxy-addr: 2.0.8
+  qs: 6.16.1
+  source-map-js: 1.2.2

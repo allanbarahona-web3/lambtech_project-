@@ -1,0 +1,77 @@
+{
+  "metadata": {
+    "title": "Acceda a tecnología global | LAMBTECH LLC",
+    "description": "Búsqueda internacional de tecnología y coordinación comercial para requerimientos industriales y de infraestructura en América Latina."
+  },
+  "introduction": {
+    "eyebrow": "Para empresas latinoamericanas",
+    "title": "Acceda a tecnología especializada para su mercado.",
+    "description": "Ayudamos a convertir un requerimiento industrial o de infraestructura definido en un proceso de búsqueda internacional de tecnología basado en evaluación técnica y comercial.",
+    "mediaAlt": "Área de media editorial para búsqueda internacional de tecnología y aplicaciones industriales en América Latina.",
+    "mediaFallback": "Media editorial aprobada para Latinoamérica pendiente",
+    "mediaCaption": "Media futura: fotografía auténtica y aprobada de infraestructura industrial, evaluación técnica o búsqueda internacional de tecnología."
+  },
+  "requirements": {
+    "eyebrow": "01 — Del requerimiento a la tecnología",
+    "title": "Dar al requerimiento un marco técnico y comercial útil.",
+    "description": "Comenzamos con la aplicación, las condiciones operativas y los criterios de evaluación que hacen comprensible un requerimiento tecnológico para los proveedores internacionales adecuados.",
+    "items": [
+      "Definición de la aplicación y del contexto operativo",
+      "Criterios de búsqueda de tecnología y proveedores",
+      "Consideraciones de evaluación técnica y comercial",
+      "Coordinación del requerimiento antes de relacionarse con proveedores"
+    ]
+  },
+  "procurement": {
+    "eyebrow": "02 — Abastecimiento internacional",
+    "title": "Coordinar la ruta del requerimiento al diálogo con proveedores.",
+    "description": "Ayudamos a conectar un requerimiento con fabricantes y proveedores adecuados, manteniendo las actividades de abastecimiento organizadas alrededor de la necesidad definida.",
+    "items": [
+      "Identificación de tecnología y evaluación de proveedores",
+      "Consideraciones de calificación técnica y comercial",
+      "Coordinación de compras y suministro internacional",
+      "Coordinación de relaciones con fabricantes para una oportunidad definida"
+    ],
+    "linkLabel": "Conozca cómo trabajamos"
+  },
+  "technology": {
+    "eyebrow": "03 — Aplicaciones tecnológicas",
+    "title": "Explore la tecnología a partir del contexto de aplicación.",
+    "description": "El enfoque está en áreas de tecnología especializada que respaldan un requerimiento bien definido de industria o infraestructura.",
+    "linkLabel": "Explorar tecnología",
+    "items": [
+      { "id": "water", "title": "Agua e infraestructura", "copy": "Medición de caudal, válvulas de control, gestión de presión, detección de fugas, monitoreo de calidad de agua y monitoreo remoto." },
+      { "id": "gas", "title": "Gas, biogás y energía", "copy": "Contextos de medición de gas, análisis de biogás y biometano, combustión y monitoreo de procesos." },
+      { "id": "industrial", "title": "Instrumentación industrial", "copy": "Contextos de instrumentación, sensores, válvulas de control, medición, automatización y herramientas industriales." },
+      { "id": "connected", "title": "Tecnologías conectadas", "copy": "Contextos de SCADA, RTUs, IoT industrial, registradores de datos, telemetría y plataformas de datos." }
+    ]
+  },
+  "collaboration": {
+    "eyebrow": "04 — Modelo de colaboración",
+    "title": "Coordinar a las partes adecuadas alrededor de un requerimiento definido.",
+    "description": "Reunimos requerimientos de clientes, proveedores internacionales de tecnología y relaciones empresariales regionales en un proceso coordinado con roles claros para cada oportunidad.",
+    "items": [
+      "Requerimiento del cliente y definición de aplicación",
+      "Relación con fabricante o proveedor internacional",
+      "Coordinación comercial para el requerimiento definido",
+      "Participación de socios empresariales regionales cuando corresponda"
+    ],
+    "mediaAlt": "Área de media editorial para coordinación comercial entre proveedores de tecnología industrial y requerimientos regionales.",
+    "mediaFallback": "Media complementaria aprobada para Latinoamérica pendiente",
+    "mediaCaption": "Media futura: imagen auténtica y aprobada de colaboración técnica, revisión de abastecimiento o contexto de aplicación industrial."
+  },
+  "process": {
+    "title": "Una ruta clara para un requerimiento especializado.",
+    "description": "Usamos este marco para organizar el abastecimiento y la coordinación comercial, mientras evaluamos individualmente los detalles de cada requerimiento.",
+    "steps": [
+      { "number": "01", "title": "Requerimiento", "copy": "Definimos la aplicación y la pregunta tecnológica." },
+      { "number": "02", "title": "Tecnología", "copy": "Identificamos tecnología internacional adecuada y opciones de proveedores." },
+      { "number": "03", "title": "Coordinación", "copy": "Alineamos evaluación técnica, relación con proveedores y condiciones comerciales." },
+      { "number": "04", "title": "Alineación de mercado", "copy": "Conectamos el requerimiento con las condiciones empresariales regionales aplicables." }
+    ]
+  },
+  "cta": {
+    "title": "Explore una ruta de abastecimiento internacional para su requerimiento.",
+    "label": "Converse sobre su requerimiento"
+  }
+}

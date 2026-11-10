@@ -1,0 +1,34 @@
+{
+  "name": "@lambtech/api",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nest start --watch",
+    "build": "nest build",
+    "start": "node dist/main.js",
+    "start:lead-email-worker": "node dist/lead-email/worker.js",
+    "dev:lead-email-worker": "nest start --watch --entryFile lead-email/worker",
+    "type-check": "tsc --noEmit",
+    "test:foundation": "rm -rf .test-dist && tsc -p tsconfig.test.json && mkdir -p .test-dist/lead-email/assets && cp src/lead-email/assets/barmentech-logo.png .test-dist/lead-email/assets/barmentech-logo.png && node --test .test-dist/**/*.spec.js && rm -rf .test-dist",
+    "test:lead-email-postgres-integration": "node ../../scripts/run-lead-outbox-postgres-integration.mjs",
+    "prisma:format": "prisma format",
+    "prisma:validate": "prisma validate"
+  },
+  "dependencies": {
+    "@nestjs/common": "11.2.8",
+    "@nestjs/core": "11.2.8",
+    "@nestjs/platform-express": "11.2.8",
+    "@prisma/client": "6.19.3",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.15.1",
+    "reflect-metadata": "0.2.2",
+    "resend": "^6.34.1",
+    "rxjs": "7.8.2"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "11.0.24",
+    "@types/node": "22.20.1",
+    "prisma": "6.19.3",
+    "typescript": "5.9.3"
+  }
+}

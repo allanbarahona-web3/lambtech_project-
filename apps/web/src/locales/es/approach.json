@@ -1,0 +1,11 @@
+{
+  "eyebrow": "Nuestro enfoque",
+  "title": "Un rol disciplinado entre la tecnología y el mercado.",
+  "description": "Conectamos tecnología internacional con la información de mercado necesaria para evaluar una oportunidad definida.",
+  "closing": "El resultado es una base más clara para que fabricantes, socios y clientes definan el siguiente paso comercial.",
+  "steps": [
+    { "number": "01", "title": "Entender las oportunidades", "copy": "Aclaramos la aplicación, la necesidad de mercado y las partes involucradas." },
+    { "number": "02", "title": "Buscar y coordinar tecnología", "copy": "Identificamos tecnología adecuada y coordinamos la ruta de suministro internacional." },
+    { "number": "03", "title": "Conectar fabricantes, socios y mercados", "copy": "Alineamos a las partes alrededor de un siguiente paso bien definido." }
+  ]
+}

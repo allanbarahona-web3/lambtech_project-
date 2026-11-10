@@ -1,0 +1,85 @@
+{
+  "metadata": {
+    "title": "Aplicaciones tecnológicas | LAMBTECH LLC",
+    "description": "Contextos tecnológicos guiados por aplicación para infraestructura de agua, gas y energía, instrumentación industrial y tecnologías conectadas."
+  },
+  "introduction": {
+    "eyebrow": "Tecnología",
+    "title": "La tecnología comienza con el contexto operativo.",
+    "description": "Partimos de aplicaciones prácticas de industria e infraestructura y luego identificamos tecnología internacional especializada adecuada para el requerimiento.",
+    "mediaAlt": "Área de media editorial para aplicaciones de tecnología industrial especializada.",
+    "mediaFallback": "Media editorial aprobada para Tecnología pendiente",
+    "mediaCaption": "Una futura imagen debe mostrar equipos, instrumentación o contexto industrial auténtico."
+  },
+  "categories": [
+    {
+      "id": "water",
+      "eyebrow": "01 — Agua e infraestructura",
+      "title": "Sistemas de agua donde la medición y el control importan.",
+      "copy": "Los contextos relevantes incluyen redes de agua y aplicaciones de infraestructura donde se consideran en conjunto la medición de caudal, la gestión de presión, el control y el monitoreo.",
+      "items": [
+        "Medidores ultrasónicos de agua",
+        "Medidores electromagnéticos de caudal",
+        "Válvulas de control y gestión de presión",
+        "Detección de fugas y monitoreo de calidad de agua",
+        "Telemetría y monitoreo remoto"
+      ],
+      "mediaAlt": "Área de media editorial para tecnología de agua e infraestructura.",
+      "mediaFallback": "Media aprobada de Agua e Infraestructura pendiente",
+      "mediaCaption": "Media futura: fotografía aprobada de redes de agua, medición de caudal o control hidráulico."
+    },
+    {
+      "id": "gas",
+      "eyebrow": "02 — Gas, biogás y energía",
+      "title": "Medición y análisis para entornos de energía y proceso.",
+      "copy": "Los requerimientos de gas, biogás y energía dependen de condiciones de medición, análisis y proceso que deben evaluarse en conjunto.",
+      "items": [
+        "Medición de gas e instrumentación industrial",
+        "Contextos de análisis de biogás y biometano",
+        "Análisis de combustión y emisiones",
+        "Monitoreo de procesos industriales",
+        "Requerimientos de medición y control de procesos"
+      ],
+      "mediaAlt": "Área de media editorial para tecnología de gas, biogás y energía.",
+      "mediaFallback": "Media aprobada de Gas, Biogás y Energía pendiente",
+      "mediaCaption": "Media futura: fotografía aprobada de análisis de gases, combustión o procesos energéticos."
+    },
+    {
+      "id": "industrial",
+      "eyebrow": "03 — Instrumentación industrial",
+      "title": "Tecnología industrial definida a partir del proceso.",
+      "copy": "Los requerimientos industriales pueden incluir medición, sensores, control y herramientas que respaldan procesos y operaciones de infraestructura.",
+      "items": [
+        "Válvulas de control e instrumentación industrial",
+        "Sensores y sistemas de medición",
+        "Medición de nivel por radar y ultrasonido",
+        "Automatización y control de procesos",
+        "Herramientas industriales y para tuberías"
+      ],
+      "mediaAlt": "Área de media editorial para instrumentación industrial y control de procesos.",
+      "mediaFallback": "Media aprobada de Instrumentación Industrial pendiente",
+      "mediaCaption": "Media futura: fotografía aprobada de instrumentación, válvulas, medición o herramientas industriales."
+    },
+    {
+      "id": "connected",
+      "eyebrow": "04 — Tecnologías conectadas",
+      "title": "Conectar el contexto de campo con visibilidad operativa.",
+      "copy": "SCADA, RTUs, IoT, registradores de datos, telemetría y plataformas de datos son contextos relevantes para conectar información de campo con visibilidad operativa.",
+      "items": [
+        "Contextos de SCADA y telemetría industrial",
+        "Aplicaciones de RTUs, registradores de datos e IoT industrial",
+        "Consideraciones de monitoreo remoto",
+        "Contextos de plataformas de datos e integración",
+        "Visibilidad operativa para entornos industriales"
+      ],
+      "mediaAlt": "Área de media editorial para tecnologías industriales conectadas.",
+      "mediaFallback": "Media aprobada de Tecnologías Conectadas pendiente",
+      "mediaCaption": "Media futura: fotografía aprobada de SCADA, telemetría, RTU o aplicación de tecnología conectada."
+    }
+  ],
+  "cta": {
+    "title": "Comience por el contexto de aplicación.",
+    "primary": "Encontrar tecnología",
+    "secondary": "Contáctanos"
+  }
+}

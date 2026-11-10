@@ -1,0 +1,19 @@
+{
+  "eyebrow": "Contact",
+  "title": "Choose the right route for your inquiry.",
+  "description": "Tell us what your inquiry involves. Online form submissions are not available yet; please use the contact details shown below.",
+  "paths": [
+    { "id": "manufacturers", "label": "For manufacturers", "title": "Expand into Latin America", "copy": "Discuss market assessment, channel development and technology positioning." },
+    { "id": "customers", "label": "For Latin American businesses", "title": "Find technology", "copy": "Share your application or requirement for technology sourcing." },
+    { "id": "general", "label": "General inquiries", "title": "Contact LAMBTECH", "copy": "Use this route for an inquiry outside the two primary paths." }
+  ],
+  "details": { "email": "Email", "phone": "Telephone", "fax": "Fax", "address": "Mailing address", "whatsapp": "Chat on WhatsApp" },
+  "form": {
+    "title": "Inquiry details",
+    "notice": "Online form submissions are not available yet. Please contact us by email, phone or WhatsApp.",
+    "name": "Name", "company": "Company", "email": "Work email", "country": "Country or market", "message": "Message", "required": "Required", "submit": "Send inquiry", "inactive": "Form delivery is not available yet. Please use the contact details provided.",
+    "validationSummary": "Please complete the required fields to review your inquiry.",
+    "errors": { "name": "Enter your name.", "email": "Enter a valid work email.", "message": "Enter a message." },
+    "honeypot": "Leave this field empty"
+  }
+}

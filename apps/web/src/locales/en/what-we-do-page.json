@@ -1,0 +1,93 @@
+{
+  "metadata": {
+    "title": "What We Do | LAMBTECH LLC",
+    "description": "International procurement, technology sourcing and Latin American market development for specialized industrial and infrastructure applications."
+  },
+  "introduction": {
+    "eyebrow": "What we do",
+    "title": "A commercial bridge between technology and market.",
+    "description": "We connect international technology, procurement and market-development activities with defined industrial and infrastructure requirements.",
+    "mediaAlt": "Editorial media area for international technology and commercial coordination.",
+    "mediaFallback": "Approved What We Do editorial media pending",
+    "mediaCaption": "A future image in this space should show authentic technical collaboration, sourcing or industrial application context."
+  },
+  "procurement": {
+    "eyebrow": "01 — International procurement",
+    "title": "Start with the application, then clarify the supply path.",
+    "description": "For specialized requirements, we begin by defining the application and evaluating international technology and supplier options.",
+    "items": [
+      "Technology sourcing and manufacturer identification",
+      "Technical and commercial supplier evaluation",
+      "International supplier engagement and relationship coordination",
+      "Commercial negotiation and purchasing coordination",
+      "International supply and logistics coordination",
+      "Development of new technology opportunities"
+    ]
+  },
+  "process": {
+    "title": "A disciplined procurement sequence.",
+    "description": "A structured sequence from requirement definition through supplier engagement, negotiation and supply coordination.",
+    "steps": [
+      { "number": "01", "title": "Identify", "copy": "We clarify the technology need and identify relevant suppliers." },
+      { "number": "02", "title": "Qualify", "copy": "We review the technical and commercial fit of the available options." },
+      { "number": "03", "title": "Source", "copy": "We engage the international supplier around the defined application." },
+      { "number": "04", "title": "Negotiate", "copy": "We coordinate commercial terms and supply conditions." },
+      { "number": "05", "title": "Coordinate", "copy": "We align the international purchasing and supply path." },
+      { "number": "06", "title": "Deliver", "copy": "We coordinate the supply path with the appropriate Latin American customer, channel or partner." }
+    ]
+  },
+  "marketDevelopment": {
+    "eyebrow": "02 — Latin American market development",
+    "title": "Turn market insight into a more informed commercial decision.",
+    "description": "We help manufacturers assess market-entry questions, identify channel options and prioritize opportunities for development in Latin America.",
+    "items": [
+      "Market research and opportunity assessment",
+      "Market-entry and technical-positioning considerations",
+      "Distributor, integrator and local-partner identification",
+      "Channel and business-development support",
+      "Potential customer and project identification",
+      "Coordination of local commercial relationships"
+    ]
+  },
+  "partnerships": {
+    "eyebrow": "03 — Technology partnerships",
+    "title": "Build the conditions for well-defined commercial collaboration.",
+    "description": "We align technology manufacturers, market opportunities and local business relationships around clearly defined roles and objectives.",
+    "items": [
+      "Manufacturer relationship development",
+      "Commercial collaboration and technology introduction",
+      "Regional channel-development planning",
+      "Coordination with local business partners"
+    ]
+  },
+  "trading": {
+    "eyebrow": "04 — International trading",
+    "title": "Coordinate specialized technology across borders.",
+    "description": "Where commercial and legal conditions are appropriate, we can coordinate the international sourcing and trading of specialized technologies for customers or distributors in Latin America.",
+    "items": [
+      "Sourcing aligned with a specific requirement",
+      "Commercial terms defined for each opportunity",
+      "Coordination between international suppliers and regional demand",
+      "Commercial alignment for the defined opportunity"
+    ]
+  },
+  "solutions": {
+    "eyebrow": "05 — Technology solutions",
+    "title": "Connect technology with the real application context.",
+    "description": "We apply international technology sourcing and commercial coordination to requirements in water, infrastructure, energy and industry.",
+    "items": [
+      "Application-led technology evaluation",
+      "Industrial and infrastructure requirements",
+      "Technical and commercial evaluation before supplier selection",
+      "Coordination between international sourcing and local execution"
+    ],
+    "mediaAlt": "Editorial media area for industrial and infrastructure technology applications.",
+    "mediaFallback": "Approved supporting editorial media pending",
+    "mediaCaption": "A future image here should be authentic, licensed and relevant to an industrial or infrastructure application."
+  },
+  "cta": {
+    "title": "Choose the commercial path that fits your starting point.",
+    "manufacturer": "Expand into LATAM",
+    "technology": "Find technology"
+  }
+}

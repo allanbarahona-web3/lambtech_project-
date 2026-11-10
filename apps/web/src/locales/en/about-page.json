@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "title": "About LAMBTECH | LAMBTECH LLC",
+    "description": "LAMBTECH connects international technology sourcing, commercial coordination and market development in Latin America."
+  },
+  "introduction": {
+    "eyebrow": "About LAMBTECH",
+    "title": "International technology for Latin American market opportunities.",
+    "description": "LAMBTECH LLC is an international technology and commercial-development company organized in Wyoming. We connect specialized manufacturers, international sourcing requirements and opportunities across Latin American markets.",
+    "mediaAlt": "Editorial media area for international technology and commercial collaboration.",
+    "mediaFallback": "Approved About editorial media pending",
+    "mediaCaption": "Future media: authentic, approved photography of technology collaboration, industrial application or international commercial coordination."
+  },
+  "identity": {
+    "eyebrow": "01 — Business identity",
+    "title": "A commercial model built around technical relevance and market understanding.",
+    "description": "We bring together the work needed to assess specialized technology requirements and connect international suppliers with demand in Latin America.",
+    "items": [
+      "International procurement and technology sourcing",
+      "Manufacturer relationships and commercial coordination",
+      "Latin American market-development initiatives",
+      "International trading where the opportunity and commercial terms are appropriate"
+    ]
+  },
+  "model": {
+    "title": "An operating model that aligns technology, opportunity and market.",
+    "description": "We organize our work around technology, market opportunity and the commercial conditions needed to move forward.",
+    "steps": [
+      { "number": "01", "title": "International manufacturers", "copy": "Specialized technologies and the market requirements they can address." },
+      { "number": "02", "title": "Technology opportunities", "copy": "Requirements, applications and supplier options for evaluation." },
+      { "number": "03", "title": "Latin American markets", "copy": "Regional market conditions, customer needs and business relationships." }
+    ]
+  },
+  "principles": {
+    "eyebrow": "02 — Working principles",
+    "title": "Commercial relationships benefit from clarity before scale.",
+    "description": "We focus on the practical conditions that support sound technology and market-development decisions.",
+    "items": [
+      { "title": "Technical relevance", "copy": "We start with the application, operating conditions and technology requirement." },
+      { "title": "Commercial clarity", "copy": "We define the information each party needs to assess the opportunity." },
+      { "title": "Supplier relationships", "copy": "We coordinate manufacturer and supplier engagement around a defined requirement." },
+      { "title": "Regional understanding", "copy": "We consider the market, channel and customer conditions that shape the opportunity." },
+      { "title": "Long-term relationships", "copy": "We build business relationships through appropriate alignment over time." }
+    ]
+  },
+  "future": {
+    "eyebrow": "03 — Looking forward",
+    "title": "A model designed to stay relevant as technology evolves.",
+    "description": "Connected technologies, IoT, data platforms and software-enabled services may become future areas of development when the underlying commercial and technical opportunities are defined."
+  },
+  "cta": {
+    "title": "Explore the right path for your market or technology requirement.",
+    "label": "Contact Us"
+  }
+}

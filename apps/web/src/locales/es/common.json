@@ -1,0 +1,13 @@
+{
+  "metadata": {
+    "title": "LAMBTECH LLC | Tecnología Internacional y Desarrollo de Mercados",
+    "description": "LAMBTECH conecta fabricantes de tecnología especializada con oportunidades comerciales en América Latina mediante abastecimiento internacional, búsqueda de tecnología y desarrollo de mercados."
+  },
+  "accessibility": { "skipToContent": "Saltar al contenido" },
+  "languageSwitcher": { "label": "Idioma", "english": "Inglés (EN)", "spanish": "Español (ES)" },
+  "header": {
+    "logoAlt": "LAMBTECH Tecnologías Integradas",
+    "menu": { "open": "Abrir menú de navegación", "close": "Cerrar menú de navegación" },
+    "navigation": { "label": "Navegación principal", "home": "Inicio", "whatWeDo": "Qué hacemos", "technology": "Tecnología", "manufacturers": "Fabricantes", "latam": "Latinoamérica", "about": "Nosotros", "contact": "Contáctanos" }
+  }
+}

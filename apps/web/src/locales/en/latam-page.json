@@ -1,0 +1,77 @@
+{
+  "metadata": {
+    "title": "Access Global Technology | LAMBTECH LLC",
+    "description": "International technology sourcing and commercial coordination for Latin American industrial and infrastructure requirements."
+  },
+  "introduction": {
+    "eyebrow": "For Latin American businesses",
+    "title": "Access specialized technology for your market.",
+    "description": "We help turn a defined industrial or infrastructure requirement into an international technology-sourcing process grounded in technical and commercial evaluation.",
+    "mediaAlt": "Editorial media area for international technology sourcing and industrial applications in Latin America.",
+    "mediaFallback": "Approved LATAM editorial media pending",
+    "mediaCaption": "Future media: authentic, approved photography of industrial infrastructure, technical evaluation or international technology sourcing."
+  },
+  "requirements": {
+    "eyebrow": "01 — Requirements to technology",
+    "title": "Give the requirement a useful technical and commercial frame.",
+    "description": "We begin with the application, operating conditions and evaluation criteria that make a technology requirement clear to the right international suppliers.",
+    "items": [
+      "Application and operating-context definition",
+      "Technology and supplier search criteria",
+      "Technical and commercial evaluation considerations",
+      "Coordination around the requirement before supplier engagement"
+    ]
+  },
+  "procurement": {
+    "eyebrow": "02 — International procurement",
+    "title": "Coordinate the route from requirement to supplier dialogue.",
+    "description": "We help connect a requirement with suitable manufacturers and suppliers, keeping sourcing activities organized around the defined need.",
+    "items": [
+      "Technology identification and supplier assessment",
+      "Technical and commercial qualification considerations",
+      "International purchasing and supply coordination",
+      "Manufacturer-relationship coordination for a defined opportunity"
+    ],
+    "linkLabel": "Explore how we work"
+  },
+  "technology": {
+    "eyebrow": "03 — Technology applications",
+    "title": "Explore technology through the application context.",
+    "description": "The focus is on specialized technology areas that support a well-defined industrial or infrastructure requirement.",
+    "linkLabel": "Explore technology",
+    "items": [
+      { "id": "water", "title": "Water & infrastructure", "copy": "Flow measurement, control valves, pressure management, leak detection, water-quality monitoring and remote monitoring." },
+      { "id": "gas", "title": "Gas, biogas & energy", "copy": "Gas measurement, biogas and biomethane analysis, combustion and process-monitoring contexts." },
+      { "id": "industrial", "title": "Industrial instrumentation", "copy": "Instrumentation, sensors, control valves, measurement, automation and industrial-tool contexts." },
+      { "id": "connected", "title": "Connected technologies", "copy": "SCADA, RTUs, industrial IoT, data loggers, telemetry and data-platform contexts." }
+    ]
+  },
+  "collaboration": {
+    "eyebrow": "04 — Collaboration model",
+    "title": "Coordinate the right parties around a defined requirement.",
+    "description": "We bring customer requirements, international technology suppliers and regional business relationships into a coordinated process with clear roles for each opportunity.",
+    "items": [
+      "Customer requirement and application definition",
+      "International manufacturer or supplier engagement",
+      "Commercial coordination for the defined requirement",
+      "Regional business-partner involvement where appropriate"
+    ],
+    "mediaAlt": "Editorial media area for commercial coordination between industrial technology suppliers and regional requirements.",
+    "mediaFallback": "Approved LATAM supporting media pending",
+    "mediaCaption": "Future media: authentic, approved imagery of technical collaboration, sourcing review or industrial application context."
+  },
+  "process": {
+    "title": "A clear path for a specialized requirement.",
+    "description": "We use this framework to organize sourcing and commercial coordination, while assessing the details of each requirement individually.",
+    "steps": [
+      { "number": "01", "title": "Requirement", "copy": "We define the application and the technology question." },
+      { "number": "02", "title": "Technology", "copy": "We identify suitable international technology and supplier options." },
+      { "number": "03", "title": "Coordination", "copy": "We align technical evaluation, supplier engagement and commercial conditions." },
+      { "number": "04", "title": "Market alignment", "copy": "We connect the requirement with the applicable regional business conditions." }
+    ]
+  },
+  "cta": {
+    "title": "Explore an international sourcing path for your requirement.",
+    "label": "Discuss your requirement"
+  }
+}

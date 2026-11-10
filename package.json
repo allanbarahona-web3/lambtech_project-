@@ -1,0 +1,23 @@
+{
+  "name": "lambtech-workspace",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.0.0 <23"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @lambtech/web dev",
+    "dev:api": "pnpm --filter @lambtech/api dev",
+    "build": "pnpm --filter @lambtech/web build",
+    "build:api": "pnpm --filter @lambtech/api build",
+    "start": "pnpm --filter @lambtech/web start",
+    "start:api": "pnpm --filter @lambtech/api start",
+    "lint": "pnpm --filter @lambtech/web lint",
+    "typecheck": "pnpm --filter @lambtech/web typecheck",
+    "typecheck:api": "pnpm --filter @lambtech/api type-check",
+    "test:api": "pnpm --filter @lambtech/api test:foundation",
+    "prisma:generate": "node scripts/generate-prisma-client-isolated.mjs",
+    "test:api:postgres": "node scripts/run-lead-outbox-postgres-integration.mjs"
+  },
+  "packageManager": "pnpm@11.5.2"
+}

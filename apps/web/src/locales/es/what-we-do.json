@@ -1,0 +1,10 @@
+{
+  "eyebrow": "Qué hacemos",
+  "title": "Tres formas de conectar la tecnología con la oportunidad de mercado.",
+  "description": "Apoyamos a fabricantes y empresas que necesitan una ruta más clara entre tecnología especializada, requerimientos comerciales y aplicaciones prácticas.",
+  "items": [
+    { "number": "01", "title": "Abastecimiento Internacional", "copy": "Definimos la necesidad de aplicación, identificamos opciones internacionales de suministro y coordinamos el abastecimiento para requerimientos industriales y de infraestructura." },
+    { "number": "02", "title": "Desarrollo de Mercados en América Latina", "copy": "Ayudamos a los fabricantes a evaluar oportunidades de mercado, identificar canales adecuados y desarrollar rutas hacia mercados latinoamericanos." },
+    { "number": "03", "title": "Soluciones Tecnológicas", "copy": "Conectamos tecnologías especializadas con aplicaciones de agua, energía, infraestructura e industria." }
+  ]
+}

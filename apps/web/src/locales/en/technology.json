@@ -1,0 +1,12 @@
+{
+  "eyebrow": "Technology & markets",
+  "title": "Technology contexts shaped by real operating needs.",
+  "description": "We use these application areas to frame technical requirements and commercial evaluation for specialized technology.",
+  "closing": "We begin every evaluation with the application: operating conditions, technical requirements and the commercial path needed to assess a suitable technology option.",
+  "areas": [
+    { "title": "Water & Infrastructure", "copy": "Water networks, valves, flow measurement, monitoring and infrastructure applications." },
+    { "title": "Gas, Biogas & Energy", "copy": "Gas and biogas processes, energy systems, measurement and control contexts." },
+    { "title": "Industrial Instrumentation", "copy": "Instrumentation, flow meters, automation, RTUs, SCADA and industrial tools." },
+    { "title": "Connected Technologies", "copy": "Connected monitoring and IoT application contexts for industrial and infrastructure requirements." }
+  ]
+}
