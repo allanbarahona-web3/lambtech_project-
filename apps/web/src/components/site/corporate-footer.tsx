@@ -43,9 +43,9 @@ export function CorporateFooter({ currentLocale, labels }: CorporateFooterProps)
       <Container>
         <div className="site-footer__grid">
           <div className="site-footer__brand">
-            {publicMedia.brandLogo ? (
+            {publicMedia.footerLogo ? (
               <Link aria-label={labels.logoAlt} className="site-footer__logo" href={`/${currentLocale}`}>
-                <Image alt={labels.logoAlt} height={725} src={publicMedia.brandLogo} width={2170} />
+                <Image alt={labels.logoAlt} height={725} src={publicMedia.footerLogo} width={2170} />
               </Link>
             ) : <p className="site-footer__asset-notice">{labels.footerLogoMissing}</p>}
             <p>{labels.tagline}</p>

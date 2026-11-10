@@ -47,7 +47,7 @@ function getNavigationLabel(id: HeaderNavigationRouteId, labels: CorporateHeader
 }
 
 export function CorporateHeader({ currentLocale, currentPage, labels, localePath }: CorporateHeaderProps) {
-  const brandLogo = publicMedia.brandLogo;
+  const headerLogo = publicMedia.headerLogo;
   const desktopNavigationItems = headerNavigationRouteIds.map((id) => ({
     href: getRouteHref(currentLocale, id),
     id,
@@ -64,13 +64,13 @@ export function CorporateHeader({ currentLocale, currentPage, labels, localePath
       <Container className="site-header__container">
         <div className="site-header__desktop">
           <Link className="site-header__logo" href={`/${currentLocale}`}>
-            {brandLogo ? (
+            {headerLogo ? (
               <Image
                 alt={labels.logoAlt}
                 height={713}
                 priority
                 sizes="(max-width: 63.99rem) 140px, 164px"
-                src={brandLogo}
+                src={headerLogo}
                 width={2206}
               />
             ) : labels.logoAlt}
@@ -102,13 +102,13 @@ export function CorporateHeader({ currentLocale, currentPage, labels, localePath
 
         <div className="site-header__mobile-bar">
           <Link className="site-header__logo" href={`/${currentLocale}`}>
-            {brandLogo ? (
+            {headerLogo ? (
               <Image
                 alt={labels.logoAlt}
                 height={713}
                 priority
                 sizes="140px"
-                src={brandLogo}
+                src={headerLogo}
                 width={2206}
               />
             ) : labels.logoAlt}
