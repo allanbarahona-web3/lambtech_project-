@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Container } from "@/components/design-system/container";
 import { LocaleSwitcher } from "@/components/i18n/locale-switcher";
 import type { Locale } from "@/lib/i18n/config";
+import { publicMedia } from "@/lib/media";
 import {
   getRouteHref,
   headerNavigationRouteIds,
@@ -46,6 +47,7 @@ function getNavigationLabel(id: HeaderNavigationRouteId, labels: CorporateHeader
 }
 
 export function CorporateHeader({ currentLocale, currentPage, labels, localePath }: CorporateHeaderProps) {
+  const brandLogo = publicMedia.brandLogo;
   const desktopNavigationItems = headerNavigationRouteIds.map((id) => ({
     href: getRouteHref(currentLocale, id),
     id,
@@ -62,14 +64,16 @@ export function CorporateHeader({ currentLocale, currentPage, labels, localePath
       <Container className="site-header__container">
         <div className="site-header__desktop">
           <Link className="site-header__logo" href={`/${currentLocale}`}>
-            <Image
-              alt={labels.logoAlt}
-              height={713}
-              priority
-              sizes="(max-width: 63.99rem) 140px, 164px"
-              src="/LogoColor.png"
-              width={2206}
-            />
+            {brandLogo ? (
+              <Image
+                alt={labels.logoAlt}
+                height={713}
+                priority
+                sizes="(max-width: 63.99rem) 140px, 164px"
+                src={brandLogo}
+                width={2206}
+              />
+            ) : labels.logoAlt}
           </Link>
 
           <nav aria-label={labels.navigation} className="site-header__primary-navigation">
@@ -98,14 +102,16 @@ export function CorporateHeader({ currentLocale, currentPage, labels, localePath
 
         <div className="site-header__mobile-bar">
           <Link className="site-header__logo" href={`/${currentLocale}`}>
-            <Image
-              alt={labels.logoAlt}
-              height={713}
-              priority
-              sizes="140px"
-              src="/LogoColor.png"
-              width={2206}
-            />
+            {brandLogo ? (
+              <Image
+                alt={labels.logoAlt}
+                height={713}
+                priority
+                sizes="140px"
+                src={brandLogo}
+                width={2206}
+              />
+            ) : labels.logoAlt}
           </Link>
           <MobileNavigation
             closeLabel={labels.menuClose}

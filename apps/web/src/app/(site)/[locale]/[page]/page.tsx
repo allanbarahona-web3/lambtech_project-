@@ -14,6 +14,7 @@ import { WhatWeDoPage, type WhatWeDoPageContent } from "@/features/what-we-do/wh
 import { isLocale, locales, type Locale } from "@/lib/i18n/config";
 import { getTranslation } from "@/lib/i18n/server";
 import { getLegalContent } from "@/lib/legal";
+import { publicMedia } from "@/lib/media";
 import {
   corporateRouteIds,
   isCorporateRoute,
@@ -156,8 +157,8 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
           }}
           currentLocale={locale}
           media={{
-            introduction: publicCompany.media.whatWeDoIntroImageUrl,
-            supporting: publicCompany.media.whatWeDoSupportingImageUrl,
+            introduction: publicMedia.whatWeDoIntroduction,
+            supporting: publicMedia.whatWeDoSupporting,
           }}
         />
       ) : page === "technology" ? (
@@ -169,11 +170,11 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
           }}
           currentLocale={locale}
           media={{
-            connected: publicCompany.media.technologyConnectedImageUrl,
-            gas: publicCompany.media.technologyGasImageUrl,
-            industrial: publicCompany.media.technologyIndustrialImageUrl,
-            introduction: publicCompany.media.technologyIntroImageUrl,
-            water: publicCompany.media.technologyWaterImageUrl,
+            connected: publicMedia.technologyConnected,
+            gas: publicMedia.technologyGas,
+            industrial: publicMedia.technologyIndustrial,
+            introduction: publicMedia.technologyIntroduction,
+            water: publicMedia.technologyWater,
           }}
         />
       ) : page === "manufacturers" ? (
@@ -188,7 +189,7 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
           }}
           currentLocale={locale}
           logos={publicCompany.partnerLogos}
-          media={{ introduction: publicCompany.media.manufacturersIntroImageUrl }}
+          media={{ introduction: publicMedia.manufacturersIntroduction }}
         />
       ) : page === "latam" ? (
         <LatamPage
@@ -203,8 +204,8 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
           }}
           currentLocale={locale}
           media={{
-            introduction: publicCompany.media.latamIntroImageUrl,
-            supporting: publicCompany.media.latamSupportingImageUrl,
+            introduction: publicMedia.latamIntroduction,
+            supporting: publicMedia.latamSupporting,
           }}
         />
       ) : page === "about" ? (
@@ -218,7 +219,7 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
             principles: aboutPage("principles", { returnObjects: true }) as unknown as AboutPageContent["principles"],
           }}
           currentLocale={locale}
-          media={{ introduction: publicCompany.media.aboutIntroImageUrl }}
+          media={{ introduction: publicMedia.aboutIntroduction }}
         />
       ) : page === "contact" ? (
         <ContactPage

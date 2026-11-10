@@ -2,16 +2,18 @@ import type { NextConfig } from "next";
 
 type RemotePattern = NonNullable<NonNullable<NextConfig["images"]>["remotePatterns"]>[number];
 
-function remotePatternFromPublicUrl(value: string | undefined): RemotePattern | undefined {
+function remotePatternFromMediaBaseUrl(value: string | undefined): RemotePattern | undefined {
   if (!value) return undefined;
 
   try {
     const url = new URL(value);
     if (url.protocol !== "https:") return undefined;
 
+    const basePath = url.pathname.replace(/\/+$/, "");
+
     return {
       hostname: url.hostname,
-      pathname: url.pathname,
+      pathname: `${basePath || ""}/**`,
       port: url.port,
       protocol: "https",
     };
@@ -20,10 +22,10 @@ function remotePatternFromPublicUrl(value: string | undefined): RemotePattern | 
   }
 }
 
-const footerLogoPattern = remotePatternFromPublicUrl(process.env.NEXT_PUBLIC_FOOTER_LOGO_URL);
+const mediaPattern = remotePatternFromMediaBaseUrl(process.env.NEXT_PUBLIC_MEDIA_BASE_URL);
 
 const nextConfig: NextConfig = {
-  ...(footerLogoPattern ? { images: { remotePatterns: [footerLogoPattern] } } : {}),
+  ...(mediaPattern ? { images: { remotePatterns: [mediaPattern] } } : {}),
   async headers() {
     return [
       {

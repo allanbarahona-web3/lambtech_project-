@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { publicCompany } from "@/config/public-company";
+import { publicMedia } from "@/lib/media";
 import { defaultLocale, locales, type Locale } from "./i18n/config";
 
 function getMetadataBase() {
@@ -34,10 +35,10 @@ export function getLocaleMetadata(
       },
     },
     description,
-    icons: publicCompany.media.faviconUrl
+    icons: publicMedia.favicon
       ? {
-          icon: [{ type: "image/png", url: publicCompany.media.faviconUrl }],
-          shortcut: [{ type: "image/png", url: publicCompany.media.faviconUrl }],
+          icon: [{ type: "image/png", url: publicMedia.favicon }],
+          shortcut: [{ type: "image/png", url: publicMedia.favicon }],
         }
       : undefined,
     metadataBase: getMetadataBase(),

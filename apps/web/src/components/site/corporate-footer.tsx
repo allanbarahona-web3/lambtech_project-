@@ -5,6 +5,7 @@ import { SocialLinks } from "@/components/company/social-links";
 import { publicCompany, type SocialPlatform } from "@/config/public-company";
 import { Container } from "@/components/design-system/container";
 import type { Locale } from "@/lib/i18n/config";
+import { publicMedia } from "@/lib/media";
 import { getRouteHref, type PrimaryNavigationRouteId } from "@/lib/site-navigation";
 
 type CorporateFooterProps = {
@@ -42,9 +43,9 @@ export function CorporateFooter({ currentLocale, labels }: CorporateFooterProps)
       <Container>
         <div className="site-footer__grid">
           <div className="site-footer__brand">
-            {publicCompany.media.footerLogoUrl ? (
+            {publicMedia.brandLogo ? (
               <Link aria-label={labels.logoAlt} className="site-footer__logo" href={`/${currentLocale}`}>
-                <Image alt={labels.logoAlt} height={725} src={publicCompany.media.footerLogoUrl} width={2170} />
+                <Image alt={labels.logoAlt} height={725} src={publicMedia.brandLogo} width={2170} />
               </Link>
             ) : <p className="site-footer__asset-notice">{labels.footerLogoMissing}</p>}
             <p>{labels.tagline}</p>
