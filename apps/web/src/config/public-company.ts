@@ -16,7 +16,7 @@ export const publicCompany = {
   jurisdiction: "Wyoming, USA",
   name: "LAMBTECH LLC",
   partnerLogos: [] satisfies PublicPartnerLogo[],
-  phone: { display: "+1 (786) 391-8722", e164: "+17863918722" },
+  phone: { display: "+(506)84047638", e164: "+50684047638" },
   social: {
     facebook: "https://www.facebook.com/corderaguas#",
     instagram: "https://www.instagram.com/corderaguas",
@@ -24,7 +24,7 @@ export const publicCompany = {
     tiktok: undefined,
   } satisfies Record<SocialPlatform, string | undefined>,
   website: "https://lambtech.us",
-  whatsappUrl: "https://wa.me/17863918722",
+  whatsappUrl: "https://wa.me/50684047638",
 } as const;
 
 export function telephoneHref(e164: string) {
