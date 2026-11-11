@@ -58,6 +58,7 @@ function footerLabels(footer: Awaited<ReturnType<typeof getTranslation>>) {
   return {
     about: footer("about"),
     contact: footer("contact"),
+    costaRica: footer("costaRica"),
     contactDetails: footer("contactDetails", { returnObjects: true }) as { address: string; email: string; fax: string; phone: string; whatsapp: string },
     disclaimer: footer("disclaimer"),
     copyright: footer("copyright"),
@@ -71,6 +72,7 @@ function footerLabels(footer: Awaited<ReturnType<typeof getTranslation>>) {
     tagline: footer("tagline"),
     technology: footer("technology"),
     terms: footer("terms"),
+    unitedStates: footer("unitedStates"),
     whatWeDo: footer("whatWeDo"),
   };
 }

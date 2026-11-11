@@ -3,6 +3,7 @@ import { Container } from "@/components/design-system/container";
 import { PublicMediaFrame } from "@/components/design-system/public-media-frame";
 import { SectionHeading } from "@/components/design-system/section-heading";
 import { EditorialHero } from "@/components/site/editorial-hero";
+import { publicCompany } from "@/config/public-company";
 import type { Locale } from "@/lib/i18n/config";
 import type { ResponsiveMedia } from "@/lib/media";
 import { getRouteHref } from "@/lib/site-navigation";
@@ -18,7 +19,7 @@ type TechnologyCategoryContent = {
 
 export type TechnologyPageContent = {
   categories: TechnologyCategoryContent[];
-  cta: { primary: string; secondary: string; title: string };
+  cta: { contact: string; title: string; whatsapp: string };
   introduction: { description: string; eyebrow: string; mediaAlt: string; title: string };
 };
 
@@ -65,8 +66,8 @@ export function TechnologyPage({ content, currentLocale, media }: TechnologyPage
             <h2 id="technology-cta-title">{content.cta.title}</h2>
           </div>
           <div className="page-actions">
-            <ButtonLink href={getRouteHref(currentLocale, "latam")}>{content.cta.primary}</ButtonLink>
-            <ButtonLink href={getRouteHref(currentLocale, "contact")} variant="secondary">{content.cta.secondary}</ButtonLink>
+            <ButtonLink href={getRouteHref(currentLocale, "contact")}>{content.cta.contact}</ButtonLink>
+            <ButtonLink href={publicCompany.whatsappUrl} rel="noopener noreferrer" target="_blank" variant="secondary">{content.cta.whatsapp}</ButtonLink>
           </div>
         </Container>
       </section>

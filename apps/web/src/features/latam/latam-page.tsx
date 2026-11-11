@@ -4,6 +4,7 @@ import { Container } from "@/components/design-system/container";
 import { PublicMediaFrame } from "@/components/design-system/public-media-frame";
 import { SectionHeading } from "@/components/design-system/section-heading";
 import { EditorialHero } from "@/components/site/editorial-hero";
+import { publicCompany } from "@/config/public-company";
 import type { Locale } from "@/lib/i18n/config";
 import type { ResponsiveMedia } from "@/lib/media";
 import { getRouteHref } from "@/lib/site-navigation";
@@ -21,7 +22,7 @@ type TechnologyContext = { copy: string; id: string; title: string };
 
 export type LatamPageContent = {
   collaboration: EditorialSection & { mediaAlt: string };
-  cta: { label: string; title: string };
+  cta: { label: string; title: string; whatsapp: string };
   introduction: { description: string; eyebrow: string; mediaAlt: string; title: string };
   procurement: EditorialSection & { linkLabel: string };
   process: { description: string; steps: ProcessStep[]; title: string };
@@ -107,6 +108,7 @@ export function LatamPage({ content, currentLocale, media }: LatamPageProps) {
           </div>
           <div className="page-actions">
             <ButtonLink data-inquiry-type="technology-sourcing" href={getRouteHref(currentLocale, "contact")}>{content.cta.label}</ButtonLink>
+            <ButtonLink href={publicCompany.whatsappUrl} rel="noopener noreferrer" target="_blank" variant="secondary">{content.cta.whatsapp}</ButtonLink>
           </div>
         </Container>
       </section>

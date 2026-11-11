@@ -3,6 +3,7 @@ import { ButtonLink } from "@/components/design-system/button-link";
 import { CommercialProcess } from "@/components/design-system/commercial-process";
 import { Container } from "@/components/design-system/container";
 import { SectionHeading } from "@/components/design-system/section-heading";
+import { publicCompany } from "@/config/public-company";
 import type { Locale } from "@/lib/i18n/config";
 import type { ManufacturerLogo } from "@/lib/media";
 import { getRouteHref } from "@/lib/site-navigation";
@@ -17,7 +18,7 @@ type EditorialSection = {
 type ProcessStep = { copy: string; number: string; title: string };
 
 export type ManufacturersPageContent = {
-  cta: { label: string; title: string };
+  cta: { label: string; title: string; whatsapp: string };
   channels: EditorialSection;
   introduction: { description: string; eyebrow: string; title: string };
   network: { description: string; eyebrow: string; title: string };
@@ -78,6 +79,7 @@ export function ManufacturersPage({ content, currentLocale, logos }: Manufacture
           </div>
           <div className="page-actions">
             <ButtonLink data-inquiry-type="manufacturer" href={getRouteHref(currentLocale, "contact")}>{content.cta.label}</ButtonLink>
+            <ButtonLink href={publicCompany.whatsappUrl} rel="noopener noreferrer" target="_blank" variant="secondary">{content.cta.whatsapp}</ButtonLink>
           </div>
         </Container>
       </section>

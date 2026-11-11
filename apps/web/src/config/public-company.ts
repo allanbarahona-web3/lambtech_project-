@@ -6,6 +6,11 @@ export type SocialPlatform = "facebook" | "instagram" | "linkedin" | "tiktok";
  */
 export const publicCompany = {
   address: "30 N Gould St #69234, Sheridan, WY 82801, USA",
+  costaRicaAddress: [
+    "Oficentro Momentum Pinares",
+    "Sánchez, Curridabat",
+    "San José 11803, Costa Rica",
+  ],
   email: "support@lambtech.us",
   fax: { display: "+1 (986) 300-8345", e164: "+19863008345" },
   jurisdiction: "Wyoming, USA",

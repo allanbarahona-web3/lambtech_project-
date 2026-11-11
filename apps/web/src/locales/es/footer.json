@@ -5,9 +5,11 @@
   "navigationTitle": "Explorar",
   "legalTitle": "Legal",
   "socialTitle": "Canales sociales",
+  "unitedStates": "Estados Unidos",
+  "costaRica": "Costa Rica",
   "whatWeDo": "Qué hacemos", "technology": "Tecnología", "about": "Nosotros", "contact": "Contáctanos",
   "privacy": "Aviso de privacidad", "terms": "Términos de Uso", "disclaimer": "Aviso legal",
-  "contactDetails": { "email": "Correo electrónico", "phone": "Teléfono", "fax": "Fax", "address": "Dirección postal", "whatsapp": "Conversar por WhatsApp" },
+  "contactDetails": { "email": "Correo electrónico", "phone": "Teléfono", "fax": "Fax", "address": "Dirección", "whatsapp": "Conversar por WhatsApp" },
   "social": { "linkedin": "Visitar LAMBTECH en LinkedIn", "facebook": "Visitar LAMBTECH en Facebook", "instagram": "Visitar LAMBTECH en Instagram", "tiktok": "Visitar LAMBTECH en TikTok" },
   "copyright": "© 2026 LAMBTECH LLC"
 }

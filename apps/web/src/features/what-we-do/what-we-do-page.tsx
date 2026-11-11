@@ -3,6 +3,7 @@ import { Container } from "@/components/design-system/container";
 import { PublicMediaFrame } from "@/components/design-system/public-media-frame";
 import { SectionHeading } from "@/components/design-system/section-heading";
 import { EditorialHero } from "@/components/site/editorial-hero";
+import { publicCompany } from "@/config/public-company";
 import type { Locale } from "@/lib/i18n/config";
 import type { ResponsiveMedia } from "@/lib/media";
 import { getRouteHref } from "@/lib/site-navigation";
@@ -17,7 +18,7 @@ type EditorialSection = {
 type ProcessStep = { copy: string; number: string; title: string };
 
 export type WhatWeDoPageContent = {
-  cta: { manufacturer: string; technology: string; title: string };
+  cta: { contact: string; title: string; whatsapp: string };
   introduction: { description: string; eyebrow: string; mediaAlt: string; title: string };
   marketDevelopment: EditorialSection;
   procurement: EditorialSection;
@@ -115,8 +116,8 @@ export function WhatWeDoPage({ content, currentLocale, media }: WhatWeDoPageProp
             <h2 id="what-we-do-cta-title">{content.cta.title}</h2>
           </div>
           <div className="page-actions">
-            <ButtonLink href={getRouteHref(currentLocale, "manufacturers")}>{content.cta.manufacturer}</ButtonLink>
-            <ButtonLink href={getRouteHref(currentLocale, "latam")} variant="secondary">{content.cta.technology}</ButtonLink>
+            <ButtonLink href={getRouteHref(currentLocale, "contact")}>{content.cta.contact}</ButtonLink>
+            <ButtonLink href={publicCompany.whatsappUrl} rel="noopener noreferrer" target="_blank" variant="secondary">{content.cta.whatsapp}</ButtonLink>
           </div>
         </Container>
       </section>

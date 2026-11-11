@@ -963,13 +963,15 @@ picture.public-media-frame > img {
   padding-top: 0;
 }
 
-.home-closing {
+.home-closing,
+.internal-page__cta {
   padding-block: clamp(var(--space-7), 6vw, var(--space-8));
-  background: var(--color-text-primary);
-  color: rgb(255 255 255 / 82%);
+  border-top: var(--border-width) solid var(--color-border-subtle);
+  background: var(--color-surface-subtle);
 }
 
-.home-closing .container {
+.home-closing .container,
+.internal-page__cta .container {
   display: flex;
   align-items: end;
   justify-content: space-between;
@@ -978,13 +980,13 @@ picture.public-media-frame > img {
 
 .home-closing h2 {
   max-width: 38rem;
-  color: var(--color-surface-base);
   font-size: clamp(2rem, 3.25vw, 3rem);
 }
 
 .home-closing p {
   max-width: 34rem;
   margin-top: var(--space-3);
+  color: var(--color-text-secondary);
 }
 
 .home-closing__actions {
@@ -993,15 +995,10 @@ picture.public-media-frame > img {
   gap: var(--space-3);
 }
 
-.home-closing .button-link--secondary {
-  border-color: rgb(255 255 255 / 55%);
-  color: var(--color-surface-base);
-}
-
-.home-closing .button-link--secondary:hover {
-  border-color: var(--color-surface-base);
-  background: rgb(255 255 255 / 10%);
-  color: var(--color-surface-base);
+.home-closing__actions .button-link,
+.page-actions .button-link {
+  width: 13.5rem;
+  max-width: 100%;
 }
 
 .contact-form {
@@ -1086,15 +1083,15 @@ picture.public-media-frame > img {
 
 .site-footer {
   padding-block: clamp(var(--space-8), 7vw, var(--space-9)) var(--space-6);
-  background: var(--color-text-primary);
-  color: rgb(255 255 255 / 78%);
+  background: #252a32;
+  color: #fff;
 }
 
 .site-footer__grid {
   display: grid;
-  grid-template-areas: "brand explore contact legal";
-  grid-template-columns: minmax(15rem, 1.45fr) minmax(8rem, 0.72fr) minmax(13rem, 1.1fr) minmax(8rem, 0.72fr);
-  gap: clamp(var(--space-6), 4vw, var(--space-8));
+  grid-template-areas: "brand explore united-states costa-rica legal";
+  grid-template-columns: minmax(13rem, 1.45fr) minmax(7rem, 0.72fr) minmax(10rem, 1fr) minmax(10rem, 1fr) minmax(7rem, 0.72fr);
+  gap: clamp(var(--space-5), 2.5vw, var(--space-7));
 }
 
 .site-footer__brand {
@@ -1105,8 +1102,12 @@ picture.public-media-frame > img {
   grid-area: explore;
 }
 
-.site-footer__contact {
-  grid-area: contact;
+.site-footer__united-states {
+  grid-area: united-states;
+}
+
+.site-footer__costa-rica {
+  grid-area: costa-rica;
 }
 
 .site-footer__legal {
@@ -1125,7 +1126,7 @@ picture.public-media-frame > img {
 
 .site-footer__asset-notice {
   max-width: 16rem;
-  color: rgb(255 255 255 / 72%);
+  color: #fff;
   font-size: 0.875rem;
   line-height: 1.5;
 }
@@ -1135,14 +1136,9 @@ picture.public-media-frame > img {
   margin-top: var(--space-3);
 }
 
-.site-footer__brand p:nth-of-type(1) {
-  color: rgb(255 255 255 / 88%);
+.site-footer__brand p {
+  color: #fff;
   line-height: 1.5;
-}
-
-.site-footer__brand p:nth-of-type(2) {
-  color: rgb(255 255 255 / 62%);
-  font-size: 0.9375rem;
 }
 
 .contact-details {
@@ -1151,11 +1147,17 @@ picture.public-media-frame > img {
   font-style: normal;
 }
 
-.contact-details--footer {
-  margin-top: 0;
-  color: inherit;
+.site-footer__location {
+  display: grid;
+  gap: var(--space-1);
+  font-style: normal;
   font-size: 0.875rem;
   line-height: 1.55;
+}
+
+.site-footer__entity {
+  color: #fff;
+  font-weight: 600;
 }
 
 .social-links {
@@ -1241,8 +1243,8 @@ picture.public-media-frame > img {
 .site-footer__base {
   margin-top: clamp(var(--space-7), 6vw, var(--space-8));
   padding-top: var(--space-5);
-  border-top: var(--border-width) solid rgb(255 255 255 / 18%);
-  color: rgb(255 255 255 / 60%);
+  border-top: var(--border-width) solid rgb(255 255 255 / 28%);
+  color: #fff;
   font-size: 0.875rem;
   line-height: 1.4;
 }
@@ -1459,8 +1461,7 @@ picture.public-media-frame > img {
   border-top: var(--border-width) solid var(--color-border-subtle);
 }
 
-.internal-page__section--subtle,
-.internal-page__cta {
+.internal-page__section--subtle {
   background: var(--color-surface-subtle);
 }
 
@@ -1838,18 +1839,6 @@ picture.public-media-frame > img {
   line-height: 1.5;
 }
 
-.internal-page__cta {
-  padding-block: clamp(var(--space-7), 6vw, var(--space-8));
-  border-top: var(--border-width) solid var(--color-border-subtle);
-}
-
-.internal-page__cta .container {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: var(--space-6);
-}
-
 .internal-page__cta h2 {
   max-width: 38rem;
   margin-top: var(--space-3);
@@ -1876,7 +1865,8 @@ picture.public-media-frame > img {
   .site-footer__grid {
     grid-template-areas:
       "brand explore"
-      "contact legal";
+      "united-states costa-rica"
+      "legal legal";
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--space-7) var(--space-6);
   }
@@ -1988,7 +1978,8 @@ picture.public-media-frame > img {
     grid-template-areas:
       "brand"
       "explore"
-      "contact"
+      "united-states"
+      "costa-rica"
       "legal";
     gap: var(--space-7);
   }
@@ -2075,6 +2066,7 @@ picture.public-media-frame > img {
     border-bottom: var(--border-width) solid var(--color-border-subtle);
   }
 
+  .home-closing .container,
   .internal-page__cta .container {
     align-items: flex-start;
     flex-direction: column;
@@ -2191,10 +2183,6 @@ picture.public-media-frame > img {
     padding: var(--space-3);
   }
 
-  .home-closing .container {
-    align-items: flex-start;
-    flex-direction: column;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

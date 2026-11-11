@@ -69,7 +69,7 @@
   ],
   "cta": {
     "title": "Start with the application context.",
-    "primary": "Find technology",
-    "secondary": "Contact Us"
+    "contact": "Contact Us",
+    "whatsapp": "Chat on WhatsApp"
   }
 }

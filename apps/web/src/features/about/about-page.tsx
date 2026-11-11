@@ -3,6 +3,7 @@ import { CommercialProcess } from "@/components/design-system/commercial-process
 import { Container } from "@/components/design-system/container";
 import { SectionHeading } from "@/components/design-system/section-heading";
 import { EditorialHero } from "@/components/site/editorial-hero";
+import { publicCompany } from "@/config/public-company";
 import type { Locale } from "@/lib/i18n/config";
 import type { ResponsiveMedia } from "@/lib/media";
 import { getRouteHref } from "@/lib/site-navigation";
@@ -18,7 +19,7 @@ type ProcessStep = { copy: string; number: string; title: string };
 type Principle = { copy: string; title: string };
 
 export type AboutPageContent = {
-  cta: { label: string; title: string };
+  cta: { label: string; title: string; whatsapp: string };
   future: { description: string; eyebrow: string; title: string };
   identity: EditorialSection;
   introduction: { description: string; eyebrow: string; mediaAlt: string; title: string };
@@ -81,6 +82,7 @@ export function AboutPage({ content, currentLocale, media }: AboutPageProps) {
           </div>
           <div className="page-actions">
             <ButtonLink href={getRouteHref(currentLocale, "contact")}>{content.cta.label}</ButtonLink>
+            <ButtonLink href={publicCompany.whatsappUrl} rel="noopener noreferrer" target="_blank" variant="secondary">{content.cta.whatsapp}</ButtonLink>
           </div>
         </Container>
       </section>

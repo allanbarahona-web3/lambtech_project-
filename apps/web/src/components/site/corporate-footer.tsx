@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ContactDetails } from "@/components/company/contact-details";
 import { SocialLinks } from "@/components/company/social-links";
-import { publicCompany, type SocialPlatform } from "@/config/public-company";
+import { publicCompany, telephoneHref, type SocialPlatform } from "@/config/public-company";
 import { Container } from "@/components/design-system/container";
 import type { Locale } from "@/lib/i18n/config";
 import { publicMedia } from "@/lib/media";
@@ -13,6 +12,7 @@ type CorporateFooterProps = {
   labels: {
     about: string;
     contact: string;
+    costaRica: string;
     contactDetails: { address: string; email: string; fax: string; phone: string; whatsapp: string };
     disclaimer: string;
     copyright: string;
@@ -26,6 +26,7 @@ type CorporateFooterProps = {
     tagline: string;
     technology: string;
     terms: string;
+    unitedStates: string;
     whatWeDo: string;
   };
 };
@@ -49,7 +50,6 @@ export function CorporateFooter({ currentLocale, labels }: CorporateFooterProps)
               </Link>
             ) : <p className="site-footer__asset-notice">{labels.footerLogoMissing}</p>}
             <p>{labels.tagline}</p>
-            <p>{publicCompany.jurisdiction}</p>
             <SocialLinks label={labels.socialTitle} labels={labels.social} links={publicCompany.social} />
           </div>
           <nav aria-label={labels.navigationTitle} className="site-footer__explore">
@@ -60,9 +60,21 @@ export function CorporateFooter({ currentLocale, labels }: CorporateFooterProps)
               ))}
             </ul>
           </nav>
-          <section aria-labelledby="footer-contact-title" className="site-footer__contact">
-            <p className="site-footer__heading" id="footer-contact-title">{labels.contact}</p>
-            <ContactDetails className="contact-details--footer" includeWhatsApp={false} labels={labels.contactDetails} />
+          <section aria-labelledby="footer-united-states-title" className="site-footer__united-states">
+            <p className="site-footer__heading" id="footer-united-states-title">{labels.unitedStates}</p>
+            <address className="site-footer__location">
+              <p className="site-footer__entity">LAMBTECH LLC</p>
+              <p>{publicCompany.address}</p>
+              <a href={telephoneHref(publicCompany.fax.e164)}>{labels.contactDetails.fax}: {publicCompany.fax.display}</a>
+            </address>
+          </section>
+          <section aria-labelledby="footer-costa-rica-title" className="site-footer__costa-rica">
+            <p className="site-footer__heading" id="footer-costa-rica-title">{labels.costaRica}</p>
+            <address className="site-footer__location">
+              {publicCompany.costaRicaAddress.map((line) => <p key={line}>{line}</p>)}
+              <a href={telephoneHref(publicCompany.phone.e164)}>{labels.contactDetails.phone}: {publicCompany.phone.display}</a>
+              <a href={`mailto:${publicCompany.email}`}>{labels.contactDetails.email}: {publicCompany.email}</a>
+            </address>
           </section>
           <nav aria-label={labels.legalTitle} className="site-footer__legal">
             <p className="site-footer__heading">{labels.legalTitle}</p>
