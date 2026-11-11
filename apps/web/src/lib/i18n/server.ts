@@ -6,7 +6,7 @@ import enContact from "@/locales/en/contact.json";
 import enContactPage from "@/locales/en/contact-page.json";
 import enFooter from "@/locales/en/footer.json";
 import enHero from "@/locales/en/hero.json";
-import enIntroduction from "@/locales/en/introduction.json";
+import enHomeCta from "@/locales/en/home-cta.json";
 import enLegal from "@/locales/en/legal.json";
 import enLatamPage from "@/locales/en/latam-page.json";
 import enManufacturersPage from "@/locales/en/manufacturers-page.json";
@@ -22,7 +22,7 @@ import esContact from "@/locales/es/contact.json";
 import esContactPage from "@/locales/es/contact-page.json";
 import esFooter from "@/locales/es/footer.json";
 import esHero from "@/locales/es/hero.json";
-import esIntroduction from "@/locales/es/introduction.json";
+import esHomeCta from "@/locales/es/home-cta.json";
 import esLegal from "@/locales/es/legal.json";
 import esLatamPage from "@/locales/es/latam-page.json";
 import esManufacturersPage from "@/locales/es/manufacturers-page.json";
@@ -42,7 +42,7 @@ const resources = {
     contactPage: enContactPage,
     footer: enFooter,
     hero: enHero,
-    introduction: enIntroduction,
+    homeCta: enHomeCta,
     legal: enLegal,
     latamPage: enLatamPage,
     manufacturersPage: enManufacturersPage,
@@ -60,7 +60,7 @@ const resources = {
     contactPage: esContactPage,
     footer: esFooter,
     hero: esHero,
-    introduction: esIntroduction,
+    homeCta: esHomeCta,
     legal: esLegal,
     latamPage: esLatamPage,
     manufacturersPage: esManufacturersPage,

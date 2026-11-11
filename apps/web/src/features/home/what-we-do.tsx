@@ -1,20 +1,27 @@
 import { SectionHeading } from "@/components/design-system/section-heading";
 import { Container } from "@/components/design-system/container";
+import type { Locale } from "@/lib/i18n/config";
+import { getRouteHref, type CorporateRouteId } from "@/lib/site-navigation";
 
-type Service = { copy: string; number: string; title: string };
-type WhatWeDoProps = { description: string; eyebrow: string; items: Service[]; title: string };
+type Service = { description: string; linkLabel: string; number: string; scope: string[]; title: string };
+type WhatWeDoProps = { currentLocale: Locale; description: string; eyebrow: string; items: Service[]; title: string };
 
-export function WhatWeDo({ description, eyebrow, items, title }: WhatWeDoProps) {
+const serviceRoutes: readonly CorporateRouteId[] = ["latam", "manufacturers", "technology"];
+
+export function WhatWeDo({ currentLocale, description, eyebrow, items, title }: WhatWeDoProps) {
   return (
     <section aria-labelledby="what-we-do-title" className="content-section" id="what-we-do">
       <Container>
         <SectionHeading description={description} eyebrow={eyebrow} title={title} titleId="what-we-do-title" />
         <ol className="service-list">
-          {items.map((item) => (
+          {items.map((item, index) => (
             <li key={item.number}>
-              <p className="service-list__number">{item.number}</p>
               <h3>{item.title}</h3>
-              <p>{item.copy}</p>
+              <p>{item.description}</p>
+              <ul className="service-list__scope">
+                {item.scope.map((scopeItem) => <li key={scopeItem}>{scopeItem}</li>)}
+              </ul>
+              <a className="home-text-link" href={getRouteHref(currentLocale, serviceRoutes[index] ?? "what-we-do")}>{item.linkLabel}</a>
             </li>
           ))}
         </ol>

@@ -1,10 +1,28 @@
 {
-  "eyebrow": "Qué hacemos",
-  "title": "Tres formas de conectar la tecnología con la oportunidad de mercado.",
-  "description": "Apoyamos a fabricantes y empresas que necesitan una ruta más clara entre tecnología especializada, requerimientos comerciales y aplicaciones prácticas.",
+  "eyebrow": "QUÉ HACEMOS",
+  "title": "De la necesidad a la oportunidad.",
+  "description": "Ayudamos a empresas a encontrar tecnología especializada y a fabricantes a desarrollar oportunidades en América Latina.",
   "items": [
-    { "number": "01", "title": "Abastecimiento Internacional", "copy": "Definimos la necesidad de aplicación, identificamos opciones internacionales de suministro y coordinamos el abastecimiento para requerimientos industriales y de infraestructura." },
-    { "number": "02", "title": "Desarrollo de Mercados en América Latina", "copy": "Ayudamos a los fabricantes a evaluar oportunidades de mercado, identificar canales adecuados y desarrollar rutas hacia mercados latinoamericanos." },
-    { "number": "03", "title": "Soluciones Tecnológicas", "copy": "Conectamos tecnologías especializadas con aplicaciones de agua, energía, infraestructura e industria." }
+    {
+      "number": "01",
+      "title": "Abastecimiento internacional",
+      "description": "Para empresas que necesitan convertir un requerimiento de aplicación en una búsqueda práctica de equipos.",
+      "scope": ["Requisitos de aplicación", "Opciones internacionales de suministro", "Coordinación de abastecimiento de equipos"],
+      "linkLabel": "Explorar abastecimiento"
+    },
+    {
+      "number": "02",
+      "title": "Desarrollo de mercados",
+      "description": "Para fabricantes que evalúan dónde encaja su tecnología y cómo avanzar una oportunidad en América Latina.",
+      "scope": ["Evaluación de mercados objetivo", "Identificación de canales comerciales", "Coordinación de oportunidades"],
+      "linkLabel": "Para fabricantes"
+    },
+    {
+      "number": "03",
+      "title": "Soluciones tecnológicas",
+      "description": "Para requerimientos de agua, energía e industria que necesitan tecnología de medición, control o monitoreo relevante.",
+      "scope": ["Agua e infraestructura", "Energía y aplicaciones de proceso", "Medición, control y monitoreo"],
+      "linkLabel": "Explorar tecnología"
+    }
   ]
 }

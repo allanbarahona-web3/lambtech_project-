@@ -2,7 +2,9 @@ import { ButtonLink } from "@/components/design-system/button-link";
 import { Container } from "@/components/design-system/container";
 import { PublicMediaFrame } from "@/components/design-system/public-media-frame";
 import { SectionHeading } from "@/components/design-system/section-heading";
+import { EditorialHero } from "@/components/site/editorial-hero";
 import type { Locale } from "@/lib/i18n/config";
+import type { ResponsiveMedia } from "@/lib/media";
 import { getRouteHref } from "@/lib/site-navigation";
 
 type EditorialSection = {
@@ -16,11 +18,11 @@ type ProcessStep = { copy: string; number: string; title: string };
 
 export type WhatWeDoPageContent = {
   cta: { manufacturer: string; technology: string; title: string };
-  introduction: { description: string; eyebrow: string; mediaAlt: string; mediaCaption: string; mediaFallback: string; title: string };
+  introduction: { description: string; eyebrow: string; mediaAlt: string; title: string };
   marketDevelopment: EditorialSection;
   procurement: EditorialSection;
   process: { description: string; steps: ProcessStep[]; title: string };
-  solutions: EditorialSection & { mediaAlt: string; mediaCaption: string; mediaFallback: string };
+  solutions: EditorialSection & { mediaAlt: string };
   trading: EditorialSection;
   partnerships: EditorialSection;
 };
@@ -28,7 +30,7 @@ export type WhatWeDoPageContent = {
 type WhatWeDoPageProps = {
   content: WhatWeDoPageContent;
   currentLocale: Locale;
-  media: { introduction?: string; supporting?: string };
+  media: { introduction?: ResponsiveMedia; supporting?: ResponsiveMedia };
 };
 
 function CapabilityList({ items }: { items: string[] }) {
@@ -42,25 +44,7 @@ function CapabilityList({ items }: { items: string[] }) {
 export function WhatWeDoPage({ content, currentLocale, media }: WhatWeDoPageProps) {
   return (
     <main className="internal-page" id="main-content">
-      <section className="internal-page__intro">
-        <Container>
-          <SectionHeading
-            description={content.introduction.description}
-            eyebrow={content.introduction.eyebrow}
-            level="h1"
-            title={content.introduction.title}
-          />
-          <figure className="editorial-media editorial-media--wide">
-            <PublicMediaFrame
-              alt={content.introduction.mediaAlt}
-              aspectRatio="21 / 9"
-              fallbackLabel={content.introduction.mediaFallback}
-              src={media.introduction}
-            />
-            <figcaption>{content.introduction.mediaCaption}</figcaption>
-          </figure>
-        </Container>
-      </section>
+      <EditorialHero alt={content.introduction.mediaAlt} description={content.introduction.description} eyebrow={content.introduction.eyebrow} media={media.introduction} title={content.introduction.title} titleId="what-we-do-title" />
 
       <section aria-labelledby="procurement-title" className="internal-page__section">
         <Container>
@@ -118,8 +102,7 @@ export function WhatWeDoPage({ content, currentLocale, media }: WhatWeDoPageProp
               <CapabilityList items={content.solutions.items} />
             </div>
             <figure className="editorial-media">
-              <PublicMediaFrame alt={content.solutions.mediaAlt} aspectRatio="3 / 2" fallbackLabel={content.solutions.mediaFallback} src={media.supporting} />
-              <figcaption>{content.solutions.mediaCaption}</figcaption>
+              <PublicMediaFrame alt={content.solutions.mediaAlt} aspectRatio="3 / 2" fallbackLabel={content.solutions.mediaAlt} height={1200} loading="lazy" mobileSrc={media.supporting?.mobile} src={media.supporting?.desktop} width={1800} />
             </figure>
           </div>
         </Container>

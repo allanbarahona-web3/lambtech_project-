@@ -1,11 +1,8 @@
 {
-  "eyebrow": "Our approach",
-  "title": "A disciplined role between technology and market.",
-  "description": "We connect international technology with the market information needed to evaluate a defined opportunity.",
-  "closing": "The result is a clearer basis for manufacturers, partners and customers to define the next commercial step.",
+  "title": "How we work",
   "steps": [
-    { "number": "01", "title": "Understand opportunities", "copy": "We clarify the application, market need and parties involved." },
-    { "number": "02", "title": "Source and coordinate technology", "copy": "We identify suitable technology and coordinate the international supply path." },
-    { "number": "03", "title": "Connect manufacturers, partners and markets", "copy": "We align the parties around a well-defined next step." }
+    { "number": "01", "title": "Understand your needs", "copy": "We consider the application, operating conditions, requirements, and target market to define the right starting point." },
+    { "number": "02", "title": "Evaluate options", "copy": "We review relevant technologies and sourcing alternatives against the information available." },
+    { "number": "03", "title": "Coordinate the next step", "copy": "We connect the parties and clarify the next technical or commercial step for the opportunity." }
   ]
 }

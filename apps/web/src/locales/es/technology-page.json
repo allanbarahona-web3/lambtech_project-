@@ -7,9 +7,7 @@
     "eyebrow": "Tecnología",
     "title": "La tecnología comienza con el contexto operativo.",
     "description": "Partimos de aplicaciones prácticas de industria e infraestructura y luego identificamos tecnología internacional especializada adecuada para el requerimiento.",
-    "mediaAlt": "Área de media editorial para aplicaciones de tecnología industrial especializada.",
-    "mediaFallback": "Media editorial aprobada para Tecnología pendiente",
-    "mediaCaption": "Una futura imagen debe mostrar equipos, instrumentación o contexto industrial auténtico."
+    "mediaAlt": "Instalación industrial con tuberías, instrumentos de medición y gabinetes de control."
   },
   "categories": [
     {
@@ -24,9 +22,7 @@
         "Detección de fugas y monitoreo de calidad de agua",
         "Telemetría y monitoreo remoto"
       ],
-      "mediaAlt": "Área de media editorial para tecnología de agua e infraestructura.",
-      "mediaFallback": "Media aprobada de Agua e Infraestructura pendiente",
-      "mediaCaption": "Media futura: fotografía aprobada de redes de agua, medición de caudal o control hidráulico."
+      "mediaAlt": "Equipos para medición de caudal y monitoreo de infraestructura de agua."
     },
     {
       "id": "gas",
@@ -40,9 +36,7 @@
         "Monitoreo de procesos industriales",
         "Requerimientos de medición y control de procesos"
       ],
-      "mediaAlt": "Área de media editorial para tecnología de gas, biogás y energía.",
-      "mediaFallback": "Media aprobada de Gas, Biogás y Energía pendiente",
-      "mediaCaption": "Media futura: fotografía aprobada de análisis de gases, combustión o procesos energéticos."
+      "mediaAlt": "Equipos de medición para procesos de gas y biogás."
     },
     {
       "id": "industrial",
@@ -56,9 +50,7 @@
         "Automatización y control de procesos",
         "Herramientas industriales y para tuberías"
       ],
-      "mediaAlt": "Área de media editorial para instrumentación industrial y control de procesos.",
-      "mediaFallback": "Media aprobada de Instrumentación Industrial pendiente",
-      "mediaCaption": "Media futura: fotografía aprobada de instrumentación, válvulas, medición o herramientas industriales."
+      "mediaAlt": "Instrumentación industrial para monitoreo de procesos."
     },
     {
       "id": "connected",
@@ -72,9 +64,7 @@
         "Contextos de plataformas de datos e integración",
         "Visibilidad operativa para entornos industriales"
       ],
-      "mediaAlt": "Área de media editorial para tecnologías industriales conectadas.",
-      "mediaFallback": "Media aprobada de Tecnologías Conectadas pendiente",
-      "mediaCaption": "Media futura: fotografía aprobada de SCADA, telemetría, RTU o aplicación de tecnología conectada."
+      "mediaAlt": "Equipos para conectividad y monitoreo industrial."
     }
   ],
   "cta": {

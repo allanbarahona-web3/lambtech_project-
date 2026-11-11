@@ -1,10 +1,28 @@
 {
-  "eyebrow": "What we do",
-  "title": "Three ways we connect technology with market opportunity.",
-  "description": "We support manufacturers and businesses that need a clearer path between specialized technology, commercial requirements and practical applications.",
+  "eyebrow": "WHAT WE DO",
+  "title": "From need to opportunity.",
+  "description": "We help businesses find specialized technology and manufacturers develop opportunities in Latin America.",
   "items": [
-    { "number": "01", "title": "International Procurement", "copy": "We define the application need, identify international supplier options and coordinate sourcing for industrial and infrastructure requirements." },
-    { "number": "02", "title": "LATAM Market Development", "copy": "We help manufacturers assess market opportunities, identify suitable channels and develop routes into Latin American markets." },
-    { "number": "03", "title": "Technology Solutions", "copy": "We connect specialized technologies with water, energy, infrastructure and industrial applications." }
+    {
+      "number": "01",
+      "title": "International sourcing",
+      "description": "For organizations that need to turn an application requirement into a practical equipment search.",
+      "scope": ["Application requirements", "International supply options", "Equipment-sourcing coordination"],
+      "linkLabel": "Explore sourcing"
+    },
+    {
+      "number": "02",
+      "title": "Market development",
+      "description": "For manufacturers evaluating where their technology fits and how to advance an opportunity in Latin America.",
+      "scope": ["Target-market evaluation", "Commercial-channel identification", "Opportunity coordination"],
+      "linkLabel": "For manufacturers"
+    },
+    {
+      "number": "03",
+      "title": "Technology solutions",
+      "description": "For water, energy, and industrial requirements that need relevant measurement, control, or monitoring technology.",
+      "scope": ["Water and infrastructure", "Energy and process applications", "Measurement, control, and monitoring"],
+      "linkLabel": "Explore technology"
+    }
   ]
 }

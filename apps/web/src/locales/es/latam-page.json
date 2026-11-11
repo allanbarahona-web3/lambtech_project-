@@ -7,9 +7,7 @@
     "eyebrow": "Para empresas latinoamericanas",
     "title": "Acceda a tecnología especializada para su mercado.",
     "description": "Ayudamos a convertir un requerimiento industrial o de infraestructura definido en un proceso de búsqueda internacional de tecnología basado en evaluación técnica y comercial.",
-    "mediaAlt": "Área de media editorial para búsqueda internacional de tecnología y aplicaciones industriales en América Latina.",
-    "mediaFallback": "Media editorial aprobada para Latinoamérica pendiente",
-    "mediaCaption": "Media futura: fotografía auténtica y aprobada de infraestructura industrial, evaluación técnica o búsqueda internacional de tecnología."
+    "mediaAlt": "Infraestructura de tratamiento de agua con tubería de distribución y equipo de medición de caudal."
   },
   "requirements": {
     "eyebrow": "01 — Del requerimiento a la tecnología",
@@ -56,9 +54,7 @@
       "Coordinación comercial para el requerimiento definido",
       "Participación de socios empresariales regionales cuando corresponda"
     ],
-    "mediaAlt": "Área de media editorial para coordinación comercial entre proveedores de tecnología industrial y requerimientos regionales.",
-    "mediaFallback": "Media complementaria aprobada para Latinoamérica pendiente",
-    "mediaCaption": "Media futura: imagen auténtica y aprobada de colaboración técnica, revisión de abastecimiento o contexto de aplicación industrial."
+    "mediaAlt": "Ingenieros de campo revisando información técnica en una estación de bombeo."
   },
   "process": {
     "title": "Una ruta clara para un requerimiento especializado.",

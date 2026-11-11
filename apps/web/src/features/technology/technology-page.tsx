@@ -2,7 +2,9 @@ import { ButtonLink } from "@/components/design-system/button-link";
 import { Container } from "@/components/design-system/container";
 import { PublicMediaFrame } from "@/components/design-system/public-media-frame";
 import { SectionHeading } from "@/components/design-system/section-heading";
+import { EditorialHero } from "@/components/site/editorial-hero";
 import type { Locale } from "@/lib/i18n/config";
+import type { ResponsiveMedia } from "@/lib/media";
 import { getRouteHref } from "@/lib/site-navigation";
 
 type TechnologyCategoryContent = {
@@ -11,21 +13,19 @@ type TechnologyCategoryContent = {
   id: string;
   items: string[];
   mediaAlt: string;
-  mediaCaption: string;
-  mediaFallback: string;
   title: string;
 };
 
 export type TechnologyPageContent = {
   categories: TechnologyCategoryContent[];
   cta: { primary: string; secondary: string; title: string };
-  introduction: { description: string; eyebrow: string; mediaAlt: string; mediaCaption: string; mediaFallback: string; title: string };
+  introduction: { description: string; eyebrow: string; mediaAlt: string; title: string };
 };
 
 type TechnologyPageProps = {
   content: TechnologyPageContent;
   currentLocale: Locale;
-  media: { connected?: string; gas?: string; industrial?: string; introduction?: string; water?: string };
+  media: { connected?: string; gas?: string; industrial?: string; introduction?: ResponsiveMedia; water?: string };
 };
 
 function categoryMedia(media: TechnologyPageProps["media"], id: string) {
@@ -38,20 +38,7 @@ function categoryMedia(media: TechnologyPageProps["media"], id: string) {
 export function TechnologyPage({ content, currentLocale, media }: TechnologyPageProps) {
   return (
     <main className="internal-page" id="main-content">
-      <section className="internal-page__intro">
-        <Container>
-          <SectionHeading
-            description={content.introduction.description}
-            eyebrow={content.introduction.eyebrow}
-            level="h1"
-            title={content.introduction.title}
-          />
-          <figure className="editorial-media editorial-media--wide">
-            <PublicMediaFrame alt={content.introduction.mediaAlt} aspectRatio="21 / 9" fallbackLabel={content.introduction.mediaFallback} src={media.introduction} />
-            <figcaption>{content.introduction.mediaCaption}</figcaption>
-          </figure>
-        </Container>
-      </section>
+      <EditorialHero alt={content.introduction.mediaAlt} description={content.introduction.description} eyebrow={content.introduction.eyebrow} media={media.introduction} title={content.introduction.title} titleId="technology-title" />
 
       {content.categories.map((category, index) => (
         <section aria-labelledby={`${category.id}-title`} className={index % 2 ? "internal-page__section internal-page__section--subtle" : "internal-page__section"} id={category.id} key={category.id}>
@@ -64,8 +51,7 @@ export function TechnologyPage({ content, currentLocale, media }: TechnologyPage
                 </ul>
               </div>
               <figure className="editorial-media">
-                <PublicMediaFrame alt={category.mediaAlt} aspectRatio="4 / 3" fallbackLabel={category.mediaFallback} src={categoryMedia(media, category.id)} />
-                <figcaption>{category.mediaCaption}</figcaption>
+                <PublicMediaFrame alt={category.mediaAlt} aspectRatio="4 / 3" fallbackLabel={category.mediaAlt} height={1000} loading="lazy" src={categoryMedia(media, category.id)} width={1600} />
               </figure>
             </div>
           </Container>

@@ -1,12 +1,11 @@
 {
-  "eyebrow": "Technology & markets",
-  "title": "Technology contexts shaped by real operating needs.",
-  "description": "We use these application areas to frame technical requirements and commercial evaluation for specialized technology.",
-  "closing": "We begin every evaluation with the application: operating conditions, technical requirements and the commercial path needed to assess a suitable technology option.",
+  "eyebrow": "TECHNOLOGY AREAS",
+  "title": "Technology for real-world needs.",
+  "linkLabel": "Explore our technology areas",
   "areas": [
-    { "title": "Water & Infrastructure", "copy": "Water networks, valves, flow measurement, monitoring and infrastructure applications." },
-    { "title": "Gas, Biogas & Energy", "copy": "Gas and biogas processes, energy systems, measurement and control contexts." },
-    { "title": "Industrial Instrumentation", "copy": "Instrumentation, flow meters, automation, RTUs, SCADA and industrial tools." },
-    { "title": "Connected Technologies", "copy": "Connected monitoring and IoT application contexts for industrial and infrastructure requirements." }
+    { "title": "Water and infrastructure", "copy": "Flow measurement, valves, leak detection, and monitoring for water networks and infrastructure applications.", "mediaAlt": "Water infrastructure equipment for flow measurement and network monitoring" },
+    { "title": "Gas, biogas, and energy", "copy": "Gas analysis, measurement, and process-control technologies for gas, biogas, and energy applications.", "mediaAlt": "Gas and biogas process measurement equipment" },
+    { "title": "Industrial instrumentation", "copy": "Pressure and flow measurement, instruments, and equipment for process monitoring.", "mediaAlt": "Industrial instrumentation for process monitoring" },
+    { "title": "Connectivity and monitoring", "copy": "Telemetry, RTUs, SCADA, and industrial IoT for connected monitoring applications.", "mediaAlt": "Industrial connectivity and monitoring equipment" }
   ]
 }

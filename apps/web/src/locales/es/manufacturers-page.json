@@ -6,10 +6,7 @@
   "introduction": {
     "eyebrow": "Para fabricantes",
     "title": "Desarrolle la presencia de su tecnología en América Latina.",
-    "description": "Ayudamos a los fabricantes a evaluar aplicaciones, rutas de mercado y opciones de canal para tecnología especializada en América Latina.",
-    "mediaAlt": "Área de media editorial para fabricantes de tecnología internacional y desarrollo comercial de mercado.",
-    "mediaFallback": "Media editorial aprobada para Fabricantes pendiente",
-    "mediaCaption": "Media futura: fotografía auténtica y aprobada de tecnología industrial, colaboración técnica o desarrollo de canales comerciales."
+    "description": "Ayudamos a los fabricantes a evaluar aplicaciones, rutas de mercado y opciones de canal para tecnología especializada en América Latina."
   },
   "opportunities": {
     "eyebrow": "01 — Oportunidad regional",
@@ -46,9 +43,7 @@
   "network": {
     "eyebrow": "03 — Red de fabricantes de tecnología",
     "title": "Relaciones definidas alrededor de tecnología especializada.",
-    "description": "Nuestra red comercial incluye fabricantes de tecnología especializada para aplicaciones industriales y de infraestructura.",
-    "logoFallback": "Marcas autorizadas de fabricantes pendientes",
-    "pendingNote": "Las marcas autorizadas de fabricantes aparecerán aquí después de verificar la identidad de los activos suministrados y aprobar su uso en el sitio web."
+    "description": "Nuestra red comercial incluye fabricantes de tecnología especializada para aplicaciones industriales y de infraestructura."
   },
   "cta": {
     "title": "Explore una ruta de desarrollo de mercado para su tecnología.",

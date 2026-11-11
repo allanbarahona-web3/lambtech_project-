@@ -6,10 +6,7 @@
   "introduction": {
     "eyebrow": "For manufacturers",
     "title": "Develop your technology’s presence in Latin America.",
-    "description": "We help manufacturers assess applications, market paths and channel options for specialized technology in Latin America.",
-    "mediaAlt": "Editorial media area for international technology manufacturers and commercial market development.",
-    "mediaFallback": "Approved Manufacturers editorial media pending",
-    "mediaCaption": "Future media: authentic, approved photography of industrial technology, technical collaboration or commercial channel development."
+    "description": "We help manufacturers assess applications, market paths and channel options for specialized technology in Latin America."
   },
   "opportunities": {
     "eyebrow": "01 — Regional opportunity",
@@ -46,9 +43,7 @@
   "network": {
     "eyebrow": "03 — Technology manufacturer network",
     "title": "Relationships shaped around specialized technology.",
-    "description": "Our commercial network includes specialized technology manufacturers serving industrial and infrastructure applications.",
-    "logoFallback": "Authorized manufacturer marks pending",
-    "pendingNote": "Authorized manufacturer marks will appear here after the supplied brand assets have been verified for identity and approved for website use."
+    "description": "Our commercial network includes specialized technology manufacturers serving industrial and infrastructure applications."
   },
   "cta": {
     "title": "Explore a market-development path for your technology.",

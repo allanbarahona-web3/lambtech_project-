@@ -1,12 +1,11 @@
 {
-  "eyebrow": "Tecnología y mercados",
-  "title": "Contextos tecnológicos definidos por necesidades operativas reales.",
-  "description": "Usamos estas áreas de aplicación para estructurar requerimientos técnicos y evaluación comercial de tecnología especializada.",
-  "closing": "Comenzamos cada evaluación con la aplicación: condiciones operativas, requerimientos técnicos y la ruta comercial necesaria para valorar una opción tecnológica adecuada.",
+  "eyebrow": "ÁREAS TECNOLÓGICAS",
+  "title": "Tecnología para necesidades reales.",
+  "linkLabel": "Explorar áreas tecnológicas",
   "areas": [
-    { "title": "Agua e Infraestructura", "copy": "Redes de agua, válvulas, medición de caudal, monitoreo y aplicaciones de infraestructura." },
-    { "title": "Gas, Biogás y Energía", "copy": "Procesos de gas y biogás, sistemas de energía y contextos de medición y control." },
-    { "title": "Instrumentación Industrial", "copy": "Instrumentación, medidores de caudal, automatización, RTUs, SCADA y herramientas industriales." },
-    { "title": "Tecnologías Conectadas", "copy": "Contextos de monitoreo conectado e IoT para requerimientos industriales y de infraestructura." }
+    { "title": "Agua e infraestructura", "copy": "Medición de caudal, válvulas, detección de fugas y monitoreo para redes de agua y aplicaciones de infraestructura.", "mediaAlt": "Equipos para medición de caudal y monitoreo de infraestructura de agua" },
+    { "title": "Gas, biogás y energía", "copy": "Análisis de gases y tecnologías de medición y control de procesos para aplicaciones de gas, biogás y energía.", "mediaAlt": "Equipos de medición para procesos de gas y biogás" },
+    { "title": "Instrumentación industrial", "copy": "Medición de presión y caudal, instrumentos y equipos para supervisar procesos.", "mediaAlt": "Instrumentación industrial para monitoreo de procesos" },
+    { "title": "Conectividad y monitoreo", "copy": "Telemetría, RTUs, SCADA e IoT industrial para aplicaciones de monitoreo conectado.", "mediaAlt": "Equipos para conectividad y monitoreo industrial" }
   ]
 }

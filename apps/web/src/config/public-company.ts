@@ -1,10 +1,5 @@
 export type SocialPlatform = "facebook" | "instagram" | "linkedin" | "tiktok";
 
-export type PublicPartnerLogo = {
-  name: string;
-  src: string;
-};
-
 /**
  * Intentionally public LAMBTECH profile. Keep this versioned with the site;
  * credentials and deployment configuration do not belong here.
@@ -15,7 +10,6 @@ export const publicCompany = {
   fax: { display: "+1 (986) 300-8345", e164: "+19863008345" },
   jurisdiction: "Wyoming, USA",
   name: "LAMBTECH LLC",
-  partnerLogos: [] satisfies PublicPartnerLogo[],
   phone: { display: "+(506)84047638", e164: "+50684047638" },
   social: {
     facebook: "https://www.facebook.com/corderaguas#",

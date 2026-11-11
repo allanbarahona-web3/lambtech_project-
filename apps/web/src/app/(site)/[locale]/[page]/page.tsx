@@ -188,8 +188,7 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
             process: manufacturersPage("process", { returnObjects: true }) as unknown as ManufacturersPageContent["process"],
           }}
           currentLocale={locale}
-          logos={publicCompany.partnerLogos}
-          media={{ introduction: publicMedia.manufacturersIntroduction }}
+          logos={publicMedia.manufacturerLogos}
         />
       ) : page === "latam" ? (
         <LatamPage

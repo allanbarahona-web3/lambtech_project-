@@ -3,28 +3,30 @@ import { WhatsAppButton } from "@/components/company/whatsapp-button";
 import { CorporateFooter } from "@/components/site/corporate-footer";
 import { CorporateHeader } from "@/components/site/corporate-header";
 import { CorporateHero } from "@/components/site/corporate-hero";
-import type { ContactFormLabels } from "@/features/contact/contact-form";
-import { ContactSection } from "@/features/contact/contact-section";
-import { HomeIntroduction } from "@/features/home/home-introduction";
+import { HomeClosingCta } from "@/features/home/home-closing-cta";
 import { OurApproach } from "@/features/home/our-approach";
 import { PartnerNetwork } from "@/features/home/partner-network";
+import { HomeReveal } from "@/features/home/home-reveal";
 import { TechnologyMarkets } from "@/features/home/technology-markets";
 import { WhatWeDo } from "@/features/home/what-we-do";
 import { isLocale } from "@/lib/i18n/config";
 import { getTranslation } from "@/lib/i18n/server";
+import { publicMedia } from "@/lib/media";
 import { publicCompany } from "@/config/public-company";
 
 type LocalePageProps = { params: Promise<{ locale: string }> };
-type Service = { copy: string; number: string; title: string };
-type ContactPath = { copy: string; id: string; label: string; title: string };
+type ProcessStep = { copy: string; number: string; title: string };
+type TechnologyArea = { copy: string; mediaAlt: string; title: string };
+type WhatWeDoService = { description: string; linkLabel: string; number: string; scope: string[]; title: string };
 
 export default async function LocalePage({ params }: LocalePageProps) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
 
-  const [common, hero, introduction, whatWeDo, technology, partners, approach, contact, footer] = await Promise.all([
-    getTranslation(locale, "common"), getTranslation(locale, "hero"), getTranslation(locale, "introduction"),
+  const [common, hero, whatWeDo, technology, partners, approach, homeCta, contact, footer] = await Promise.all([
+    getTranslation(locale, "common"), getTranslation(locale, "hero"),
     getTranslation(locale, "whatWeDo"), getTranslation(locale, "technology"), getTranslation(locale, "partners"), getTranslation(locale, "approach"),
+    getTranslation(locale, "homeCta"),
     getTranslation(locale, "contact"), getTranslation(locale, "footer"),
   ]);
 
@@ -43,19 +45,31 @@ export default async function LocalePage({ params }: LocalePageProps) {
           eyebrow: hero("eyebrow"), headline: hero("headline"), mediaAlt: hero("mediaAlt"),
           primaryCta: hero("primaryCta"), secondaryCta: hero("secondaryCta"),
         }} />
-        <HomeIntroduction copy={introduction("copy")} label={introduction("label")} />
-        <WhatWeDo description={whatWeDo("description")} eyebrow={whatWeDo("eyebrow")} items={whatWeDo("items", { returnObjects: true }) as unknown as Service[]} title={whatWeDo("title")} />
-        <TechnologyMarkets areas={technology("areas", { returnObjects: true }) as unknown as Array<Omit<Service, "number">>} closing={technology("closing")} description={technology("description")} eyebrow={technology("eyebrow")} title={technology("title")} />
-        <PartnerNetwork approvalNote={partners("approvalNote")} description={partners("description")} eyebrow={partners("eyebrow")} logoFallback={partners("logoFallback")} title={partners("title")} />
-        <OurApproach closing={approach("closing")} description={approach("description")} eyebrow={approach("eyebrow")} steps={approach("steps", { returnObjects: true }) as unknown as Service[]} title={approach("title")} />
-        <ContactSection
-          contactDetails={contact("details", { returnObjects: true }) as { address: string; email: string; fax: string; phone: string; whatsapp: string }}
-          description={contact("description")}
-          eyebrow={contact("eyebrow")}
-          form={contact("form", { returnObjects: true }) as unknown as ContactFormLabels}
-          paths={contact("paths", { returnObjects: true }) as unknown as ContactPath[]}
-          title={contact("title")}
-        />
+        <HomeReveal>
+          <WhatWeDo currentLocale={locale} description={whatWeDo("description")} eyebrow={whatWeDo("eyebrow")} items={whatWeDo("items", { returnObjects: true }) as unknown as WhatWeDoService[]} title={whatWeDo("title")} />
+        </HomeReveal>
+        <HomeReveal>
+          <TechnologyMarkets
+            areas={technology("areas", { returnObjects: true }) as unknown as TechnologyArea[]}
+            currentLocale={locale}
+            eyebrow={technology("eyebrow")}
+            images={[publicMedia.technologyWater, publicMedia.technologyGas, publicMedia.technologyIndustrial, publicMedia.technologyConnected]}
+            linkLabel={technology("linkLabel")}
+            title={technology("title")}
+          />
+        </HomeReveal>
+        <HomeReveal><PartnerNetwork title={partners("title")} /></HomeReveal>
+        <HomeReveal><OurApproach steps={approach("steps", { returnObjects: true }) as unknown as ProcessStep[]} title={approach("title")} /></HomeReveal>
+        <HomeReveal>
+          <HomeClosingCta
+            currentLocale={locale}
+            description={homeCta("description")}
+            primaryAction={homeCta("primaryAction")}
+            secondaryAction={homeCta("secondaryAction")}
+            title={homeCta("title")}
+            whatsappUrl={publicCompany.whatsappUrl}
+          />
+        </HomeReveal>
       </main>
       <CorporateFooter currentLocale={locale} labels={{
         about: footer("about"), contact: footer("contact"), contactDetails: footer("contactDetails", { returnObjects: true }) as { address: string; email: string; fax: string; phone: string; whatsapp: string }, disclaimer: footer("disclaimer"), copyright: footer("copyright"), footerLogoMissing: footer("footerLogoMissing"),

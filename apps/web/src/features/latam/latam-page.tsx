@@ -3,7 +3,9 @@ import { CommercialProcess } from "@/components/design-system/commercial-process
 import { Container } from "@/components/design-system/container";
 import { PublicMediaFrame } from "@/components/design-system/public-media-frame";
 import { SectionHeading } from "@/components/design-system/section-heading";
+import { EditorialHero } from "@/components/site/editorial-hero";
 import type { Locale } from "@/lib/i18n/config";
+import type { ResponsiveMedia } from "@/lib/media";
 import { getRouteHref } from "@/lib/site-navigation";
 
 type EditorialSection = {
@@ -18,9 +20,9 @@ type ProcessStep = { copy: string; number: string; title: string };
 type TechnologyContext = { copy: string; id: string; title: string };
 
 export type LatamPageContent = {
-  collaboration: EditorialSection & { mediaAlt: string; mediaCaption: string; mediaFallback: string };
+  collaboration: EditorialSection & { mediaAlt: string };
   cta: { label: string; title: string };
-  introduction: { description: string; eyebrow: string; mediaAlt: string; mediaCaption: string; mediaFallback: string; title: string };
+  introduction: { description: string; eyebrow: string; mediaAlt: string; title: string };
   procurement: EditorialSection & { linkLabel: string };
   process: { description: string; steps: ProcessStep[]; title: string };
   requirements: EditorialSection;
@@ -30,7 +32,7 @@ export type LatamPageContent = {
 type LatamPageProps = {
   content: LatamPageContent;
   currentLocale: Locale;
-  media: { introduction?: string; supporting?: string };
+  media: { introduction?: ResponsiveMedia; supporting?: ResponsiveMedia };
 };
 
 function CapabilityList({ items }: { items: string[] }) {
@@ -42,15 +44,7 @@ export function LatamPage({ content, currentLocale, media }: LatamPageProps) {
 
   return (
     <main className="internal-page" id="main-content">
-      <section className="internal-page__intro">
-        <Container>
-          <SectionHeading description={content.introduction.description} eyebrow={content.introduction.eyebrow} level="h1" title={content.introduction.title} />
-          <figure className="editorial-media editorial-media--wide">
-            <PublicMediaFrame alt={content.introduction.mediaAlt} aspectRatio="21 / 9" fallbackLabel={content.introduction.mediaFallback} src={media.introduction} />
-            <figcaption>{content.introduction.mediaCaption}</figcaption>
-          </figure>
-        </Container>
-      </section>
+      <EditorialHero alt={content.introduction.mediaAlt} description={content.introduction.description} eyebrow={content.introduction.eyebrow} media={media.introduction} title={content.introduction.title} titleId="latam-title" />
 
       <section aria-labelledby="latam-requirements-title" className="internal-page__section">
         <Container>
@@ -98,8 +92,7 @@ export function LatamPage({ content, currentLocale, media }: LatamPageProps) {
               <CapabilityList items={content.collaboration.items} />
             </div>
             <figure className="editorial-media">
-              <PublicMediaFrame alt={content.collaboration.mediaAlt} aspectRatio="3 / 2" fallbackLabel={content.collaboration.mediaFallback} src={media.supporting} />
-              <figcaption>{content.collaboration.mediaCaption}</figcaption>
+              <PublicMediaFrame alt={content.collaboration.mediaAlt} aspectRatio="3 / 2" fallbackLabel={content.collaboration.mediaAlt} height={1200} loading="lazy" mobileSrc={media.supporting?.mobile} src={media.supporting?.desktop} width={1800} />
             </figure>
           </div>
           <CommercialProcess description={content.process.description} steps={content.process.steps} title={content.process.title} titleId="latam-process-title" />

@@ -1,9 +1,10 @@
 import { ButtonLink } from "@/components/design-system/button-link";
 import { CommercialProcess } from "@/components/design-system/commercial-process";
 import { Container } from "@/components/design-system/container";
-import { PublicMediaFrame } from "@/components/design-system/public-media-frame";
 import { SectionHeading } from "@/components/design-system/section-heading";
+import { EditorialHero } from "@/components/site/editorial-hero";
 import type { Locale } from "@/lib/i18n/config";
+import type { ResponsiveMedia } from "@/lib/media";
 import { getRouteHref } from "@/lib/site-navigation";
 
 type EditorialSection = {
@@ -20,7 +21,7 @@ export type AboutPageContent = {
   cta: { label: string; title: string };
   future: { description: string; eyebrow: string; title: string };
   identity: EditorialSection;
-  introduction: { description: string; eyebrow: string; mediaAlt: string; mediaCaption: string; mediaFallback: string; title: string };
+  introduction: { description: string; eyebrow: string; mediaAlt: string; title: string };
   model: { description: string; steps: ProcessStep[]; title: string };
   principles: { description: string; eyebrow: string; items: Principle[]; title: string };
 };
@@ -28,21 +29,13 @@ export type AboutPageContent = {
 type AboutPageProps = {
   content: AboutPageContent;
   currentLocale: Locale;
-  media: { introduction?: string };
+  media: { introduction?: ResponsiveMedia };
 };
 
 export function AboutPage({ content, currentLocale, media }: AboutPageProps) {
   return (
     <main className="internal-page" id="main-content">
-      <section className="internal-page__intro">
-        <Container>
-          <SectionHeading description={content.introduction.description} eyebrow={content.introduction.eyebrow} level="h1" title={content.introduction.title} />
-          <figure className="editorial-media editorial-media--wide">
-            <PublicMediaFrame alt={content.introduction.mediaAlt} aspectRatio="21 / 9" fallbackLabel={content.introduction.mediaFallback} src={media.introduction} />
-            <figcaption>{content.introduction.mediaCaption}</figcaption>
-          </figure>
-        </Container>
-      </section>
+      <EditorialHero alt={content.introduction.mediaAlt} description={content.introduction.description} eyebrow={content.introduction.eyebrow} media={media.introduction} title={content.introduction.title} titleId="about-title" />
 
       <section aria-labelledby="about-identity-title" className="internal-page__section">
         <Container>

@@ -7,9 +7,7 @@
     "eyebrow": "Qué hacemos",
     "title": "Un puente comercial entre la tecnología y el mercado.",
     "description": "Conectamos tecnología internacional, abastecimiento y desarrollo de mercados con requerimientos definidos de industria e infraestructura.",
-    "mediaAlt": "Área de media editorial para tecnología internacional y coordinación comercial.",
-    "mediaFallback": "Media editorial aprobada para Qué hacemos pendiente",
-    "mediaCaption": "Una futura imagen en este espacio debe mostrar colaboración técnica auténtica, abastecimiento o un contexto de aplicación industrial."
+    "mediaAlt": "Ingenieros revisando planos de tuberías y muestras de equipos industriales."
   },
   "procurement": {
     "eyebrow": "01 — Abastecimiento internacional",
@@ -81,9 +79,7 @@
       "Evaluación técnica y comercial previa a la selección de proveedor",
       "Coordinación entre abastecimiento internacional y ejecución local"
     ],
-    "mediaAlt": "Área de media editorial para aplicaciones tecnológicas industriales y de infraestructura.",
-    "mediaFallback": "Media editorial complementaria aprobada pendiente",
-    "mediaCaption": "Una futura imagen debe ser auténtica, licenciada y pertinente para una aplicación industrial o de infraestructura."
+    "mediaAlt": "Caudalímetro y válvula de control instalados en un sistema de tratamiento de agua."
   },
   "cta": {
     "title": "Elija la ruta comercial que mejor corresponde a su punto de partida.",

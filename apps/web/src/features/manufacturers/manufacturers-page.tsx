@@ -2,10 +2,9 @@ import { ManufacturerLogoGrid } from "@/components/company/manufacturer-logo-gri
 import { ButtonLink } from "@/components/design-system/button-link";
 import { CommercialProcess } from "@/components/design-system/commercial-process";
 import { Container } from "@/components/design-system/container";
-import { PublicMediaFrame } from "@/components/design-system/public-media-frame";
 import { SectionHeading } from "@/components/design-system/section-heading";
-import type { PublicPartnerLogo } from "@/config/public-company";
 import type { Locale } from "@/lib/i18n/config";
+import type { ManufacturerLogo } from "@/lib/media";
 import { getRouteHref } from "@/lib/site-navigation";
 
 type EditorialSection = {
@@ -20,8 +19,8 @@ type ProcessStep = { copy: string; number: string; title: string };
 export type ManufacturersPageContent = {
   cta: { label: string; title: string };
   channels: EditorialSection;
-  introduction: { description: string; eyebrow: string; mediaAlt: string; mediaCaption: string; mediaFallback: string; title: string };
-  network: { description: string; eyebrow: string; logoFallback: string; pendingNote: string; title: string };
+  introduction: { description: string; eyebrow: string; title: string };
+  network: { description: string; eyebrow: string; title: string };
   opportunities: EditorialSection;
   process: { description: string; steps: ProcessStep[]; title: string };
 };
@@ -29,24 +28,19 @@ export type ManufacturersPageContent = {
 type ManufacturersPageProps = {
   content: ManufacturersPageContent;
   currentLocale: Locale;
-  logos: readonly PublicPartnerLogo[];
-  media: { introduction?: string };
+  logos: readonly ManufacturerLogo[];
 };
 
 function CapabilityList({ items }: { items: string[] }) {
   return <ul className="capability-list">{items.map((item) => <li key={item}>{item}</li>)}</ul>;
 }
 
-export function ManufacturersPage({ content, currentLocale, logos, media }: ManufacturersPageProps) {
+export function ManufacturersPage({ content, currentLocale, logos }: ManufacturersPageProps) {
   return (
     <main className="internal-page" id="main-content">
       <section className="internal-page__intro">
         <Container>
           <SectionHeading description={content.introduction.description} eyebrow={content.introduction.eyebrow} level="h1" title={content.introduction.title} />
-          <figure className="editorial-media editorial-media--wide">
-            <PublicMediaFrame alt={content.introduction.mediaAlt} aspectRatio="21 / 9" fallbackLabel={content.introduction.mediaFallback} src={media.introduction} />
-            <figcaption>{content.introduction.mediaCaption}</figcaption>
-          </figure>
         </Container>
       </section>
 
@@ -72,8 +66,7 @@ export function ManufacturersPage({ content, currentLocale, logos, media }: Manu
       <section aria-labelledby="manufacturer-network-title" className="internal-page__section">
         <Container>
           <SectionHeading description={content.network.description} eyebrow={content.network.eyebrow} title={content.network.title} titleId="manufacturer-network-title" />
-          <ManufacturerLogoGrid fallbackLabel={content.network.logoFallback} logos={logos} />
-          {!logos.length ? <p className="manufacturer-logo-grid__note">{content.network.pendingNote}</p> : null}
+          <ManufacturerLogoGrid logos={logos} />
         </Container>
       </section>
 

@@ -7,9 +7,7 @@
     "eyebrow": "What we do",
     "title": "A commercial bridge between technology and market.",
     "description": "We connect international technology, procurement and market-development activities with defined industrial and infrastructure requirements.",
-    "mediaAlt": "Editorial media area for international technology and commercial coordination.",
-    "mediaFallback": "Approved What We Do editorial media pending",
-    "mediaCaption": "A future image in this space should show authentic technical collaboration, sourcing or industrial application context."
+    "mediaAlt": "Engineers reviewing piping drawings and industrial equipment samples."
   },
   "procurement": {
     "eyebrow": "01 — International procurement",
@@ -81,9 +79,7 @@
       "Technical and commercial evaluation before supplier selection",
       "Coordination between international sourcing and local execution"
     ],
-    "mediaAlt": "Editorial media area for industrial and infrastructure technology applications.",
-    "mediaFallback": "Approved supporting editorial media pending",
-    "mediaCaption": "A future image here should be authentic, licensed and relevant to an industrial or infrastructure application."
+    "mediaAlt": "Flow meter and control valve installed in a water-treatment system."
   },
   "cta": {
     "title": "Choose the commercial path that fits your starting point.",
