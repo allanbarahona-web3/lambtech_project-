@@ -19,17 +19,19 @@ export function CorporateHero({ currentLocale, labels }: CorporateHeroProps) {
   return (
     <section aria-labelledby="hero-title" className="corporate-hero">
       <div className="corporate-hero__media">
-        {/* The approved SVG is intentionally rendered without Next's SVG optimizer. */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          alt={labels.mediaAlt}
-          className="corporate-hero__media-image"
-          decoding="async"
-          fetchPriority="high"
-          height={heroMedia.height}
-          src={heroMedia.src}
-          width={heroMedia.width}
-        />
+        <picture className="corporate-hero__media-picture">
+          {heroMedia.mobile ? <source media="(max-width: 39.99rem)" srcSet={heroMedia.mobile} type="image/webp" /> : null}
+          {/* Public WebP media is rendered directly to preserve the responsive art direction. */}
+          <img
+            alt={labels.mediaAlt}
+            className="corporate-hero__media-image"
+            decoding="async"
+            fetchPriority="high"
+            height={heroMedia.height}
+            src={heroMedia.desktop}
+            width={heroMedia.width}
+          />
+        </picture>
         <div aria-hidden="true" className="corporate-hero__overlay" />
         <Container className="corporate-hero__content">
           <div className="corporate-hero__copy">

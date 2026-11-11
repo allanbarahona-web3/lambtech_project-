@@ -6,12 +6,13 @@
   "introduction": {
     "eyebrow": "Contacto LAMBTECH",
     "title": "Cuéntenos qué necesita evaluar.",
-    "description": "Ya sea que represente tecnología especializada o esté evaluando un requerimiento industrial, ofrecemos un punto de partida claro para abastecimiento internacional o desarrollo de mercados."
+    "description": "Ya sea que represente tecnología especializada o esté evaluando un requerimiento industrial, ofrecemos un punto de partida claro para abastecimiento internacional o desarrollo de mercados.",
+    "portraitAlt": "Especialista tecnológico de LAMBTECH"
   },
   "pathsHeading": {
     "eyebrow": "01 — Rutas de consulta",
-    "title": "Elija la ruta que mejor corresponda a su consulta.",
-    "description": "Un punto de partida claro ayuda a dirigir su consulta hacia la ruta adecuada de desarrollo de mercado o abastecimiento tecnológico."
+    "title": "Empiece con el contexto que importa.",
+    "description": "Elija la ruta que mejor corresponda a su consulta para entender la tecnología, el mercado o la aplicación involucrada."
   },
   "paths": [
     { "id": "manufacturers", "label": "Para fabricantes", "title": "Desarrolle oportunidades en América Latina", "copy": "Converse sobre posicionamiento tecnológico, evaluación de mercado, desarrollo de canales o identificación de distribuidores." },
@@ -20,19 +21,19 @@
   ],
   "information": {
     "eyebrow": "02 — Datos de contacto",
-    "title": "Use el canal más adecuado para su consulta.",
-    "description": "La dirección postal se proporciona para correspondencia corporativa. Utilice los canales indicados para consultas comerciales."
+    "title": "¿Prefiere una conversación directa?",
+    "description": "Use los canales indicados para consultas comerciales. La dirección postal se proporciona para correspondencia corporativa."
   },
   "details": { "email": "Correo electrónico", "phone": "Teléfono", "fax": "Fax", "address": "Dirección postal", "whatsapp": "Conversar por WhatsApp" },
   "form": {
-    "title": "Detalles de la consulta",
+    "title": "Inicie una consulta estructurada",
     "notice": "El formulario en línea aún no está habilitado. Puede comunicarse con nosotros por correo electrónico, teléfono o WhatsApp.",
-    "name": "Nombre", "company": "Empresa", "email": "Correo laboral", "country": "País o mercado", "message": "Mensaje", "required": "Obligatorio", "checkFields": "Revisar campos obligatorios", "inactive": "El envío del formulario aún no está disponible. Utilice los datos de contacto proporcionados.",
+    "name": "Nombre", "lastName": "Apellido", "company": "Empresa", "email": "Correo laboral", "phone": "Teléfono", "country": "País o mercado", "message": "Mensaje", "required": "Obligatorio", "checkFields": "Revisar campos obligatorios", "inactive": "El envío del formulario aún no está disponible. Utilice los datos de contacto proporcionados.",
     "validationSummary": "Complete los campos obligatorios para revisar su consulta.",
     "errors": { "name": "Ingrese su nombre.", "email": "Ingrese un correo laboral válido.", "message": "Ingrese un mensaje." },
     "honeypot": "Deje este campo vacío",
     "inquiryType": "Tipo de consulta",
-    "inquiryTypes": { "manufacturer": "Fabricante internacional", "customer": "Requerimiento tecnológico en América Latina", "general": "Consulta empresarial general" },
+    "inquiryTypes": { "manufacturer": "Consulta de fabricante", "customer": "Búsqueda de tecnología", "general": "Consulta general" },
     "technologyContext": "Tecnología, área de producto o aplicación", "marketOrProject": "Mercados de América Latina de interés o detalles del proyecto", "website": "Sitio web de la empresa"
   }
 }

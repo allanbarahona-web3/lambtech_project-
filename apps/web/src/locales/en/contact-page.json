@@ -6,12 +6,13 @@
   "introduction": {
     "eyebrow": "Contact LAMBTECH",
     "title": "Tell us what you need to evaluate.",
-    "description": "Whether you represent specialized technology or are evaluating an industrial requirement, we provide a clear starting point for international sourcing or market development."
+    "description": "Whether you represent specialized technology or are evaluating an industrial requirement, we provide a clear starting point for international sourcing or market development.",
+    "portraitAlt": "LAMBTECH technology specialist"
   },
   "pathsHeading": {
     "eyebrow": "01 — Inquiry routes",
-    "title": "Choose the route that best fits your inquiry.",
-    "description": "A clear starting point helps direct your inquiry to the appropriate market-development or technology-sourcing path."
+    "title": "Start with the context that matters.",
+    "description": "Choose the route that best fits your inquiry so we can understand the technology, market or application involved."
   },
   "paths": [
     { "id": "manufacturers", "label": "For manufacturers", "title": "Develop opportunities in Latin America", "copy": "Discuss technology positioning, market assessment, channel development or distributor identification." },
@@ -20,19 +21,19 @@
   ],
   "information": {
     "eyebrow": "02 — Contact details",
-    "title": "Use the channel that best suits your inquiry.",
-    "description": "The mailing address is provided for corporate correspondence. Please use the listed channels for commercial inquiries."
+    "title": "Prefer a direct conversation?",
+    "description": "Use the listed channels for commercial inquiries. The mailing address is provided for corporate correspondence."
   },
   "details": { "email": "Email", "phone": "Telephone", "fax": "Fax", "address": "Mailing address", "whatsapp": "Chat on WhatsApp" },
   "form": {
-    "title": "Inquiry details",
+    "title": "Start a structured inquiry",
     "notice": "Online form submissions are not available yet. Please contact us by email, phone or WhatsApp.",
-    "name": "Name", "company": "Company", "email": "Work email", "country": "Country or market", "message": "Message", "required": "Required", "checkFields": "Check required fields", "inactive": "Form delivery is not available yet. Please use the contact details provided.",
+    "name": "First name", "lastName": "Last name", "company": "Company", "email": "Work email", "phone": "Phone", "country": "Country or market", "message": "Message", "required": "Required", "checkFields": "Check required fields", "inactive": "Form delivery is not available yet. Please use the contact details provided.",
     "validationSummary": "Please complete the required fields to review your inquiry.",
     "errors": { "name": "Enter your name.", "email": "Enter a valid work email.", "message": "Enter a message." },
     "honeypot": "Leave this field empty",
     "inquiryType": "Inquiry type",
-    "inquiryTypes": { "manufacturer": "International manufacturer", "customer": "Latin American technology requirement", "general": "General business inquiry" },
+    "inquiryTypes": { "manufacturer": "Manufacturer inquiry", "customer": "Technology sourcing", "general": "General inquiry" },
     "technologyContext": "Technology, product area or application", "marketOrProject": "Latin American markets of interest or project details", "website": "Company website"
   }
 }

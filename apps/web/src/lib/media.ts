@@ -27,11 +27,13 @@ function publicMediaUrl(path: MediaPath) {
 // per environment so assets can move behind the Space CDN without code changes.
 export const publicMedia = {
   aboutIntroduction: undefined,
+  contactPortrait: publicMediaUrl("lambtech-contact-portrait.webp"),
   favicon: publicMediaUrl("Favicon.png"),
   founderPortrait: publicMediaUrl("Executive PortraitFounder.png"),
   footerLogo: publicMediaUrl("Lambtech LogoFooter.png"),
   headerLogo: publicMediaUrl("LogoColor.png"),
-  hero: publicMediaUrl("Hero Desktop Lambtech.svg"),
+  heroDesktop: publicMediaUrl("lambtech-hero-scada-Desktop.webp"),
+  heroMobile: publicMediaUrl("lambtech-hero-scada-mobile.webp"),
   latamIntroduction: undefined,
   latamSupporting: undefined,
   manufacturersIntroduction: undefined,
@@ -45,7 +47,8 @@ export const publicMedia = {
 } as const;
 
 export const heroMedia = {
+  desktop: publicMedia.heroDesktop,
   height: 1080,
-  src: publicMedia.hero,
+  mobile: publicMedia.heroMobile,
   width: 1920,
 } as const;

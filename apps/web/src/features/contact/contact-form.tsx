@@ -22,7 +22,9 @@ export type ExtendedContactFormLabels = Omit<ContactFormLabels, "submit"> & {
   checkFields: string;
   inquiryType: string;
   inquiryTypes: { customer: string; general: string; manufacturer: string };
+  lastName: string;
   marketOrProject: string;
+  phone: string;
   technologyContext: string;
   website: string;
 };
@@ -57,8 +59,10 @@ export function ContactForm({ extendedLabels, labels }: { extendedLabels?: Exten
       <div className="contact-form__grid">
         {extendedLabels ? <SelectField label={extendedLabels.inquiryType} name="inquiry-type" options={extendedLabels.inquiryTypes} /> : null}
         <Field error={errors.name} label={labels.name} name="name" requiredLabel={labels.required} required />
+        {extendedLabels ? <Field label={extendedLabels.lastName} name="last-name" /> : null}
         <Field label={labels.company} name="company" />
         <Field error={errors.email} label={labels.email} name="email" requiredLabel={labels.required} required type="email" />
+        {extendedLabels ? <Field label={extendedLabels.phone} name="phone" type="tel" /> : null}
         <Field label={labels.country} name="country" />
         <Field error={errors.message} label={labels.message} name="message" requiredLabel={labels.required} required textarea />
         {extendedLabels ? (
@@ -87,7 +91,7 @@ type FieldProps = {
   required?: boolean;
   requiredLabel?: string;
   textarea?: boolean;
-  type?: "email" | "text" | "url";
+  type?: "email" | "tel" | "text" | "url";
 };
 
 function Field({ error, label, name, required, requiredLabel, textarea, type = "text" }: FieldProps) {
