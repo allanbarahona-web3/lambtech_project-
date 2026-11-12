@@ -5,6 +5,7 @@ import { PublicMediaFrame } from "@/components/design-system/public-media-frame"
 import { SectionHeading } from "@/components/design-system/section-heading";
 import { EditorialHero } from "@/components/site/editorial-hero";
 import { publicCompany } from "@/config/public-company";
+import { TechnologyApplicationCards } from "@/features/latam/technology-application-cards";
 import type { Locale } from "@/lib/i18n/config";
 import type { ResponsiveMedia } from "@/lib/media";
 import { getRouteHref } from "@/lib/site-navigation";
@@ -18,7 +19,7 @@ type EditorialSection = {
 
 type ProcessStep = { copy: string; number: string; title: string };
 
-type TechnologyContext = { copy: string; id: string; title: string };
+type TechnologyContext = { bullets: string[]; description: string; id: string; mediaAlt: string; title: string };
 
 export type LatamPageContent = {
   collaboration: EditorialSection & { mediaAlt: string };
@@ -27,17 +28,24 @@ export type LatamPageContent = {
   procurement: EditorialSection & { linkLabel: string };
   process: { description: string; steps: ProcessStep[]; title: string };
   requirements: EditorialSection;
-  technology: { description: string; eyebrow: string; items: TechnologyContext[]; linkLabel: string; title: string };
+  technology: { backLabel: string; description: string; eyebrow: string; items: TechnologyContext[]; linkLabel: string; moreInfoLabel: string; title: string };
 };
 
 type LatamPageProps = {
   content: LatamPageContent;
   currentLocale: Locale;
-  media: { introduction?: ResponsiveMedia; supporting?: ResponsiveMedia };
+  media: { connected?: string; gas?: string; industrial?: string; introduction?: ResponsiveMedia; supporting?: ResponsiveMedia; water?: string };
 };
 
 function CapabilityList({ items }: { items: string[] }) {
   return <ul className="capability-list">{items.map((item) => <li key={item}>{item}</li>)}</ul>;
+}
+
+function technologyMedia(media: LatamPageProps["media"], id: TechnologyContext["id"]) {
+  return id === "water" ? media.water
+    : id === "gas" ? media.gas
+      : id === "industrial" ? media.industrial
+        : media.connected;
 }
 
 export function LatamPage({ content, currentLocale, media }: LatamPageProps) {
@@ -73,15 +81,12 @@ export function LatamPage({ content, currentLocale, media }: LatamPageProps) {
       <section aria-labelledby="latam-technology-title" className="internal-page__section">
         <Container>
           <SectionHeading description={content.technology.description} eyebrow={content.technology.eyebrow} title={content.technology.title} titleId="latam-technology-title" />
-          <div className="technology-context-list">
-            {content.technology.items.map((item) => (
-              <article key={item.id}>
-                <h3>{item.title}</h3>
-                <p>{item.copy}</p>
-                <a href={`${technologyHref}#${item.id}`}>{content.technology.linkLabel}</a>
-              </article>
-            ))}
-          </div>
+          <TechnologyApplicationCards
+            backLabel={content.technology.backLabel}
+            cards={content.technology.items.map((item) => ({ ...item, href: `${technologyHref}#${item.id}`, src: technologyMedia(media, item.id) }))}
+            linkLabel={content.technology.linkLabel}
+            moreInfoLabel={content.technology.moreInfoLabel}
+          />
         </Container>
       </section>
 

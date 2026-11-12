@@ -166,6 +166,7 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
       ) : page === "technology" ? (
         <TechnologyPage
           content={{
+            applicationsIntroduction: technologyPage("applicationsIntroduction", { returnObjects: true }) as TechnologyPageContent["applicationsIntroduction"],
             categories: technologyPage("categories", { returnObjects: true }) as unknown as TechnologyPageContent["categories"],
             cta: technologyPage("cta", { returnObjects: true }) as unknown as TechnologyPageContent["cta"],
             introduction: technologyPage("introduction", { returnObjects: true }) as unknown as TechnologyPageContent["introduction"],
@@ -190,7 +191,7 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
             process: manufacturersPage("process", { returnObjects: true }) as unknown as ManufacturersPageContent["process"],
           }}
           currentLocale={locale}
-          media={{ hero: publicMedia.manufacturerHero }}
+          media={{ channels: publicMedia.latamSupporting, hero: publicMedia.manufacturerHero }}
           logos={publicMedia.manufacturerLogos}
         />
       ) : page === "latam" ? (
@@ -206,8 +207,12 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
           }}
           currentLocale={locale}
           media={{
+            connected: publicMedia.technologyConnected,
+            gas: publicMedia.technologyGas,
+            industrial: publicMedia.technologyIndustrial,
             introduction: publicMedia.latamIntroduction,
             supporting: publicMedia.latamSupporting,
+            water: publicMedia.technologyWater,
           }}
         />
       ) : page === "about" ? (

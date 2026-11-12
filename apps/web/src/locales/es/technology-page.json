@@ -9,12 +9,18 @@
     "description": "Identificamos tecnologías especializadas para aplicaciones de agua, gas, energía e industria, según sus condiciones operativas y requerimientos técnicos.",
     "mediaAlt": "Monitoreo de agua, análisis de biogás, instrumentación industrial y conectividad SCADA."
   },
+  "applicationsIntroduction": {
+    "eyebrow": "Áreas tecnológicas",
+    "title": "Partimos de las condiciones de la aplicación.",
+    "description": "Las aplicaciones de agua, gas, energía e industria combinan variables de proceso, condiciones operativas y necesidades de información distintas. Explore las áreas en las que ayudamos a identificar opciones relevantes de medición, control y conectividad."
+  },
   "categories": [
     {
       "id": "water",
-      "eyebrow": "01 — Agua e infraestructura",
-      "title": "Sistemas de agua donde la medición y el control importan.",
-      "copy": "Los contextos relevantes incluyen redes de agua y aplicaciones de infraestructura donde se consideran en conjunto la medición de caudal, la gestión de presión, el control y el monitoreo.",
+      "eyebrow": "Agua e infraestructura",
+      "title": "Tecnología para redes de agua resilientes.",
+      "copy": "Medición de caudal, gestión de presión y monitoreo remoto para aplicaciones de distribución, tratamiento e infraestructura de agua.",
+      "listLabel": "Aplicaciones relevantes",
       "items": [
         "Medidores ultrasónicos de agua",
         "Medidores electromagnéticos de caudal",
@@ -26,9 +32,10 @@
     },
     {
       "id": "gas",
-      "eyebrow": "02 — Gas, biogás y energía",
-      "title": "Medición y análisis para entornos de energía y proceso.",
-      "copy": "Los requerimientos de gas, biogás y energía dependen de condiciones de medición, análisis y proceso que deben evaluarse en conjunto.",
+      "eyebrow": "Gas, biogás y energía",
+      "title": "Medir y comprender procesos de gas.",
+      "copy": "Análisis, medición y control de procesos para aplicaciones de gas, biogás, biometano y energía con condiciones operativas definidas.",
+      "listLabel": "Aplicaciones relevantes",
       "items": [
         "Medición de gas e instrumentación industrial",
         "Contextos de análisis de biogás y biometano",
@@ -40,9 +47,10 @@
     },
     {
       "id": "industrial",
-      "eyebrow": "03 — Instrumentación industrial",
-      "title": "Tecnología industrial definida a partir del proceso.",
-      "copy": "Los requerimientos industriales pueden incluir medición, sensores, control y herramientas que respaldan procesos y operaciones de infraestructura.",
+      "eyebrow": "Instrumentación industrial",
+      "title": "Instrumentación definida por el proceso.",
+      "copy": "Tecnologías de medición, sensado y control seleccionadas según las condiciones operativas y la información que cada proceso necesita.",
+      "listLabel": "Aplicaciones relevantes",
       "items": [
         "Válvulas de control e instrumentación industrial",
         "Sensores y sistemas de medición",
@@ -54,9 +62,10 @@
     },
     {
       "id": "connected",
-      "eyebrow": "04 — Tecnologías conectadas",
-      "title": "Conectar el contexto de campo con visibilidad operativa.",
-      "copy": "SCADA, RTUs, IoT, registradores de datos, telemetría y plataformas de datos son contextos relevantes para conectar información de campo con visibilidad operativa.",
+      "eyebrow": "Tecnologías conectadas",
+      "title": "Hacer operativa la información de campo.",
+      "copy": "Telemetría, RTUs, SCADA e IoT industrial que conectan equipos, información de campo y visibilidad operativa.",
+      "listLabel": "Aplicaciones relevantes",
       "items": [
         "Contextos de SCADA y telemetría industrial",
         "Aplicaciones de RTUs, registradores de datos e IoT industrial",

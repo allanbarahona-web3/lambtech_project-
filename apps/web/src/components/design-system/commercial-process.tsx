@@ -6,12 +6,13 @@ type CommercialProcessStep = {
 
 type CommercialProcessProps = {
   description: string;
+  showNumbers?: boolean;
   steps: CommercialProcessStep[];
   title: string;
   titleId: string;
 };
 
-export function CommercialProcess({ description, steps, title, titleId }: CommercialProcessProps) {
+export function CommercialProcess({ description, showNumbers = true, steps, title, titleId }: CommercialProcessProps) {
   return (
     <div className="commercial-process" aria-labelledby={titleId}>
       <div className="commercial-process__intro">
@@ -21,7 +22,7 @@ export function CommercialProcess({ description, steps, title, titleId }: Commer
       <ol>
         {steps.map((step) => (
           <li key={step.number}>
-            <p>{step.number}</p>
+            {showNumbers ? <p>{step.number}</p> : null}
             <h4>{step.title}</h4>
             <span>{step.copy}</span>
           </li>

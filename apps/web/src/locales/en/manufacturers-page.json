@@ -10,41 +10,43 @@
     "mediaAlt": "Industrial process hall with piping, measurement instruments, and control cabinets."
   },
   "opportunities": {
-    "eyebrow": "01 — Regional opportunity",
-    "title": "Begin with a useful market question.",
-    "description": "We assess market opportunities by connecting a manufacturer’s technology with buyer requirements, industrial applications and commercial conditions in Latin America.",
-    "items": [
-      "Market intelligence and opportunity qualification",
-      "Industrial application and buyer-requirement context",
-      "Technology positioning for a defined market opportunity",
-      "Prioritization of opportunities for further review"
+    "eyebrow": "Market opportunity",
+    "title": "Find where your technology fits.",
+    "description": "We assess how your technology relates to buyer needs, industrial applications, and commercial conditions in Latin America, focusing the search on relevant opportunities.",
+    "cards": [
+      { "title": "Relevant applications", "description": "We identify industrial and infrastructure needs your technology could address, considering its intended use, operating environment, and application requirements." },
+      { "title": "Buyer requirements", "description": "We seek to understand the operating conditions, technical criteria, and supply expectations that influence the evaluation of a solution." },
+      { "title": "Commercial fit", "description": "We assess how to present your technology’s value proposition in relation to available alternatives and the commercial context of each opportunity." },
+      { "title": "Priority markets", "description": "We prioritize opportunities for further review based on the application, available information, and potential to develop a commercial route." }
     ]
   },
   "channels": {
-    "eyebrow": "02 — Commercial channels",
-    "title": "Build the commercial path around the application.",
-    "description": "We develop commercial channels by connecting potential distributors, integrators, commercial partners and customers around the technology and local market conditions.",
+    "eyebrow": "Commercial channels",
+    "title": "Connect your technology with the right channel.",
+    "description": "The commercial route depends on the application, the buyer, and the support the technology requires. We assess potential collaborators and coordinate discussions around the context of each opportunity.",
+    "mediaAlt": "Field professionals reviewing technical information beside pumping-station equipment.",
     "items": [
-      "Potential distributor and integrator identification",
-      "Commercial partner and customer-development coordination",
-      "Channel-development coordination",
-      "Alignment between manufacturer objectives and local business relationships"
+      { "id": "distributors", "title": "Distributors", "description": "We identify potential distributors and review their market focus, experience with related technologies, and ability to address the opportunity’s commercial and supply requirements." },
+      { "id": "integrators", "title": "Integrators", "description": "We assess integrators that could incorporate the technology into a broader solution, considering technical compatibility, installation context, and coordination needs with the manufacturer." },
+      { "id": "commercial-partners", "title": "Commercial partners", "description": "We explore potential collaborators to develop opportunities, aligning the relationship’s scope, responsibilities, and the manufacturer’s objectives with local market conditions." },
+      { "id": "industrial-customers", "title": "Industrial customers", "description": "When an opportunity calls for a direct relationship, we help clarify the application and buyer requirements to support a technical and commercial discussion with the manufacturer." }
     ]
   },
   "process": {
-    "title": "How we work with manufacturers.",
-    "description": "We organize market-development work around a concise framework. We assess each opportunity against its technical requirements and commercial conditions.",
-    "steps": [
-      { "number": "01", "title": "Market understanding", "copy": "We clarify the technology, application and market requirement." },
-      { "number": "02", "title": "Opportunity identification", "copy": "We assess buyer, project and channel opportunities." },
-      { "number": "03", "title": "Channel development", "copy": "We identify potential distributors, integrators and commercial paths." },
-      { "number": "04", "title": "Commercial coordination", "copy": "We coordinate the next step between the appropriate parties." }
+    "title": "From the market question to the next coordinated step.",
+    "description": "Each opportunity progresses according to the application, market conditions, and available information. Our work helps clarify what to evaluate and who should join the next conversation.",
+    "focusLabel": "Focus:",
+    "stages": [
+      { "title": "Understand the market", "description": "We clarify the technology, the need it addresses, and the context of the target market.", "focus": "application and initial requirements." },
+      { "title": "Identify opportunities", "description": "We review potential buyers, projects, and channels to focus discussions on opportunities that merit further analysis.", "focus": "opportunities to evaluate." },
+      { "title": "Develop channels", "description": "We explore potential distributors, integrators, or partners according to the technology and commercial route.", "focus": "potential collaborators and their roles." },
+      { "title": "Coordinate the next step", "description": "We align the parties on outstanding information and the next technical or commercial discussion.", "focus": "next action and participants." }
     ]
   },
   "network": {
-    "eyebrow": "03 — Technology manufacturer network",
-    "title": "Relationships shaped around specialized technology.",
-    "description": "Our commercial network includes specialized technology manufacturers serving industrial and infrastructure applications."
+    "eyebrow": "Technologies & manufacturers",
+    "title": "Technologies and manufacturers we work with.",
+    "description": "We work with specialized technology manufacturers to explore applications for industrial and infrastructure requirements."
   },
   "cta": {
     "title": "Explore a market-development path for your technology.",

@@ -33,15 +33,41 @@
     "linkLabel": "Conozca cómo trabajamos"
   },
   "technology": {
-    "eyebrow": "03 — Aplicaciones tecnológicas",
+    "eyebrow": "Aplicaciones tecnológicas",
     "title": "Explore la tecnología a partir del contexto de aplicación.",
     "description": "El enfoque está en áreas de tecnología especializada que respaldan un requerimiento bien definido de industria o infraestructura.",
+    "moreInfoLabel": "Más información",
     "linkLabel": "Explorar tecnología",
+    "backLabel": "Volver",
     "items": [
-      { "id": "water", "title": "Agua e infraestructura", "copy": "Medición de caudal, válvulas de control, gestión de presión, detección de fugas, monitoreo de calidad de agua y monitoreo remoto." },
-      { "id": "gas", "title": "Gas, biogás y energía", "copy": "Contextos de medición de gas, análisis de biogás y biometano, combustión y monitoreo de procesos." },
-      { "id": "industrial", "title": "Instrumentación industrial", "copy": "Contextos de instrumentación, sensores, válvulas de control, medición, automatización y herramientas industriales." },
-      { "id": "connected", "title": "Tecnologías conectadas", "copy": "Contextos de SCADA, RTUs, IoT industrial, registradores de datos, telemetría y plataformas de datos." }
+      {
+        "id": "water",
+        "title": "Agua e infraestructura",
+        "description": "Tecnologías para medir, supervisar y gestionar sistemas de agua, desde puntos de medición hasta redes de distribución e instalaciones de tratamiento.",
+        "bullets": ["Medición de caudal, presión y nivel.", "Detección de fugas y monitoreo de calidad.", "Control de válvulas y seguimiento remoto."],
+        "mediaAlt": "Caudalímetro y válvula de control en una instalación de tratamiento de agua."
+      },
+      {
+        "id": "gas",
+        "title": "Gas, biogás y energía",
+        "description": "Instrumentos para conocer la composición de gases y evaluar condiciones de operación en aplicaciones de biogás, biometano, combustión y energía.",
+        "bullets": ["Análisis de gases y monitoreo de procesos.", "Medición de caudal, presión y temperatura.", "Evaluación de combustión y emisiones."],
+        "mediaAlt": "Equipo de medición de biogás frente a digestores anaerobios."
+      },
+      {
+        "id": "industrial",
+        "title": "Instrumentación industrial",
+        "description": "Equipos para obtener datos del proceso y evaluar alternativas de medición y control según el fluido, el entorno y los requisitos de cada aplicación.",
+        "bullets": ["Sensores y transmisores de variables de proceso.", "Medición de nivel, caudal, presión y temperatura.", "Válvulas de control y herramientas de diagnóstico."],
+        "mediaAlt": "Manómetro y transmisor de proceso industrial sobre tuberías."
+      },
+      {
+        "id": "connected",
+        "title": "Tecnologías conectadas",
+        "description": "Soluciones para recopilar información de equipos en campo y llevarla a sistemas de supervisión, facilitando el seguimiento de instalaciones y activos distribuidos.",
+        "bullets": ["RTUs, registradores de datos y telemetría.", "Integración con SCADA y plataformas de datos.", "Monitoreo remoto, alertas e IoT industrial."],
+        "mediaAlt": "Gabinete de control industrial abierto en una instalación de tratamiento de agua."
+      }
     ]
   },
   "collaboration": {

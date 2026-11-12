@@ -33,15 +33,41 @@
     "linkLabel": "Explore how we work"
   },
   "technology": {
-    "eyebrow": "03 — Technology applications",
+    "eyebrow": "Technology applications",
     "title": "Explore technology through the application context.",
     "description": "The focus is on specialized technology areas that support a well-defined industrial or infrastructure requirement.",
+    "moreInfoLabel": "More information",
     "linkLabel": "Explore technology",
+    "backLabel": "Back",
     "items": [
-      { "id": "water", "title": "Water & infrastructure", "copy": "Flow measurement, control valves, pressure management, leak detection, water-quality monitoring and remote monitoring." },
-      { "id": "gas", "title": "Gas, biogas & energy", "copy": "Gas measurement, biogas and biomethane analysis, combustion and process-monitoring contexts." },
-      { "id": "industrial", "title": "Industrial instrumentation", "copy": "Instrumentation, sensors, control valves, measurement, automation and industrial-tool contexts." },
-      { "id": "connected", "title": "Connected technologies", "copy": "SCADA, RTUs, industrial IoT, data loggers, telemetry and data-platform contexts." }
+      {
+        "id": "water",
+        "title": "Water and infrastructure",
+        "description": "Technologies for measuring, monitoring, and managing water systems, from individual measurement points to distribution networks and treatment facilities.",
+        "bullets": ["Flow, pressure, and level measurement.", "Leak detection and water quality monitoring.", "Valve control and remote monitoring."],
+        "mediaAlt": "Flow meter and control valve in a water-treatment facility."
+      },
+      {
+        "id": "gas",
+        "title": "Gas, biogas, and energy",
+        "description": "Instruments for understanding gas composition and assessing operating conditions in biogas, biomethane, combustion, and energy applications.",
+        "bullets": ["Gas analysis and process monitoring.", "Flow, pressure, and temperature measurement.", "Combustion and emissions assessment."],
+        "mediaAlt": "Biogas measurement equipment in front of anaerobic digesters."
+      },
+      {
+        "id": "industrial",
+        "title": "Industrial instrumentation",
+        "description": "Equipment for collecting process data and evaluating measurement and control options according to the fluid, environment, and requirements of each application.",
+        "bullets": ["Process sensors and transmitters.", "Level, flow, pressure, and temperature measurement.", "Control valves and diagnostic tools."],
+        "mediaAlt": "Industrial pressure gauge and process transmitter on process piping."
+      },
+      {
+        "id": "connected",
+        "title": "Connected technologies",
+        "description": "Solutions for collecting data from field equipment and bringing it into supervisory systems, supporting the monitoring of distributed facilities and assets.",
+        "bullets": ["RTUs, data loggers, and telemetry.", "Integration with SCADA and data platforms.", "Remote monitoring, alerts, and industrial IoT."],
+        "mediaAlt": "Open industrial control enclosure at a water-treatment facility."
+      }
     ]
   },
   "collaboration": {

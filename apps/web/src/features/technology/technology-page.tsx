@@ -13,11 +13,13 @@ type TechnologyCategoryContent = {
   eyebrow: string;
   id: string;
   items: string[];
+  listLabel: string;
   mediaAlt: string;
   title: string;
 };
 
 export type TechnologyPageContent = {
+  applicationsIntroduction: { description: string; eyebrow: string; title: string };
   categories: TechnologyCategoryContent[];
   cta: { contact: string; title: string; whatsapp: string };
   introduction: { description: string; eyebrow: string; mediaAlt: string; title: string };
@@ -41,20 +43,29 @@ export function TechnologyPage({ content, currentLocale, media }: TechnologyPage
     <main className="internal-page" id="main-content">
       <EditorialHero alt={content.introduction.mediaAlt} description={content.introduction.description} eyebrow={content.introduction.eyebrow} media={media.hero} title={content.introduction.title} titleId="technology-title" />
 
+      <section aria-labelledby="technology-applications-title" className="technology-page__applications-intro">
+        <Container>
+          <SectionHeading className="technology-page__applications-heading" description={content.applicationsIntroduction.description} eyebrow={content.applicationsIntroduction.eyebrow} title={content.applicationsIntroduction.title} titleId="technology-applications-title" />
+        </Container>
+      </section>
+
       {content.categories.map((category, index) => (
-        <section aria-labelledby={`${category.id}-title`} className={index % 2 ? "internal-page__section internal-page__section--subtle" : "internal-page__section"} id={category.id} key={category.id}>
+        <section aria-labelledby={`${category.id}-title`} className={index % 2 ? "internal-page__section internal-page__section--subtle technology-page__section" : "internal-page__section technology-page__section"} id={category.id} key={category.id}>
           <Container>
-            <div className={index % 2 ? "technology-category technology-category--reverse" : "technology-category"}>
-              <div>
-                <SectionHeading description={category.copy} eyebrow={category.eyebrow} title={category.title} titleId={`${category.id}-title`} />
-                <ul className="capability-list">
-                  {category.items.map((item) => <li key={item}>{item}</li>)}
-                </ul>
-              </div>
-              <figure className="editorial-media">
-                <PublicMediaFrame alt={category.mediaAlt} aspectRatio="4 / 3" fallbackLabel={category.mediaAlt} height={1000} loading="lazy" src={categoryMedia(media, category.id)} width={1600} />
+            <article className={index % 2 ? "technology-feature technology-feature--reverse" : "technology-feature"}>
+              <figure className="technology-feature__media">
+                <PublicMediaFrame alt={category.mediaAlt} aspectRatio="16 / 10" fallbackLabel={category.mediaAlt} height={1000} loading="lazy" src={categoryMedia(media, category.id)} width={1600} />
               </figure>
-            </div>
+              <div className="technology-feature__content">
+                <SectionHeading className="technology-feature__heading" description={category.copy} eyebrow={category.eyebrow} title={category.title} titleId={`${category.id}-title`} />
+                <div className="technology-feature__scope">
+                  <p>{category.listLabel}</p>
+                  <ul>
+                    {category.items.map((item) => <li key={item}>{item}</li>)}
+                  </ul>
+                </div>
+              </div>
+            </article>
           </Container>
         </section>
       ))}

@@ -9,12 +9,18 @@
     "description": "We identify specialized technologies for water, gas, energy, and industrial applications, based on operating conditions and technical requirements.",
     "mediaAlt": "Water monitoring, biogas analysis, industrial instrumentation, and SCADA connectivity."
   },
+  "applicationsIntroduction": {
+    "eyebrow": "Technology applications",
+    "title": "Start with the conditions of the application.",
+    "description": "Water, gas, energy, and industrial applications each combine distinct process variables, operating conditions, and information needs. Explore the areas where we help identify relevant measurement, control, and connectivity options."
+  },
   "categories": [
     {
       "id": "water",
-      "eyebrow": "01 — Water & infrastructure",
-      "title": "Water systems where measurement and control matter.",
-      "copy": "Relevant contexts include water networks and infrastructure applications where flow measurement, pressure management, control and monitoring are considered together.",
+      "eyebrow": "Water & infrastructure",
+      "title": "Technology for resilient water networks.",
+      "copy": "Flow measurement, pressure management and remote monitoring for water distribution, treatment and infrastructure applications.",
+      "listLabel": "Relevant applications",
       "items": [
         "Ultrasonic water meters",
         "Electromagnetic flow meters",
@@ -26,9 +32,10 @@
     },
     {
       "id": "gas",
-      "eyebrow": "02 — Gas, biogas & energy",
-      "title": "Measurement and analysis for energy and process environments.",
-      "copy": "Gas, biogas and energy requirements depend on measurement, analysis and process conditions that must be assessed together.",
+      "eyebrow": "Gas, biogas & energy",
+      "title": "Measure and understand gas processes.",
+      "copy": "Analysis, measurement and process control for gas, biogas, biomethane and energy applications with defined operating conditions.",
+      "listLabel": "Relevant applications",
       "items": [
         "Gas measurement and industrial instrumentation",
         "Biogas analysis and biomethane contexts",
@@ -40,9 +47,10 @@
     },
     {
       "id": "industrial",
-      "eyebrow": "03 — Industrial instrumentation",
-      "title": "Industrial technology framed around the process.",
-      "copy": "Industrial requirements can include the measurement, sensing, control and tooling needed to support process and infrastructure operations.",
+      "eyebrow": "Industrial instrumentation",
+      "title": "Instrumentation defined by the process.",
+      "copy": "Measurement, sensing and control technologies selected around the operating conditions and information each process needs.",
+      "listLabel": "Relevant applications",
       "items": [
         "Control valves and industrial instrumentation",
         "Sensors and measurement systems",
@@ -54,9 +62,10 @@
     },
     {
       "id": "connected",
-      "eyebrow": "04 — Connected technologies",
-      "title": "Connect field context with operational visibility.",
-      "copy": "SCADA, RTUs, IoT, data loggers, telemetry and data platforms are relevant contexts for connecting field information with operational visibility.",
+      "eyebrow": "Connected technologies",
+      "title": "Make field data operational.",
+      "copy": "Telemetry, RTUs, SCADA and industrial IoT that connect equipment, field information and operational visibility.",
+      "listLabel": "Relevant applications",
       "items": [
         "SCADA and industrial telemetry contexts",
         "RTUs, data loggers and industrial IoT applications",

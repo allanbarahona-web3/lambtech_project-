@@ -10,41 +10,43 @@
     "mediaAlt": "Instalación industrial con tuberías, instrumentos de medición y gabinetes de control."
   },
   "opportunities": {
-    "eyebrow": "01 — Oportunidad regional",
-    "title": "Comenzar con una pregunta de mercado útil.",
-    "description": "Evaluamos oportunidades de mercado al conectar la tecnología de un fabricante con requerimientos de compradores, aplicaciones industriales y condiciones comerciales en América Latina.",
-    "items": [
-      "Inteligencia de mercado y calificación de oportunidades",
-      "Contexto de aplicación industrial y requerimientos del comprador",
-      "Posicionamiento tecnológico para una oportunidad de mercado definida",
-      "Priorización de oportunidades para revisión posterior"
+    "eyebrow": "Oportunidad de mercado",
+    "title": "Encuentre dónde encaja su tecnología.",
+    "description": "Evaluamos cómo se relaciona su tecnología con las necesidades de compradores, las aplicaciones industriales y las condiciones comerciales de América Latina, para enfocar la búsqueda en oportunidades relevantes.",
+    "cards": [
+      { "title": "Aplicaciones relevantes", "description": "Identificamos necesidades industriales y de infraestructura que su tecnología puede atender, considerando el uso previsto, el entorno operativo y los requisitos de la aplicación." },
+      { "title": "Requisitos del comprador", "description": "Buscamos entender las condiciones operativas, los criterios técnicos y las expectativas de suministro que influyen en la evaluación de una solución." },
+      { "title": "Encaje comercial", "description": "Evaluamos cómo presentar la propuesta de valor de su tecnología frente a las alternativas disponibles y al contexto comercial de cada oportunidad." },
+      { "title": "Mercados prioritarios", "description": "Priorizamos oportunidades para una revisión más profunda según la aplicación, la información disponible y las posibilidades de desarrollar una ruta comercial." }
     ]
   },
   "channels": {
-    "eyebrow": "02 — Canales comerciales",
-    "title": "Construya la ruta comercial alrededor de la aplicación.",
-    "description": "Desarrollamos canales comerciales al conectar distribuidores potenciales, integradores, socios comerciales y clientes alrededor de la tecnología y las condiciones del mercado local.",
+    "eyebrow": "Canales comerciales",
+    "title": "Conecte su tecnología con el canal adecuado.",
+    "description": "La ruta comercial depende de la aplicación, del comprador y del soporte que requiere la tecnología. Evaluamos posibles colaboradores y coordinamos conversaciones según el contexto de cada oportunidad.",
+    "mediaAlt": "Profesionales de campo revisando información técnica junto a equipos de una estación de bombeo.",
     "items": [
-      "Identificación de distribuidores e integradores potenciales",
-      "Coordinación con socios comerciales y desarrollo de clientes",
-      "Coordinación del desarrollo de canales",
-      "Alineación entre objetivos del fabricante y relaciones empresariales locales"
+      { "id": "distribuidores", "title": "Distribuidores", "description": "Identificamos distribuidores potenciales y revisamos su enfoque de mercado, experiencia con tecnologías relacionadas y capacidad para atender los requisitos comerciales y de suministro de la oportunidad." },
+      { "id": "integradores", "title": "Integradores", "description": "Evaluamos integradores que puedan incorporar la tecnología en una solución más amplia, considerando compatibilidad técnica, contexto de instalación y necesidades de coordinación con el fabricante." },
+      { "id": "socios-comerciales", "title": "Socios comerciales", "description": "Exploramos posibles colaboradores para desarrollar oportunidades, alineando el alcance de la relación, las responsabilidades y los objetivos del fabricante con el contexto del mercado local." },
+      { "id": "clientes-industriales", "title": "Clientes industriales", "description": "Cuando la oportunidad requiere una relación directa, ayudamos a aclarar la aplicación y los requisitos del comprador para facilitar una conversación técnica y comercial con el fabricante." }
     ]
   },
   "process": {
-    "title": "Cómo trabajamos con fabricantes.",
-    "description": "Organizamos el desarrollo de mercados alrededor de un marco conciso. Evaluamos cada oportunidad según sus requerimientos técnicos y condiciones comerciales.",
-    "steps": [
-      { "number": "01", "title": "Entendimiento de mercado", "copy": "Aclaramos la tecnología, la aplicación y la necesidad de mercado." },
-      { "number": "02", "title": "Identificación de oportunidades", "copy": "Evaluamos oportunidades de compradores, proyectos y canales." },
-      { "number": "03", "title": "Desarrollo de canales", "copy": "Identificamos distribuidores potenciales, integradores y rutas comerciales." },
-      { "number": "04", "title": "Coordinación comercial", "copy": "Coordinamos el siguiente paso entre las partes adecuadas." }
+    "title": "De la pregunta de mercado al siguiente paso coordinado.",
+    "description": "Cada oportunidad avanza según la aplicación, las condiciones del mercado y la información disponible. Nuestro trabajo ayuda a aclarar qué evaluar y con quién continuar la conversación.",
+    "focusLabel": "Enfoque:",
+    "stages": [
+      { "title": "Entender el mercado", "description": "Aclaramos la tecnología, la necesidad que atiende y el contexto del mercado objetivo.", "focus": "aplicación y requisitos iniciales." },
+      { "title": "Identificar oportunidades", "description": "Revisamos posibles compradores, proyectos y canales para enfocar las conversaciones que merecen mayor análisis.", "focus": "oportunidades para evaluar." },
+      { "title": "Desarrollar canales", "description": "Exploramos posibles distribuidores, integradores o socios según el tipo de tecnología y la ruta comercial.", "focus": "posibles colaboradores y su función." },
+      { "title": "Coordinar el siguiente paso", "description": "Alineamos a las partes sobre la información pendiente y la siguiente conversación técnica o comercial.", "focus": "siguiente acción y participantes." }
     ]
   },
   "network": {
-    "eyebrow": "03 — Red de fabricantes de tecnología",
-    "title": "Relaciones definidas alrededor de tecnología especializada.",
-    "description": "Nuestra red comercial incluye fabricantes de tecnología especializada para aplicaciones industriales y de infraestructura."
+    "eyebrow": "Tecnologías y fabricantes",
+    "title": "Tecnologías y fabricantes con los que trabajamos.",
+    "description": "Trabajamos con fabricantes de tecnología especializada para explorar aplicaciones en requerimientos industriales y de infraestructura."
   },
   "cta": {
     "title": "Explore una ruta de desarrollo de mercado para su tecnología.",
