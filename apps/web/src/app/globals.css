@@ -2027,32 +2027,32 @@ picture.solutions-feature__image > img {
 }
 
 .technology-page__applications-intro {
-  padding-block: clamp(var(--space-7), 7vw, var(--space-10));
+  padding-block: clamp(3.5rem, 5vw, 5.5rem);
   border-bottom: var(--border-width) solid var(--color-border-subtle);
   background: var(--color-surface-base);
 }
 
 .technology-page__applications-heading {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  column-gap: clamp(var(--space-6), 8vw, var(--space-11));
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--grid-gap);
   align-items: end;
 }
 
 .technology-page__applications-heading .eyebrow,
 .technology-page__applications-heading .section-heading__title {
-  grid-column: 1;
+  grid-column: span 6;
 }
 
 .technology-page__applications-heading .section-heading__title {
-  max-width: 13ch;
+  max-width: 17ch;
   margin-top: var(--space-3);
-  font-size: clamp(2rem, 3.05vw, 3.25rem);
+  font-size: clamp(2rem, 3vw, 3.375rem);
   line-height: 1.08;
 }
 
 .technology-page__applications-heading .section-heading__description {
-  grid-column: 2;
+  grid-column: 8 / span 5;
   grid-row: 1 / span 2;
   max-width: 42rem;
   margin: 0;
