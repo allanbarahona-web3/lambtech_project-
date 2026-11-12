@@ -30,8 +30,12 @@ function getMediaBaseUrl(value: string | undefined) {
 
 const mediaBaseUrl = getMediaBaseUrl(process.env.NEXT_PUBLIC_MEDIA_BASE_URL);
 
-function publicMediaUrl(path: MediaPath) {
-  return mediaBaseUrl ? new URL(path, mediaBaseUrl).toString() : undefined;
+function publicMediaUrl(path: MediaPath, version?: string) {
+  if (!mediaBaseUrl) return undefined;
+
+  const url = new URL(path, mediaBaseUrl);
+  if (version) url.searchParams.set("v", version);
+  return url.toString();
 }
 
 // Object paths in the exclusive LAMBTECH Space. Only the base URL is configured
@@ -49,12 +53,16 @@ export const publicMedia = {
   heroDesktop: publicMediaUrl("lambtech-hero-scada-Desktop.webp"),
   heroMobile: publicMediaUrl("lambtech-hero-scada-mobile.webp"),
   latamIntroduction: {
-    desktop: publicMediaUrl("lambtech-latam-intro-desktop.webp"),
-    mobile: publicMediaUrl("lambtech-latam-intro-mobile.webp"),
+    desktop: publicMediaUrl("lambtech-latam-intro-desktop.webp", "20261112011118"),
+    mobile: publicMediaUrl("lambtech-latam-intro-mobile.webp", "20261112010519"),
   } satisfies ResponsiveMedia,
   latamSupporting: {
     desktop: publicMediaUrl("lambtech-latam-collaboration-desktop.webp"),
     mobile: publicMediaUrl("lambtech-latam-collaboration-mobile.webp"),
+  } satisfies ResponsiveMedia,
+  manufacturerHero: {
+    desktop: publicMediaUrl("lambtech-technology-intro-desktop.webp", "20261112005636"),
+    mobile: publicMediaUrl("lambtech-technology-intro-mobile.webp", "20261112005636"),
   } satisfies ResponsiveMedia,
   manufacturerLogos: [
     { desktopSrc: publicMediaUrl("orionis-desktop.webp"), mobileSrc: publicMediaUrl("orionis-mobile.webp"), name: "Orionis" },
@@ -69,11 +77,33 @@ export const publicMedia = {
     desktop: publicMediaUrl("lambtech-technology-intro-desktop.webp"),
     mobile: publicMediaUrl("lambtech-technology-intro-mobile.webp"),
   } satisfies ResponsiveMedia,
+  technologyHeroMosaic: {
+    desktop: publicMediaUrl("lambtech-technology-hero-mosaic-desktop.webp"),
+    mobile: publicMediaUrl("lambtech-technology-hero-mosaic-mobile.webp"),
+  } satisfies ResponsiveMedia,
   technologyWater: publicMediaUrl("lambtech-water-infrastructure.webp"),
   whatWeDoIntroduction: {
     desktop: publicMediaUrl("lambtech-what-we-do-intro-desktop.webp"),
     mobile: publicMediaUrl("lambtech-what-we-do-intro-mobile.webp"),
   } satisfies ResponsiveMedia,
+  whatWeDoProcurementJourney: [
+    {
+      desktop: publicMediaUrl("lambtech-procurement-requirement-desktop.webp"),
+      mobile: publicMediaUrl("lambtech-procurement-requirement-mobile.webp"),
+    },
+    {
+      desktop: publicMediaUrl("lambtech-procurement-evaluation-desktop.webp"),
+      mobile: publicMediaUrl("lambtech-procurement-evaluation-mobile.webp"),
+    },
+    {
+      desktop: publicMediaUrl("lambtech-procurement-coordination-desktop.webp"),
+      mobile: publicMediaUrl("lambtech-procurement-coordination-mobile.webp"),
+    },
+    {
+      desktop: publicMediaUrl("lambtech-procurement-next-step-desktop.webp"),
+      mobile: publicMediaUrl("lambtech-procurement-next-step-mobile.webp"),
+    },
+  ] satisfies readonly ResponsiveMedia[],
   whatWeDoSupporting: {
     desktop: publicMediaUrl("lambtech-technology-solutions-desktop.webp"),
     mobile: publicMediaUrl("lambtech-technology-solutions-mobile.webp"),

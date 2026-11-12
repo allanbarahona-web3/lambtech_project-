@@ -3,9 +3,10 @@ import { ButtonLink } from "@/components/design-system/button-link";
 import { CommercialProcess } from "@/components/design-system/commercial-process";
 import { Container } from "@/components/design-system/container";
 import { SectionHeading } from "@/components/design-system/section-heading";
+import { EditorialHero } from "@/components/site/editorial-hero";
 import { publicCompany } from "@/config/public-company";
 import type { Locale } from "@/lib/i18n/config";
-import type { ManufacturerLogo } from "@/lib/media";
+import type { ManufacturerLogo, ResponsiveMedia } from "@/lib/media";
 import { getRouteHref } from "@/lib/site-navigation";
 
 type EditorialSection = {
@@ -20,7 +21,7 @@ type ProcessStep = { copy: string; number: string; title: string };
 export type ManufacturersPageContent = {
   cta: { label: string; title: string; whatsapp: string };
   channels: EditorialSection;
-  introduction: { description: string; eyebrow: string; title: string };
+  introduction: { description: string; eyebrow: string; mediaAlt: string; title: string };
   network: { description: string; eyebrow: string; title: string };
   opportunities: EditorialSection;
   process: { description: string; steps: ProcessStep[]; title: string };
@@ -29,6 +30,7 @@ export type ManufacturersPageContent = {
 type ManufacturersPageProps = {
   content: ManufacturersPageContent;
   currentLocale: Locale;
+  media: { hero?: ResponsiveMedia };
   logos: readonly ManufacturerLogo[];
 };
 
@@ -36,14 +38,10 @@ function CapabilityList({ items }: { items: string[] }) {
   return <ul className="capability-list">{items.map((item) => <li key={item}>{item}</li>)}</ul>;
 }
 
-export function ManufacturersPage({ content, currentLocale, logos }: ManufacturersPageProps) {
+export function ManufacturersPage({ content, currentLocale, logos, media }: ManufacturersPageProps) {
   return (
     <main className="internal-page" id="main-content">
-      <section className="internal-page__intro">
-        <Container>
-          <SectionHeading description={content.introduction.description} eyebrow={content.introduction.eyebrow} level="h1" title={content.introduction.title} />
-        </Container>
-      </section>
+      <EditorialHero alt={content.introduction.mediaAlt} description={content.introduction.description} eyebrow={content.introduction.eyebrow} media={media.hero} title={content.introduction.title} titleId="manufacturers-title" />
 
       <section aria-labelledby="manufacturer-opportunities-title" className="internal-page__section">
         <Container>

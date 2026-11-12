@@ -10,7 +10,7 @@ const serviceRoutes: readonly CorporateRouteId[] = ["latam", "manufacturers", "t
 
 export function WhatWeDo({ currentLocale, description, eyebrow, items, title }: WhatWeDoProps) {
   return (
-    <section aria-labelledby="what-we-do-title" className="content-section" id="what-we-do">
+    <section aria-labelledby="what-we-do-title" className="content-section home-what-we-do" id="what-we-do">
       <Container>
         <SectionHeading description={description} eyebrow={eyebrow} title={title} titleId="what-we-do-title" />
         <ol className="service-list">

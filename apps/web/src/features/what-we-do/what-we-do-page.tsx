@@ -4,107 +4,103 @@ import { PublicMediaFrame } from "@/components/design-system/public-media-frame"
 import { SectionHeading } from "@/components/design-system/section-heading";
 import { EditorialHero } from "@/components/site/editorial-hero";
 import { publicCompany } from "@/config/public-company";
+import { ProcurementJourney } from "@/features/what-we-do/procurement-journey";
+import { ServiceScopes } from "@/features/what-we-do/service-scopes";
 import type { Locale } from "@/lib/i18n/config";
 import type { ResponsiveMedia } from "@/lib/media";
 import { getRouteHref } from "@/lib/site-navigation";
 
-type EditorialSection = {
+type Scope = {
   description: string;
-  eyebrow: string;
-  items: string[];
   title: string;
 };
 
-type ProcessStep = { copy: string; number: string; title: string };
+type ProcurementJourneySlide = { description: string; mediaAlt: string; title: string };
+
+type ProcurementSection = { description: string; eyebrow: string; items: Scope[]; title: string };
 
 export type WhatWeDoPageContent = {
+  collaboration: { columns: Scope[]; description: string; eyebrow: string; title: string };
   cta: { contact: string; title: string; whatsapp: string };
   introduction: { description: string; eyebrow: string; mediaAlt: string; title: string };
-  marketDevelopment: EditorialSection;
-  procurement: EditorialSection;
-  process: { description: string; steps: ProcessStep[]; title: string };
-  solutions: EditorialSection & { mediaAlt: string };
-  trading: EditorialSection;
-  partnerships: EditorialSection;
+  marketDevelopment: { description: string; eyebrow: string; items: Scope[]; title: string };
+  procurement: ProcurementSection;
+  procurementJourney: {
+    description: string;
+    slides: ProcurementJourneySlide[];
+    title: string;
+  };
+  solutions: { applications: Scope[]; description: string; eyebrow: string; mediaAlt: string; title: string };
 };
 
 type WhatWeDoPageProps = {
   content: WhatWeDoPageContent;
   currentLocale: Locale;
-  media: { introduction?: ResponsiveMedia; supporting?: ResponsiveMedia };
+  media: { introduction?: ResponsiveMedia; procurementJourney: readonly ResponsiveMedia[]; supporting?: ResponsiveMedia };
 };
-
-function CapabilityList({ items }: { items: string[] }) {
-  return (
-    <ul className="capability-list">
-      {items.map((item) => <li key={item}>{item}</li>)}
-    </ul>
-  );
-}
 
 export function WhatWeDoPage({ content, currentLocale, media }: WhatWeDoPageProps) {
   return (
-    <main className="internal-page" id="main-content">
+    <main className="internal-page what-we-do-page" id="main-content">
       <EditorialHero alt={content.introduction.mediaAlt} description={content.introduction.description} eyebrow={content.introduction.eyebrow} media={media.introduction} title={content.introduction.title} titleId="what-we-do-title" />
 
       <section aria-labelledby="procurement-title" className="internal-page__section">
         <Container>
-          <div className="editorial-split">
-            <SectionHeading description={content.procurement.description} eyebrow={content.procurement.eyebrow} title={content.procurement.title} titleId="procurement-title" />
-            <CapabilityList items={content.procurement.items} />
+          <div className="procurement-overview">
+            <SectionHeading className="procurement-overview__heading" description={content.procurement.description} eyebrow={content.procurement.eyebrow} title={content.procurement.title} titleId="procurement-title" />
+            <ServiceScopes items={content.procurement.items} />
+            <ProcurementJourney description={content.procurementJourney.description} media={media.procurementJourney} slides={content.procurementJourney.slides} title={content.procurementJourney.title} />
           </div>
-          <div className="procurement-process" aria-labelledby="procurement-process-title">
-            <div className="procurement-process__intro">
-              <h3 id="procurement-process-title">{content.process.title}</h3>
-              <p>{content.process.description}</p>
+        </Container>
+      </section>
+
+      <section className="internal-page__section internal-page__section--subtle">
+        <Container>
+          <div className="market-collaboration">
+            <div className="market-collaboration__stage">
+              <SectionHeading description={content.marketDevelopment.description} eyebrow={content.marketDevelopment.eyebrow} title={content.marketDevelopment.title} titleId="market-development-title" />
+              <div className="market-collaboration__scopes">
+                {content.marketDevelopment.items.map((item) => (
+                  <article key={item.title}>
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                  </article>
+                ))}
+              </div>
             </div>
-            <ol>
-              {content.process.steps.map((step) => (
-                <li key={step.number}>
-                  <p>{step.number}</p>
-                  <h4>{step.title}</h4>
-                  <span>{step.copy}</span>
-                </li>
-              ))}
-            </ol>
+
+            <div className="market-collaboration__stage market-collaboration__stage--collaboration">
+              <SectionHeading description={content.collaboration.description} eyebrow={content.collaboration.eyebrow} title={content.collaboration.title} titleId="collaboration-title" />
+              <div className="market-collaboration__columns">
+                {content.collaboration.columns.map((column) => (
+                  <article key={column.title}>
+                    <h3>{column.title}</h3>
+                    <p>{column.description}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
           </div>
         </Container>
       </section>
 
-      <section aria-labelledby="market-development-title" className="internal-page__section internal-page__section--subtle">
+      <section aria-labelledby="solutions-title" className="internal-page__section">
         <Container>
-          <div className="editorial-split editorial-split--reverse">
-            <SectionHeading description={content.marketDevelopment.description} eyebrow={content.marketDevelopment.eyebrow} title={content.marketDevelopment.title} titleId="market-development-title" />
-            <CapabilityList items={content.marketDevelopment.items} />
-          </div>
-        </Container>
-      </section>
-
-      <section className="internal-page__section">
-        <Container>
-          <div className="editorial-pair">
-            <article aria-labelledby="partnerships-title">
-              <SectionHeading description={content.partnerships.description} eyebrow={content.partnerships.eyebrow} title={content.partnerships.title} titleId="partnerships-title" />
-              <CapabilityList items={content.partnerships.items} />
-            </article>
-            <article aria-labelledby="trading-title">
-              <SectionHeading description={content.trading.description} eyebrow={content.trading.eyebrow} title={content.trading.title} titleId="trading-title" />
-              <CapabilityList items={content.trading.items} />
-            </article>
-          </div>
-        </Container>
-      </section>
-
-      <section aria-labelledby="solutions-title" className="internal-page__section internal-page__section--subtle">
-        <Container>
-          <div className="editorial-split">
+          <div className="solutions-feature">
+            <figure className="solutions-feature__media">
+              <PublicMediaFrame alt={content.solutions.mediaAlt} aspectRatio="3 / 2" className="solutions-feature__image" fallbackLabel={content.solutions.mediaAlt} height={1200} loading="lazy" mobileSrc={media.supporting?.mobile} src={media.supporting?.desktop} width={1800} />
+            </figure>
             <div>
               <SectionHeading description={content.solutions.description} eyebrow={content.solutions.eyebrow} title={content.solutions.title} titleId="solutions-title" />
-              <CapabilityList items={content.solutions.items} />
+              <div className="solutions-feature__applications">
+                {content.solutions.applications.map((application) => (
+                  <article key={application.title}>
+                    <h3>{application.title}</h3>
+                    <p>{application.description}</p>
+                  </article>
+                ))}
+              </div>
             </div>
-            <figure className="editorial-media">
-              <PublicMediaFrame alt={content.solutions.mediaAlt} aspectRatio="3 / 2" fallbackLabel={content.solutions.mediaAlt} height={1200} loading="lazy" mobileSrc={media.supporting?.mobile} src={media.supporting?.desktop} width={1800} />
-            </figure>
           </div>
         </Container>
       </section>

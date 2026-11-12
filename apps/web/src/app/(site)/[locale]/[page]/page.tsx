@@ -148,18 +148,18 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
       ) : page === "what-we-do" ? (
         <WhatWeDoPage
           content={{
+            collaboration: whatWeDoPage("collaboration", { returnObjects: true }) as unknown as WhatWeDoPageContent["collaboration"],
             cta: whatWeDoPage("cta", { returnObjects: true }) as unknown as WhatWeDoPageContent["cta"],
             introduction: whatWeDoPage("introduction", { returnObjects: true }) as unknown as WhatWeDoPageContent["introduction"],
             marketDevelopment: whatWeDoPage("marketDevelopment", { returnObjects: true }) as unknown as WhatWeDoPageContent["marketDevelopment"],
-            partnerships: whatWeDoPage("partnerships", { returnObjects: true }) as unknown as WhatWeDoPageContent["partnerships"],
-            process: whatWeDoPage("process", { returnObjects: true }) as unknown as WhatWeDoPageContent["process"],
             procurement: whatWeDoPage("procurement", { returnObjects: true }) as unknown as WhatWeDoPageContent["procurement"],
+            procurementJourney: whatWeDoPage("procurementJourney", { returnObjects: true }) as unknown as WhatWeDoPageContent["procurementJourney"],
             solutions: whatWeDoPage("solutions", { returnObjects: true }) as unknown as WhatWeDoPageContent["solutions"],
-            trading: whatWeDoPage("trading", { returnObjects: true }) as unknown as WhatWeDoPageContent["trading"],
           }}
           currentLocale={locale}
           media={{
             introduction: publicMedia.whatWeDoIntroduction,
+            procurementJourney: publicMedia.whatWeDoProcurementJourney,
             supporting: publicMedia.whatWeDoSupporting,
           }}
         />
@@ -175,7 +175,7 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
             connected: publicMedia.technologyConnected,
             gas: publicMedia.technologyGas,
             industrial: publicMedia.technologyIndustrial,
-            introduction: publicMedia.technologyIntroduction,
+            hero: publicMedia.technologyHeroMosaic,
             water: publicMedia.technologyWater,
           }}
         />
@@ -190,6 +190,7 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
             process: manufacturersPage("process", { returnObjects: true }) as unknown as ManufacturersPageContent["process"],
           }}
           currentLocale={locale}
+          media={{ hero: publicMedia.manufacturerHero }}
           logos={publicMedia.manufacturerLogos}
         />
       ) : page === "latam" ? (

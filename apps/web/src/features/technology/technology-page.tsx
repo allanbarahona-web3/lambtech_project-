@@ -26,7 +26,7 @@ export type TechnologyPageContent = {
 type TechnologyPageProps = {
   content: TechnologyPageContent;
   currentLocale: Locale;
-  media: { connected?: string; gas?: string; industrial?: string; introduction?: ResponsiveMedia; water?: string };
+  media: { connected?: string; gas?: string; hero?: ResponsiveMedia; industrial?: string; water?: string };
 };
 
 function categoryMedia(media: TechnologyPageProps["media"], id: string) {
@@ -39,7 +39,7 @@ function categoryMedia(media: TechnologyPageProps["media"], id: string) {
 export function TechnologyPage({ content, currentLocale, media }: TechnologyPageProps) {
   return (
     <main className="internal-page" id="main-content">
-      <EditorialHero alt={content.introduction.mediaAlt} description={content.introduction.description} eyebrow={content.introduction.eyebrow} media={media.introduction} title={content.introduction.title} titleId="technology-title" />
+      <EditorialHero alt={content.introduction.mediaAlt} description={content.introduction.description} eyebrow={content.introduction.eyebrow} media={media.hero} title={content.introduction.title} titleId="technology-title" />
 
       {content.categories.map((category, index) => (
         <section aria-labelledby={`${category.id}-title`} className={index % 2 ? "internal-page__section internal-page__section--subtle" : "internal-page__section"} id={category.id} key={category.id}>

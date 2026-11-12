@@ -10,74 +10,105 @@
     "mediaAlt": "Engineers reviewing piping drawings and industrial equipment samples."
   },
   "procurement": {
-    "eyebrow": "01 — International procurement",
+    "eyebrow": "International procurement",
     "title": "Start with the application, then clarify the supply path.",
     "description": "For specialized requirements, we begin by defining the application and evaluating international technology and supplier options.",
     "items": [
-      "Technology sourcing and manufacturer identification",
-      "Technical and commercial supplier evaluation",
-      "International supplier engagement and relationship coordination",
-      "Commercial negotiation and purchasing coordination",
-      "International supply and logistics coordination",
-      "Development of new technology opportunities"
+      {
+        "title": "Technology selection",
+        "description": "We define the application and identify relevant international technology options and manufacturers."
+      },
+      {
+        "title": "Supplier evaluation",
+        "description": "We review the technical and commercial fit of the available alternatives for the defined requirement."
+      },
+      {
+        "title": "Supply coordination",
+        "description": "We align supplier engagement, commercial conditions and the international sourcing path."
+      }
     ]
   },
-  "process": {
-    "title": "A disciplined procurement sequence.",
-    "description": "A structured sequence from requirement definition through supplier engagement, negotiation and supply coordination.",
-    "steps": [
-      { "number": "01", "title": "Identify", "copy": "We clarify the technology need and identify relevant suppliers." },
-      { "number": "02", "title": "Qualify", "copy": "We review the technical and commercial fit of the available options." },
-      { "number": "03", "title": "Source", "copy": "We engage the international supplier around the defined application." },
-      { "number": "04", "title": "Negotiate", "copy": "We coordinate commercial terms and supply conditions." },
-      { "number": "05", "title": "Coordinate", "copy": "We align the international purchasing and supply path." },
-      { "number": "06", "title": "Deliver", "copy": "We coordinate the supply path with the appropriate Latin American customer, channel or partner." }
+  "procurementJourney": {
+    "title": "From requirement to the next step.",
+    "description": "A look at the work that helps turn a defined need into a well-directed technical and commercial opportunity.",
+    "slides": [
+      {
+        "title": "Define the requirement",
+        "description": "We review the application, operating conditions and technical information that guide the search.",
+        "mediaAlt": "Technical professionals reviewing drawings and industrial equipment specifications."
+      },
+      {
+        "title": "Evaluate alternatives",
+        "description": "We compare technology and supplier options against the technical and commercial requirements of the opportunity.",
+        "mediaAlt": "Technical professional comparing information about industrial equipment and instruments."
+      },
+      {
+        "title": "Coordinate the opportunity",
+        "description": "We align conversations with suppliers and the conditions needed to move forward with clarity.",
+        "mediaAlt": "Professionals reviewing technical and commercial information in a working meeting."
+      },
+      {
+        "title": "Clarify the next step",
+        "description": "We connect the parties to define the next relevant technical or commercial conversation.",
+        "mediaAlt": "Engineers reviewing technical data beside industrial infrastructure equipment."
+      }
     ]
   },
   "marketDevelopment": {
-    "eyebrow": "02 — Latin American market development",
+    "eyebrow": "Latin American market development",
     "title": "Turn market insight into a more informed commercial decision.",
     "description": "We help manufacturers assess market-entry questions, identify channel options and prioritize opportunities for development in Latin America.",
     "items": [
-      "Market research and opportunity assessment",
-      "Market-entry and technical-positioning considerations",
-      "Distributor, integrator and local-partner identification",
-      "Channel and business-development support",
-      "Potential customer and project identification",
-      "Coordination of local commercial relationships"
+      {
+        "title": "Market evaluation",
+        "description": "We assess the context, application and entry conditions that help prioritize markets."
+      },
+      {
+        "title": "Channel development",
+        "description": "We identify distributors, integrators and local partners with a potential commercial fit."
+      },
+      {
+        "title": "Relevant opportunities",
+        "description": "We help organize prospective customers, projects and conversations for the next step."
+      }
     ]
   },
-  "partnerships": {
-    "eyebrow": "03 — Technology partnerships",
-    "title": "Build the conditions for well-defined commercial collaboration.",
-    "description": "We align technology manufacturers, market opportunities and local business relationships around clearly defined roles and objectives.",
-    "items": [
-      "Manufacturer relationship development",
-      "Commercial collaboration and technology introduction",
-      "Regional channel-development planning",
-      "Coordination with local business partners"
-    ]
-  },
-  "trading": {
-    "eyebrow": "04 — International trading",
-    "title": "Coordinate specialized technology across borders.",
-    "description": "Where commercial and legal conditions are appropriate, we can coordinate the international sourcing and trading of specialized technologies for customers or distributors in Latin America.",
-    "items": [
-      "Sourcing aligned with a specific requirement",
-      "Commercial terms defined for each opportunity",
-      "Coordination between international suppliers and regional demand",
-      "Commercial alignment for the defined opportunity"
+  "collaboration": {
+    "eyebrow": "Commercial collaboration",
+    "title": "Align the parties around a defined opportunity.",
+    "description": "We coordinate international and regional commercial relationships when there is a clear requirement, market and next step.",
+    "columns": [
+      {
+        "title": "Manufacturer collaboration",
+        "description": "We develop relationships, technology introduction and regional channels with local business partners."
+      },
+      {
+        "title": "International coordination",
+        "description": "We align the requirement, opportunity-specific conditions and the conversation between supplier and regional market."
+      }
     ]
   },
   "solutions": {
-    "eyebrow": "05 — Technology solutions",
+    "eyebrow": "Technology solutions",
     "title": "Connect technology with the real application context.",
     "description": "We apply international technology sourcing and commercial coordination to requirements in water, infrastructure, energy and industry.",
-    "items": [
-      "Application-led technology evaluation",
-      "Industrial and infrastructure requirements",
-      "Technical and commercial evaluation before supplier selection",
-      "Coordination between international sourcing and local execution"
+    "applications": [
+      {
+        "title": "Water and infrastructure",
+        "description": "Flow measurement, valves, leak detection and water-network monitoring."
+      },
+      {
+        "title": "Energy and processes",
+        "description": "Gas analysis, measurement and control technologies for process applications."
+      },
+      {
+        "title": "Measurement and control",
+        "description": "Instrumentation for pressure, flow and operating-condition monitoring."
+      },
+      {
+        "title": "Monitoring and connectivity",
+        "description": "Telemetry, RTUs, SCADA and IoT for industrial applications."
+      }
     ],
     "mediaAlt": "Flow meter and control valve installed in a water-treatment system."
   },
