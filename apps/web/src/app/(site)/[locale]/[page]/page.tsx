@@ -62,6 +62,7 @@ function footerLabels(footer: Awaited<ReturnType<typeof getTranslation>>) {
     contactDetails: footer("contactDetails", { returnObjects: true }) as { address: string; email: string; fax: string; phone: string; whatsapp: string },
     disclaimer: footer("disclaimer"),
     copyright: footer("copyright"),
+    developmentCredit: footer("developmentCredit"),
     footerLogoMissing: footer("footerLogoMissing"),
     legalTitle: footer("legalTitle"),
     logoAlt: footer("logoAlt"),

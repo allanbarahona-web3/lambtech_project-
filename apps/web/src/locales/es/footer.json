@@ -11,5 +11,6 @@
   "privacy": "Aviso de privacidad", "terms": "Términos de Uso", "disclaimer": "Aviso legal",
   "contactDetails": { "email": "Correo electrónico", "phone": "Teléfono", "fax": "Fax", "address": "Dirección", "whatsapp": "Conversar por WhatsApp" },
   "social": { "linkedin": "Visitar LAMBTECH en LinkedIn", "facebook": "Visitar LAMBTECH en Facebook", "instagram": "Visitar LAMBTECH en Instagram", "tiktok": "Visitar LAMBTECH en TikTok" },
-  "copyright": "© 2026 LAMBTECH LLC"
+  "copyright": "© 2026 LAMBTECH LLC",
+  "developmentCredit": "Diseño y desarrollo por Barmentech"
 }

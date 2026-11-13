@@ -1386,12 +1386,27 @@ picture.public-media-frame > img {
 }
 
 .site-footer__base {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3) var(--space-5);
   margin-top: clamp(var(--space-7), 6vw, var(--space-8));
   padding-top: var(--space-5);
   border-top: var(--border-width) solid rgb(255 255 255 / 28%);
   color: #fff;
   font-size: 0.875rem;
   line-height: 1.4;
+}
+
+.site-footer__base p {
+  margin: 0;
+}
+
+.site-footer__credit {
+  color: rgb(255 255 255 / 72%);
+  font-size: 0.75rem;
+  letter-spacing: 0.025em;
 }
 
 .whatsapp-button {

@@ -15,6 +15,7 @@ type CorporateFooterProps = {
     costaRica: string;
     contactDetails: { address: string; email: string; fax: string; phone: string; whatsapp: string };
     disclaimer: string;
+    developmentCredit: string;
     copyright: string;
     footerLogoMissing: string;
     legalTitle: string;
@@ -85,7 +86,10 @@ export function CorporateFooter({ currentLocale, labels }: CorporateFooterProps)
             </ul>
           </nav>
         </div>
-        <p className="site-footer__base">{labels.copyright}</p>
+        <div className="site-footer__base">
+          <p>{labels.copyright}</p>
+          <a className="site-footer__credit" href="https://barmentech.com/" rel="noopener noreferrer" target="_blank">{labels.developmentCredit}</a>
+        </div>
       </Container>
     </footer>
   );

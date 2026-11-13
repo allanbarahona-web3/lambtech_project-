@@ -72,7 +72,7 @@ export default async function LocalePage({ params }: LocalePageProps) {
         </HomeReveal>
       </main>
       <CorporateFooter currentLocale={locale} labels={{
-        about: footer("about"), contact: footer("contact"), costaRica: footer("costaRica"), contactDetails: footer("contactDetails", { returnObjects: true }) as { address: string; email: string; fax: string; phone: string; whatsapp: string }, disclaimer: footer("disclaimer"), copyright: footer("copyright"), footerLogoMissing: footer("footerLogoMissing"),
+        about: footer("about"), contact: footer("contact"), costaRica: footer("costaRica"), contactDetails: footer("contactDetails", { returnObjects: true }) as { address: string; email: string; fax: string; phone: string; whatsapp: string }, disclaimer: footer("disclaimer"), copyright: footer("copyright"), developmentCredit: footer("developmentCredit"), footerLogoMissing: footer("footerLogoMissing"),
         legalTitle: footer("legalTitle"), logoAlt: footer("logoAlt"), navigationTitle: footer("navigationTitle"),
         privacy: footer("privacy"), social: footer("social", { returnObjects: true }) as Record<"facebook" | "instagram" | "linkedin" | "tiktok", string>, socialTitle: footer("socialTitle"), tagline: footer("tagline"), technology: footer("technology"), terms: footer("terms"), unitedStates: footer("unitedStates"), whatWeDo: footer("whatWeDo"),
       }} />
