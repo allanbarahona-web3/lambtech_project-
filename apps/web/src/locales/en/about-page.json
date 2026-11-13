@@ -6,13 +6,21 @@
   "introduction": {
     "eyebrow": "About LAMBTECH",
     "title": "International technology for Latin American market opportunities.",
-    "description": "LAMBTECH LLC is an international technology and commercial-development company organized in Wyoming. We connect specialized manufacturers, international sourcing requirements and opportunities across Latin American markets.",
+    "description": "LAMBTECH LLC is an international technology and commercial-development company. We connect specialized manufacturers, international sourcing requirements and opportunities across Latin American markets.",
     "mediaAlt": "Technical professionals reviewing an industrial sensor and equipment drawings."
   },
+  "bridge": {
+    "items": [
+      "Technology and commercial development",
+      "Latin America"
+    ]
+  },
   "identity": {
-    "eyebrow": "01 — Business identity",
+    "eyebrow": "Business identity",
     "title": "A commercial model built around technical relevance and market understanding.",
     "description": "We bring together the work needed to assess specialized technology requirements and connect international suppliers with demand in Latin America.",
+    "founderAlt": "LAMBTECH founder reviewing technology in an industrial control environment.",
+    "founderRole": "Founder & CEO",
     "items": [
       "International procurement and technology sourcing",
       "Manufacturer relationships and commercial coordination",
@@ -30,7 +38,7 @@
     ]
   },
   "principles": {
-    "eyebrow": "02 — Working principles",
+    "eyebrow": "Working principles",
     "title": "Commercial relationships benefit from clarity before scale.",
     "description": "We focus on the practical conditions that support sound technology and market-development decisions.",
     "items": [
@@ -42,7 +50,7 @@
     ]
   },
   "future": {
-    "eyebrow": "03 — Looking forward",
+    "eyebrow": "Looking ahead",
     "title": "A model designed to stay relevant as technology evolves.",
     "description": "Connected technologies, IoT, data platforms and software-enabled services may become future areas of development when the underlying commercial and technical opportunities are defined."
   },

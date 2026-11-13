@@ -10,7 +10,7 @@
     "mediaAlt": "Infraestructura de tratamiento de agua con tubería de distribución y equipo de medición de caudal."
   },
   "requirements": {
-    "eyebrow": "01 — Del requerimiento a la tecnología",
+    "eyebrow": "Del requerimiento a la tecnología",
     "title": "Dar al requerimiento un marco técnico y comercial útil.",
     "description": "Comenzamos con la aplicación, las condiciones operativas y los criterios de evaluación que hacen comprensible un requerimiento tecnológico para los proveedores internacionales adecuados.",
     "items": [
@@ -21,7 +21,7 @@
     ]
   },
   "procurement": {
-    "eyebrow": "02 — Abastecimiento internacional",
+    "eyebrow": "Abastecimiento internacional",
     "title": "Coordinar la ruta del requerimiento al diálogo con proveedores.",
     "description": "Ayudamos a conectar un requerimiento con fabricantes y proveedores adecuados, manteniendo las actividades de abastecimiento organizadas alrededor de la necesidad definida.",
     "items": [
@@ -71,7 +71,7 @@
     ]
   },
   "collaboration": {
-    "eyebrow": "04 — Modelo de colaboración",
+    "eyebrow": "Modelo de colaboración",
     "title": "Coordinar a las partes adecuadas alrededor de un requerimiento definido.",
     "description": "Reunimos requerimientos de clientes, proveedores internacionales de tecnología y relaciones empresariales regionales en un proceso coordinado con roles claros para cada oportunidad.",
     "items": [

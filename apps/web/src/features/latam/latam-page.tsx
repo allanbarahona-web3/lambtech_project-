@@ -57,18 +57,20 @@ export function LatamPage({ content, currentLocale, media }: LatamPageProps) {
 
       <section aria-labelledby="latam-requirements-title" className="internal-page__section">
         <Container>
-          <div className="editorial-split">
-            <SectionHeading description={content.requirements.description} eyebrow={content.requirements.eyebrow} title={content.requirements.title} titleId="latam-requirements-title" />
-            <CapabilityList items={content.requirements.items} />
+          <div className="editorial-split latam-page__stage">
+            <SectionHeading className="latam-page__stage-heading" description={content.requirements.description} eyebrow={content.requirements.eyebrow} title={content.requirements.title} titleId="latam-requirements-title" />
+            <div className="latam-page__capabilities">
+              <CapabilityList items={content.requirements.items} />
+            </div>
           </div>
         </Container>
       </section>
 
       <section aria-labelledby="latam-procurement-title" className="internal-page__section internal-page__section--subtle">
         <Container>
-          <div className="editorial-split editorial-split--reverse">
-            <SectionHeading description={content.procurement.description} eyebrow={content.procurement.eyebrow} title={content.procurement.title} titleId="latam-procurement-title" />
-            <div>
+          <div className="editorial-split editorial-split--reverse latam-page__stage">
+            <SectionHeading className="latam-page__stage-heading" description={content.procurement.description} eyebrow={content.procurement.eyebrow} title={content.procurement.title} titleId="latam-procurement-title" />
+            <div className="latam-page__capabilities">
               <CapabilityList items={content.procurement.items} />
               <ButtonLink className="editorial-inline-action" href={getRouteHref(currentLocale, "what-we-do")} variant="secondary">
                 {content.procurement.linkLabel}
@@ -92,16 +94,16 @@ export function LatamPage({ content, currentLocale, media }: LatamPageProps) {
 
       <section aria-labelledby="latam-collaboration-title" className="internal-page__section internal-page__section--subtle">
         <Container>
-          <div className="editorial-split">
-            <div>
+          <div className="editorial-split latam-page__collaboration">
+            <div className="latam-page__collaboration-content">
               <SectionHeading description={content.collaboration.description} eyebrow={content.collaboration.eyebrow} title={content.collaboration.title} titleId="latam-collaboration-title" />
               <CapabilityList items={content.collaboration.items} />
             </div>
-            <figure className="editorial-media">
+            <figure className="editorial-media latam-page__collaboration-media">
               <PublicMediaFrame alt={content.collaboration.mediaAlt} aspectRatio="3 / 2" fallbackLabel={content.collaboration.mediaAlt} height={1200} loading="lazy" mobileSrc={media.supporting?.mobile} src={media.supporting?.desktop} width={1800} />
             </figure>
           </div>
-          <CommercialProcess description={content.process.description} steps={content.process.steps} title={content.process.title} titleId="latam-process-title" />
+          <CommercialProcess className="latam-page__process" description={content.process.description} showNumbers={false} steps={content.process.steps} title={content.process.title} titleId="latam-process-title" />
         </Container>
       </section>
 

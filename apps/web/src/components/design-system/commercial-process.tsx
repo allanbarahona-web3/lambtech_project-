@@ -5,6 +5,7 @@ type CommercialProcessStep = {
 };
 
 type CommercialProcessProps = {
+  className?: string;
   description: string;
   showNumbers?: boolean;
   steps: CommercialProcessStep[];
@@ -12,9 +13,9 @@ type CommercialProcessProps = {
   titleId: string;
 };
 
-export function CommercialProcess({ description, showNumbers = true, steps, title, titleId }: CommercialProcessProps) {
+export function CommercialProcess({ className, description, showNumbers = true, steps, title, titleId }: CommercialProcessProps) {
   return (
-    <div className="commercial-process" aria-labelledby={titleId}>
+    <div className={["commercial-process", className].filter(Boolean).join(" ")} aria-labelledby={titleId}>
       <div className="commercial-process__intro">
         <h3 id={titleId}>{title}</h3>
         <p>{description}</p>

@@ -49,7 +49,7 @@ export function ContactPage({ content }: { content: ContactPageContent }) {
               </div>
               <div className="contact-page__details">
                 <SectionHeading description={content.information.description} eyebrow={content.information.eyebrow} title={content.information.title} titleId="contact-information-title" />
-                <ContactDetails className="contact-details--page" labels={content.details} />
+                <ContactDetails className="contact-details--page" includeAddress={false} labels={content.details} />
               </div>
             </aside>
             <div className="contact-page__form-card">

@@ -47,7 +47,7 @@ export const publicMedia = {
   } satisfies ResponsiveMedia,
   contactPortrait: publicMediaUrl("lambtech-contact-portrait.webp"),
   favicon: publicMediaUrl("Favicon.png"),
-  founderPortrait: publicMediaUrl("Executive PortraitFounder.png"),
+  founderPortrait: publicMediaUrl("Executive Portrait in Tech Control Room.png", "202611131600"),
   footerLogo: publicMediaUrl("Lambtech LogoFooter.png"),
   headerLogo: publicMediaUrl("LogoColor.png"),
   heroDesktop: publicMediaUrl("lambtech-hero-scada-Desktop.webp"),
@@ -57,8 +57,8 @@ export const publicMedia = {
     mobile: publicMediaUrl("lambtech-latam-intro-mobile.webp", "20261112010519"),
   } satisfies ResponsiveMedia,
   latamSupporting: {
-    desktop: publicMediaUrl("lambtech-latam-collaboration-desktop.webp"),
-    mobile: publicMediaUrl("lambtech-latam-collaboration-mobile.webp"),
+    desktop: publicMediaUrl("lambtech-latam-collaboration-desktop.webp", "202611131500"),
+    mobile: publicMediaUrl("lambtech-latam-collaboration-mobile.webp", "202611131500"),
   } satisfies ResponsiveMedia,
   manufacturerHero: {
     desktop: publicMediaUrl("lambtech-technology-intro-desktop.webp", "20261112005636"),

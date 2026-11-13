@@ -10,7 +10,7 @@
     "mediaAlt": "Water-treatment infrastructure with a distribution pipe and flow measurement equipment."
   },
   "requirements": {
-    "eyebrow": "01 — Requirements to technology",
+    "eyebrow": "Requirements to technology",
     "title": "Give the requirement a useful technical and commercial frame.",
     "description": "We begin with the application, operating conditions and evaluation criteria that make a technology requirement clear to the right international suppliers.",
     "items": [
@@ -21,7 +21,7 @@
     ]
   },
   "procurement": {
-    "eyebrow": "02 — International procurement",
+    "eyebrow": "International procurement",
     "title": "Coordinate the route from requirement to supplier dialogue.",
     "description": "We help connect a requirement with suitable manufacturers and suppliers, keeping sourcing activities organized around the defined need.",
     "items": [
@@ -71,7 +71,7 @@
     ]
   },
   "collaboration": {
-    "eyebrow": "04 — Collaboration model",
+    "eyebrow": "Collaboration model",
     "title": "Coordinate the right parties around a defined requirement.",
     "description": "We bring customer requirements, international technology suppliers and regional business relationships into a coordinated process with clear roles for each opportunity.",
     "items": [

@@ -218,6 +218,7 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
       ) : page === "about" ? (
         <AboutPage
           content={{
+            bridge: aboutPage("bridge", { returnObjects: true }) as unknown as AboutPageContent["bridge"],
             cta: aboutPage("cta", { returnObjects: true }) as unknown as AboutPageContent["cta"],
             future: aboutPage("future", { returnObjects: true }) as unknown as AboutPageContent["future"],
             identity: aboutPage("identity", { returnObjects: true }) as unknown as AboutPageContent["identity"],
@@ -226,7 +227,7 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
             principles: aboutPage("principles", { returnObjects: true }) as unknown as AboutPageContent["principles"],
           }}
           currentLocale={locale}
-          media={{ introduction: publicMedia.aboutIntroduction }}
+          media={{ founder: publicMedia.founderPortrait, introduction: publicMedia.aboutIntroduction }}
         />
       ) : page === "contact" ? (
         <ContactPage

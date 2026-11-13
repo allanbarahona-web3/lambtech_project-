@@ -15,7 +15,7 @@ export const publicCompany = {
   fax: { display: "+1 (986) 300-8345", e164: "+19863008345" },
   jurisdiction: "Wyoming, USA",
   name: "LAMBTECH LLC",
-  phone: { display: "+(506)84047638", e164: "+50684047638" },
+  phone: { display: "+(506) 8404-7638", e164: "+50684047638" },
   social: {
     facebook: "https://www.facebook.com/corderaguas#",
     instagram: "https://www.instagram.com/corderaguas",

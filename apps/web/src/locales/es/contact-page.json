@@ -22,7 +22,7 @@
   "information": {
     "eyebrow": "02 — Datos de contacto",
     "title": "¿Prefiere una conversación directa?",
-    "description": "Use los canales indicados para consultas comerciales. La dirección postal se proporciona para correspondencia corporativa."
+    "description": "Use los canales indicados para consultas comerciales."
   },
   "details": { "email": "Correo electrónico", "phone": "Teléfono", "fax": "Fax", "address": "Dirección postal", "whatsapp": "Conversar por WhatsApp" },
   "form": {

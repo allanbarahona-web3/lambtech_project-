@@ -6,13 +6,21 @@
   "introduction": {
     "eyebrow": "Sobre LAMBTECH",
     "title": "Tecnología internacional para oportunidades de mercado en América Latina.",
-    "description": "LAMBTECH LLC es una empresa internacional de tecnología y desarrollo comercial organizada en Wyoming. Conectamos fabricantes especializados, requerimientos de abastecimiento internacional y oportunidades en mercados de América Latina.",
+    "description": "LAMBTECH LLC es una empresa internacional de tecnología y desarrollo comercial. Conectamos fabricantes especializados, requerimientos de abastecimiento internacional y oportunidades en mercados de América Latina.",
     "mediaAlt": "Profesionales técnicos revisando un sensor industrial y planos de equipos."
   },
+  "bridge": {
+    "items": [
+      "Tecnología y desarrollo comercial",
+      "América Latina"
+    ]
+  },
   "identity": {
-    "eyebrow": "01 — Identidad empresarial",
+    "eyebrow": "Identidad empresarial",
     "title": "Un modelo comercial construido alrededor de relevancia técnica y conocimiento de mercado.",
     "description": "Reunimos el trabajo necesario para evaluar requerimientos de tecnología especializada y conectar proveedores internacionales con demanda en América Latina.",
+    "founderAlt": "Fundador de LAMBTECH revisando tecnología en un entorno de control industrial.",
+    "founderRole": "Fundador y CEO",
     "items": [
       "Abastecimiento internacional y búsqueda de tecnología",
       "Relaciones con fabricantes y coordinación comercial",
@@ -30,7 +38,7 @@
     ]
   },
   "principles": {
-    "eyebrow": "02 — Principios de trabajo",
+    "eyebrow": "Principios de trabajo",
     "title": "Las relaciones comerciales se benefician de la claridad antes de escalar.",
     "description": "Nos enfocamos en las condiciones prácticas que respaldan decisiones sólidas de tecnología y desarrollo de mercados.",
     "items": [
@@ -42,7 +50,7 @@
     ]
   },
   "future": {
-    "eyebrow": "03 — Mirada al futuro",
+    "eyebrow": "Mirada al futuro",
     "title": "Un modelo diseñado para mantener su relevancia a medida que evoluciona la tecnología.",
     "description": "Las tecnologías conectadas, IoT, plataformas de datos y servicios habilitados por software pueden convertirse en áreas futuras de desarrollo cuando las oportunidades comerciales y técnicas que las sustentan estén definidas."
   },
