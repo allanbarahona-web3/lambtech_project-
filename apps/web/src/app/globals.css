@@ -1425,6 +1425,7 @@ picture.public-media-frame > img {
   background: var(--color-brand-teal);
   color: var(--color-surface-base);
   text-decoration: none;
+  isolation: isolate;
   box-shadow: 0 0.5rem 1.5rem rgb(51 56 66 / 18%);
   animation: whatsapp-button-enter 420ms var(--ease-standard) both;
   transition:
@@ -1432,6 +1433,18 @@ picture.public-media-frame > img {
     border-color var(--duration-fast) var(--ease-standard),
     box-shadow var(--duration-fast) var(--ease-standard),
     transform var(--duration-fast) var(--ease-standard);
+}
+
+.whatsapp-button::after {
+  position: absolute;
+  z-index: -1;
+  inset: -0.3rem;
+  border: 1px solid rgb(0 126 128 / 45%);
+  border-radius: inherit;
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  animation: whatsapp-button-breathe 3.6s var(--ease-standard) 1.1s infinite;
 }
 
 .whatsapp-button:hover,
@@ -1477,6 +1490,24 @@ picture.public-media-frame > img {
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes whatsapp-button-breathe {
+  0%,
+  62%,
+  100% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  18% {
+    opacity: 0.55;
+  }
+
+  46% {
+    opacity: 0;
+    transform: scale(1.35);
   }
 }
 
@@ -3804,6 +3835,10 @@ picture.solutions-feature__image > img {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .whatsapp-button::after {
+    animation: none;
+  }
+
   html {
     scroll-behavior: auto;
   }

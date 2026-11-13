@@ -140,6 +140,7 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
   ]);
   const currentPage: CorporateRouteId | undefined = isCorporateRoute(page) ? page : undefined;
   const whatsappLabel = footer("contactDetails.whatsapp");
+  const whatsappMessage = footer("whatsappMessage");
 
   return (
     <>
@@ -245,7 +246,7 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
         notFound()
       )}
       <CorporateFooter currentLocale={locale} labels={footerLabels(footer)} />
-      <WhatsAppButton label={whatsappLabel} url={publicCompany.whatsappUrl} />
+      <WhatsAppButton label={whatsappLabel} message={whatsappMessage} url={publicCompany.whatsappUrl} />
     </>
   );
 }

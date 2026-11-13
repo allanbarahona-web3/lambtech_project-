@@ -76,7 +76,7 @@ export default async function LocalePage({ params }: LocalePageProps) {
         legalTitle: footer("legalTitle"), logoAlt: footer("logoAlt"), navigationTitle: footer("navigationTitle"),
         privacy: footer("privacy"), social: footer("social", { returnObjects: true }) as Record<"facebook" | "instagram" | "linkedin" | "tiktok", string>, socialTitle: footer("socialTitle"), tagline: footer("tagline"), technology: footer("technology"), terms: footer("terms"), unitedStates: footer("unitedStates"), whatWeDo: footer("whatWeDo"),
       }} />
-      <WhatsAppButton label={contact("details.whatsapp")} url={publicCompany.whatsappUrl} />
+      <WhatsAppButton label={contact("details.whatsapp")} message={footer("whatsappMessage")} url={publicCompany.whatsappUrl} />
     </>
   );
 }

@@ -12,5 +12,6 @@
   "contactDetails": { "email": "Correo electrónico", "phone": "Teléfono", "fax": "Fax", "address": "Dirección", "whatsapp": "Conversar por WhatsApp" },
   "social": { "linkedin": "Visitar LAMBTECH en LinkedIn", "facebook": "Visitar LAMBTECH en Facebook", "instagram": "Visitar LAMBTECH en Instagram", "tiktok": "Visitar LAMBTECH en TikTok" },
   "copyright": "© 2026 LAMBTECH LLC",
-  "developmentCredit": "Diseño y desarrollo por Barmentech"
+  "developmentCredit": "Diseño y desarrollo por Barmentech",
+  "whatsappMessage": "Hola, vengo del sitio web de LAMBTECH y me interesa obtener más información."
 }
