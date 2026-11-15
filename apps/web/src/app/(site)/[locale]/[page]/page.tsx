@@ -89,32 +89,32 @@ export async function generateMetadata({ params }: LocalizedPageProps): Promise<
 
   if (page === "what-we-do") {
     const t = await getTranslation(locale, "whatWeDoPage");
-    return getLocaleMetadata(locale, t("metadata.title"), t("metadata.description"), page, { noIndex: true });
+    return getLocaleMetadata(locale, t("metadata.title"), t("metadata.description"), page);
   }
 
   if (page === "technology") {
     const t = await getTranslation(locale, "technologyPage");
-    return getLocaleMetadata(locale, t("metadata.title"), t("metadata.description"), page, { noIndex: true });
+    return getLocaleMetadata(locale, t("metadata.title"), t("metadata.description"), page);
   }
 
   if (page === "manufacturers") {
     const t = await getTranslation(locale, "manufacturersPage");
-    return getLocaleMetadata(locale, t("metadata.title"), t("metadata.description"), page, { noIndex: true });
+    return getLocaleMetadata(locale, t("metadata.title"), t("metadata.description"), page);
   }
 
   if (page === "latam") {
     const t = await getTranslation(locale, "latamPage");
-    return getLocaleMetadata(locale, t("metadata.title"), t("metadata.description"), page, { noIndex: true });
+    return getLocaleMetadata(locale, t("metadata.title"), t("metadata.description"), page);
   }
 
   if (page === "about") {
     const t = await getTranslation(locale, "aboutPage");
-    return getLocaleMetadata(locale, t("metadata.title"), t("metadata.description"), page, { noIndex: true });
+    return getLocaleMetadata(locale, t("metadata.title"), t("metadata.description"), page);
   }
 
   if (page === "contact") {
     const t = await getTranslation(locale, "contactPage");
-    return getLocaleMetadata(locale, t("metadata.title"), t("metadata.description"), page, { noIndex: true });
+    return getLocaleMetadata(locale, t("metadata.title"), t("metadata.description"), page);
   }
 
   return {};

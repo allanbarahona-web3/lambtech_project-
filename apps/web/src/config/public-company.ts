@@ -26,6 +26,22 @@ export const publicCompany = {
   whatsappUrl: "https://wa.me/50684047638",
 } as const;
 
+/** The canonical public origin. Do not derive this from an incoming request. */
+export const publicSiteOrigin = new URL(publicCompany.website);
+
+export function publicSiteUrl(pathname = "/") {
+  return new URL(pathname, publicSiteOrigin).toString();
+}
+
+/**
+ * Crawling and indexing are enabled only on the explicitly designated
+ * production deployment. This keeps preview and QA deployments out of search
+ * results even when they are built with NODE_ENV=production.
+ */
+export function isProductionSite() {
+  return process.env.NEXT_PUBLIC_SITE_ENV === "production";
+}
+
 export function telephoneHref(e164: string) {
   return `tel:${e164}`;
 }

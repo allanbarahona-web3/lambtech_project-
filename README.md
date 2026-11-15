@@ -26,6 +26,15 @@ pnpm lint
 pnpm build
 ```
 
+## Deployment
+
+- `apps/web` is deployed on Vercel. Set `NEXT_PUBLIC_SITE_ENV=production` only
+  in Vercel's Production environment and redeploy for the live `lambtech.us`
+  site to be indexable. Keep the variable unset or non-production in Vercel
+  Preview and QA environments so they remain non-indexable.
+- `apps/api` is deployed separately on DigitalOcean. Its deployment does not
+  control the website's metadata, robots policy, sitemap, or indexing state.
+
 ## API local
 
 El API se ejecuta con `pnpm dev:api` en `http://localhost:3001/v1`.

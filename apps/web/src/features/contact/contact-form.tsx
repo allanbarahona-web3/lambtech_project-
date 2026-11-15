@@ -2,6 +2,7 @@
 
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { useRouter } from "next/navigation";
 
 import type { Locale } from "@/lib/i18n/config";
 import { publicApiBaseUrl } from "@/lib/public-api";
@@ -69,26 +70,24 @@ function normalizedCompanyWebsite(values: FormData): string | undefined {
 }
 
 export function ContactForm({ extendedLabels, labels, locale, privacyNoticeHref }: ContactFormProps) {
+  const router = useRouter();
   const formRef = useRef<HTMLFormElement>(null);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [confirmationOpen, setConfirmationOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const confirmationDialogRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    const dialog = confirmationDialogRef.current;
 
-  useEffect(() => {
     if (confirmationOpen) {
-      confirmationDialogRef.current?.showModal();
+      dialog?.showModal();
       closeButtonRef.current?.focus();
     }
 
-    return () => confirmationDialogRef.current?.close();
+    return () => dialog?.close();
   }, [confirmationOpen]);
 
   useEffect(() => {
@@ -104,7 +103,7 @@ export function ContactForm({ extendedLabels, labels, locale, privacyNoticeHref 
 
   function closeConfirmation() {
     confirmationDialogRef.current?.close();
-    window.location.assign(`/${locale}`);
+    router.push(`/${locale}`);
   }
 
   async function submit(event: FormEvent<HTMLFormElement>) {
@@ -208,7 +207,7 @@ export function ContactForm({ extendedLabels, labels, locale, privacyNoticeHref 
         <button className="button-link button-link--primary" disabled={submitting} type="submit">{submitting ? extendedLabels.sending : labels.submit}</button>
         <p aria-live="polite" id="contact-form-status" role="status">{status}</p>
       </div>
-      {confirmationOpen && mounted ? createPortal(
+      {confirmationOpen ? createPortal(
         <dialog aria-describedby="contact-confirmation-description" aria-labelledby="contact-confirmation-title" className="contact-confirmation" onCancel={(event) => { event.preventDefault(); closeConfirmation(); }} ref={confirmationDialogRef}>
           <div className="contact-confirmation__panel">
             <button aria-label={extendedLabels.confirmation.closeLabel} className="contact-confirmation__close" onClick={closeConfirmation} type="button">

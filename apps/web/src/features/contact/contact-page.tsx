@@ -27,7 +27,7 @@ export function ContactPage({ content, locale }: { content: ContactPageContent; 
               <div className="contact-page__portrait">
                 {/* The portrait is a public CDN asset intentionally rendered directly. */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img alt={content.introduction.portraitAlt} src={publicMedia.contactPortrait} />
+                <img alt={content.introduction.portraitAlt} height={1000} src={publicMedia.contactPortrait} width={1600} />
               </div>
             ) : null}
           </div>

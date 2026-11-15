@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import "../../globals.css";
 import { instrumentSans } from "@/lib/fonts";
+import { SiteStructuredData } from "@/components/site/site-structured-data";
 import { getLocaleStaticParams, getLocaleMetadata } from "@/lib/seo";
 import { getTranslation } from "@/lib/i18n/server";
 import { isLocale } from "@/lib/i18n/config";
@@ -45,6 +46,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   return (
     <html lang={locale}>
       <body className={instrumentSans.variable}>
+        <SiteStructuredData />
         <a className="skip-link" href="#main-content">
           {t("accessibility.skipToContent")}
         </a>

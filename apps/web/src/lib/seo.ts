@@ -1,18 +1,10 @@
 import type { Metadata } from "next";
-import { publicCompany } from "@/config/public-company";
-import { publicMedia } from "@/lib/media";
+import { isProductionSite, publicCompany, publicSiteOrigin, publicSiteUrl } from "@/config/public-company";
+import { heroMedia, publicMedia } from "@/lib/media";
 import { defaultLocale, locales, type Locale } from "./i18n/config";
 
-function getMetadataBase() {
-  if (!publicCompany.website) {
-    return undefined;
-  }
-
-  try {
-    return new URL(publicCompany.website);
-  } catch {
-    return undefined;
-  }
+function getOpenGraphLocale(locale: Locale) {
+  return locale === "es" ? "es_ES" : "en_US";
 }
 
 export function getLocaleMetadata(
@@ -24,14 +16,19 @@ export function getLocaleMetadata(
 ): Metadata {
   const normalizedSuffix = pathSuffix.replace(/^\/+/, "");
   const pathname = normalizedSuffix ? `/${locale}/${normalizedSuffix}` : `/${locale}`;
+  const canonicalUrl = publicSiteUrl(pathname);
+  const isNoIndex = noIndex || !isProductionSite();
+  const socialImage = heroMedia.desktop
+    ? [{ alt: `${title} | ${publicCompany.name}`, height: heroMedia.height, url: heroMedia.desktop, width: heroMedia.width }]
+    : undefined;
 
   return {
     alternates: {
-      canonical: pathname,
+      canonical: canonicalUrl,
       languages: {
-        en: normalizedSuffix ? `/en/${normalizedSuffix}` : "/en",
-        es: normalizedSuffix ? `/es/${normalizedSuffix}` : "/es",
-        "x-default": normalizedSuffix ? `/${defaultLocale}/${normalizedSuffix}` : `/${defaultLocale}`,
+        en: publicSiteUrl(normalizedSuffix ? `/en/${normalizedSuffix}` : "/en"),
+        es: publicSiteUrl(normalizedSuffix ? `/es/${normalizedSuffix}` : "/es"),
+        "x-default": publicSiteUrl(normalizedSuffix ? `/${defaultLocale}/${normalizedSuffix}` : `/${defaultLocale}`),
       },
     },
     description,
@@ -41,9 +38,24 @@ export function getLocaleMetadata(
           shortcut: [{ type: "image/png", url: publicMedia.favicon }],
         }
       : undefined,
-    metadataBase: getMetadataBase(),
-    ...(noIndex ? { robots: { follow: false, index: false } } : {}),
+    metadataBase: publicSiteOrigin,
+    openGraph: {
+      description,
+      images: socialImage,
+      locale: getOpenGraphLocale(locale),
+      siteName: publicCompany.name,
+      title,
+      type: "website",
+      url: canonicalUrl,
+    },
+    ...(isNoIndex ? { robots: { follow: false, index: false } } : {}),
     title,
+    twitter: {
+      card: socialImage ? "summary_large_image" : "summary",
+      description,
+      images: socialImage?.map((image) => image.url),
+      title,
+    },
   };
 }
 
