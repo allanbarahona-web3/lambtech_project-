@@ -32,14 +32,17 @@ function leadRecord(
 ): LeadNotificationRecord {
   return {
     id: "lead-123",
-    sourceSite: LeadSourceSite.FORMATION,
+    sourceSite: LeadSourceSite.LAMBTECH,
     locale: LeadLocale.EN,
-    interest: LeadInterest.COMPANY_FORMATION,
+    interest: LeadInterest.MANUFACTURER_INQUIRY,
     fullName: "Ada Lovelace",
     email: "ada@example.com",
     phone: "+1 555 0100",
     country: "Costa Rica",
     company: "Analytical Engines",
+    companyWebsite: "https://analytical.example.test",
+    technologyContext: "Industrial automation",
+    marketOrProject: "Costa Rica pilot project",
     message: "I need help forming a company.",
     privacyConsentAt: new Date("2026-10-27T10:00:00.000Z"),
     campaign: "autumn-launch",
@@ -141,14 +144,13 @@ test("sends internal and English visitor messages, then records both as sent", a
   assert.equal(messages.length, 2);
   assert.equal(messages[0]?.to, "leads@barmentech.test");
   assert.equal(messages[0]?.replyTo, "ada@example.com");
-  assert.ok(Buffer.isBuffer(messages[0]?.attachments?.[0]?.content));
-  assert.equal(messages[0]?.attachments?.[0]?.path, undefined);
-  assert.match(messages[0]?.subject ?? "", /New inquiry: U\.S\. company formation/);
+  assert.equal(messages[0]?.attachments, undefined);
+  assert.match(messages[0]?.subject ?? "", /New inquiry: Manufacturer inquiry/);
   assert.match(messages[0]?.text ?? "", /Lead ID: lead-123/);
   assert.equal(messages[1]?.to, "ada@example.com");
   assert.equal(
     messages[1]?.subject,
-    "We received your inquiry | Barmentech Formation",
+    "We received your inquiry | LAMBTECH",
   );
   assert.match(messages[1]?.text ?? "", /do not email passwords/i);
   assert.deepEqual(statuses(updates), [
@@ -165,9 +167,9 @@ test("sends a Spanish visitor confirmation for a persisted Spanish lead", async 
 
   assert.equal(
     messages[1]?.subject,
-    "Recibimos tu solicitud | Barmentech Formation",
+    "Recibimos tu solicitud | LAMBTECH",
   );
-  assert.match(messages[1]?.text ?? "", /Gracias por contactar a Barmentech/);
+  assert.match(messages[1]?.text ?? "", /Gracias por contactar a LAMBTECH/);
 });
 
 test("records independent outcomes when the internal message succeeds and visitor message fails", async () => {

@@ -11,8 +11,8 @@ import { PublicLeadsService } from "./public-leads.service";
 
 const lead: CreatePublicLeadDto = {
   fullName: "Ada Lovelace", email: "ada@example.com", country: "Costa Rica",
-  interest: LeadInterest.COMPANY_FORMATION, message: "I need help forming a company.",
-  locale: LeadLocale.EN, sourceSite: LeadSourceSite.FORMATION, privacyAccepted: true,
+  interest: LeadInterest.MANUFACTURER_INQUIRY, message: "I need help with market development.",
+  locale: LeadLocale.EN, sourceSite: LeadSourceSite.LAMBTECH, privacyAccepted: true,
 };
 
 function prismaMock(options?: { existingHash?: string; createError?: Error }) {

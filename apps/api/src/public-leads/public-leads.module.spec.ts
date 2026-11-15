@@ -24,8 +24,8 @@ test("resolves PublicLeadsService through the Nest container without a database 
   let context: Awaited<ReturnType<typeof NestFactory.createApplicationContext>> | undefined;
   try {
     context = await NestFactory.createApplicationContext(PublicLeadsModule.register(new Map([
-      ["http://localhost:3000", LeadSourceSite.TECHNOLOGY],
-      ["http://localhost:3002", LeadSourceSite.FORMATION],
+      ["http://localhost:3000", LeadSourceSite.LAMBTECH],
+      ["http://localhost:3002", LeadSourceSite.LAMBTECH],
     ])), {
       logger: false,
     });

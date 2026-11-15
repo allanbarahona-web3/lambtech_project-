@@ -241,6 +241,7 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
             paths: contactPage("paths", { returnObjects: true }) as unknown as ContactPageContent["paths"],
             pathsHeading: contactPage("pathsHeading", { returnObjects: true }) as ContactPageContent["pathsHeading"],
           }}
+          locale={locale}
         />
       ) : (
         notFound()

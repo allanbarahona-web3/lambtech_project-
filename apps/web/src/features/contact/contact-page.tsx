@@ -1,4 +1,5 @@
 import { ContactDetails } from "@/components/company/contact-details";
+import type { Locale } from "@/lib/i18n/config";
 import { Container } from "@/components/design-system/container";
 import { SectionHeading } from "@/components/design-system/section-heading";
 import { publicMedia } from "@/lib/media";
@@ -15,7 +16,7 @@ export type ContactPageContent = {
   pathsHeading: { description: string; eyebrow: string; title: string };
 };
 
-export function ContactPage({ content }: { content: ContactPageContent }) {
+export function ContactPage({ content, locale }: { content: ContactPageContent; locale: Locale }) {
   return (
     <main className="internal-page" id="main-content">
       <section className="contact-page__hero">
@@ -53,7 +54,12 @@ export function ContactPage({ content }: { content: ContactPageContent }) {
               </div>
             </aside>
             <div className="contact-page__form-card">
-              <ContactForm extendedLabels={content.form} labels={{ ...content.form, submit: content.form.checkFields }} />
+              <ContactForm
+                extendedLabels={content.form}
+                labels={{ ...content.form, submit: content.form.checkFields }}
+                locale={locale}
+                privacyNoticeHref={`/${locale}/privacy`}
+              />
             </div>
           </div>
         </Container>

@@ -27,13 +27,15 @@
   "details": { "email": "Email", "phone": "Telephone", "fax": "Fax", "address": "Mailing address", "whatsapp": "Chat on WhatsApp" },
   "form": {
     "title": "Start a structured inquiry",
-    "notice": "Online form submissions are not available yet. Please contact us by email, phone or WhatsApp.",
-    "name": "First name", "lastName": "Last name", "company": "Company", "email": "Work email", "phone": "Phone", "country": "Country or market", "message": "Message", "required": "Required", "checkFields": "Check required fields", "inactive": "Form delivery is not available yet. Please use the contact details provided.",
-    "validationSummary": "Please complete the required fields to review your inquiry.",
+    "notice": "Tell us about your inquiry and our team will review it.",
+    "name": "First name", "lastName": "Last name", "company": "Company", "email": "Work email", "phone": "Phone", "country": "Country or market", "message": "Message", "required": "Required", "checkFields": "Send inquiry", "inactive": "Online submissions are unavailable at the moment. Please use the contact details provided.",
+    "validationSummary": "Please complete the required fields and accept the Privacy Notice.",
     "errors": { "name": "Enter your name.", "email": "Enter a valid work email.", "message": "Enter a message." },
     "honeypot": "Leave this field empty",
     "inquiryType": "Inquiry type",
     "inquiryTypes": { "manufacturer": "Manufacturer inquiry", "customer": "Technology sourcing", "general": "General inquiry" },
-    "technologyContext": "Technology, product area or application", "marketOrProject": "Latin American markets of interest or project details", "website": "Company website"
+    "technologyContext": "Technology, product area or application", "marketOrProject": "Latin American markets of interest or project details", "website": "Company website",
+    "privacyAcceptance": "I have read and accept the", "privacyLink": "Privacy Notice", "sending": "Sending your inquiry…", "submitError": "We could not send your inquiry. Please try again or use the contact details provided.",
+    "confirmation": { "title": "Inquiry received", "message": "Thank you for contacting LAMBTECH. We’ll review your inquiry and get in touch using the contact details you provided.", "close": "Got it", "closeLabel": "Close confirmation dialog" }
   }
 }

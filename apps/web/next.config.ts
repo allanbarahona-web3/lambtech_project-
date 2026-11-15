@@ -25,6 +25,7 @@ function remotePatternFromMediaBaseUrl(value: string | undefined): RemotePattern
 const mediaPattern = remotePatternFromMediaBaseUrl(process.env.NEXT_PUBLIC_MEDIA_BASE_URL);
 
 const nextConfig: NextConfig = {
+  allowedDevOrigins: ["127.0.0.1"],
   ...(mediaPattern ? { images: { remotePatterns: [mediaPattern] } } : {}),
   async headers() {
     return [

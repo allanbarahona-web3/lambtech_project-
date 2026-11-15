@@ -24,14 +24,17 @@ function leadRecord(
 ): LeadNotificationRecord {
   return {
     id: "lead-123",
-    sourceSite: LeadSourceSite.FORMATION,
+    sourceSite: LeadSourceSite.LAMBTECH,
     locale: LeadLocale.EN,
-    interest: LeadInterest.COMPANY_FORMATION,
+    interest: LeadInterest.MANUFACTURER_INQUIRY,
     fullName: "Ada Lovelace",
     email: "ada@example.com",
     phone: "+1 555 0100",
     country: "Costa Rica",
     company: "Analytical Engines",
+    companyWebsite: "https://analytical.example.test",
+    technologyContext: "Industrial automation",
+    marketOrProject: "Costa Rica pilot project",
     message: "I need help forming a company.\nPlease contact me by email.",
     privacyConsentAt: new Date("2026-10-27T10:00:00.000Z"),
     campaign: "autumn-launch",
@@ -50,23 +53,23 @@ test("builds complete English internal and visitor templates", () => {
 
   assert.equal(
     internal.subject,
-    "New inquiry: U.S. company formation | Barmentech Formation",
+    "New inquiry: Manufacturer inquiry | LAMBTECH",
   );
-  assert.match(internal.html, /New Barmentech Formation inquiry/);
+  assert.match(internal.html, /New LAMBTECH inquiry/);
   assert.match(internal.html, /Full name/);
   assert.match(internal.html, /UTM source/);
   assert.match(internal.text, /America\/Costa_Rica/);
   assert.match(internal.text, /Reply to this person/);
   assert.equal(
     visitor.subject,
-    "We received your inquiry | Barmentech Formation",
+    "We received your inquiry | LAMBTECH",
   );
   assert.match(visitor.html, /What happens next\?/);
   assert.match(visitor.html, /do not email passwords/i);
-  assert.match(visitor.html, /professional, legal, tax, or contractual relationship/i);
+  assert.match(visitor.html, /professional or contractual relationship/i);
   assert.match(visitor.text, /Reference number: lead-123/);
-  assert.match(visitor.html, /Barmentech LLC/);
-  assert.match(visitor.html, /formation/);
+  assert.match(visitor.html, /LAMBTECH LLC/);
+  assert.match(visitor.html, /LAMBTECH/);
   assert.doesNotMatch(visitor.html, /mailto:formation@barmentech\.com/);
   assert.doesNotMatch(visitor.html, /formation@barmentech\.com/);
 });
@@ -74,39 +77,39 @@ test("builds complete English internal and visitor templates", () => {
 test("builds complete Spanish internal and visitor templates from the persisted locale", () => {
   const lead = leadRecord({
     locale: LeadLocale.ES,
-    interest: LeadInterest.IN_PERSON_WORKSHOP,
+    interest: LeadInterest.GENERAL_INQUIRY,
   });
   const internal = createInternalLeadNotificationTemplate(lead);
   const visitor = createVisitorConfirmationTemplate(lead);
 
   assert.equal(
     internal.subject,
-    "Nueva solicitud: Taller presencial | Barmentech Formation",
+    "Nueva solicitud: Consulta general | LAMBTECH",
   );
-  assert.match(internal.html, /Nueva solicitud de Barmentech Formation/);
+  assert.match(internal.html, /Nueva consulta de LAMBTECH/);
   assert.match(internal.html, /Nombre completo/);
   assert.match(internal.html, /Fuente UTM/);
   assert.equal(
     visitor.subject,
-    "Recibimos tu solicitud | Barmentech Formation",
+    "Recibimos tu solicitud | LAMBTECH",
   );
   assert.match(visitor.html, /¿Qué sigue\?/);
   assert.match(visitor.html, /no envíes contraseñas/i);
-  assert.match(visitor.html, /relación profesional, legal, fiscal o contractual/i);
+  assert.match(visitor.html, /relación profesional o contractual/i);
   assert.match(visitor.text, /Número de referencia: lead-123/);
   assert.match(visitor.html, /Atención en español e inglés/);
 });
 
-test("uses Technology-specific bilingual email presentation without changing the shared delivery flow", () => {
+test("uses LAMBTECH bilingual email presentation without changing the shared delivery flow", () => {
   const englishLead = leadRecord({
-    sourceSite: LeadSourceSite.TECHNOLOGY,
-    interest: LeadInterest.TECHNOLOGY_AND_DIGITAL,
+    sourceSite: LeadSourceSite.LAMBTECH,
+    interest: LeadInterest.TECHNOLOGY_SOURCING,
     message: "Technology need: Automation and integrations\n\nWe need to connect existing systems.",
   });
   const spanishLead = leadRecord({
-    sourceSite: LeadSourceSite.TECHNOLOGY,
+    sourceSite: LeadSourceSite.LAMBTECH,
     locale: LeadLocale.ES,
-    interest: LeadInterest.TECHNOLOGY_AND_DIGITAL,
+    interest: LeadInterest.TECHNOLOGY_SOURCING,
     message: "Necesidad tecnológica: Automatización e integraciones\n\nNecesitamos conectar sistemas existentes.",
   });
 
@@ -117,45 +120,35 @@ test("uses Technology-specific bilingual email presentation without changing the
 
   assert.equal(
     englishInternal.subject,
-    "New Technology inquiry: Technology and digital support | Barmentech Technology",
+    "New inquiry: Technology sourcing | LAMBTECH",
   );
   assert.equal(
     englishVisitor.subject,
-    "We received your Technology inquiry | Barmentech Technology",
+    "We received your inquiry | LAMBTECH",
   );
-  assert.match(englishInternal.html, /New Barmentech Technology inquiry/);
+  assert.match(englishInternal.html, /New LAMBTECH inquiry/);
   assert.match(englishInternal.html, /Technology need: Automation and integrations/);
-  assert.match(englishVisitor.html, /Barmentech Technology Team/);
-  assert.doesNotMatch(englishVisitor.html, /Barmentech Formation/);
+  assert.match(englishVisitor.html, /LAMBTECH Team/);
+  assert.doesNotMatch(englishVisitor.html, /Barmentech/);
   assert.equal(
     spanishInternal.subject,
-    "Nueva consulta de Tecnología: Tecnología y apoyo digital | Barmentech Tecnología",
+    "Nueva solicitud: Búsqueda de tecnología | LAMBTECH",
   );
   assert.equal(
     spanishVisitor.subject,
-    "Recibimos tu consulta de Tecnología | Barmentech Tecnología",
+    "Recibimos tu solicitud | LAMBTECH",
   );
-  assert.match(spanishInternal.html, /Nueva consulta de Barmentech Tecnología/);
-  assert.match(spanishVisitor.html, /Equipo de Barmentech Tecnología/);
-  assert.doesNotMatch(spanishVisitor.html, /Formación y apoyo empresarial/);
+  assert.match(spanishInternal.html, /Nueva consulta de LAMBTECH/);
+  assert.match(spanishVisitor.html, /Equipo de LAMBTECH/);
+  assert.doesNotMatch(spanishVisitor.html, /Barmentech/);
 });
 
-test("attaches the complete logo through an in-memory inline CID reference", () => {
+test("does not attach an inherited brand asset", () => {
   const visitor = createVisitorConfirmationTemplate(leadRecord());
   const attachment = visitor.attachments?.[0];
 
-  assert.equal(attachment?.filename, "barmentech-logo.png");
-  assert.equal(attachment?.contentId, "barmentech-logo");
-  assert.equal(attachment?.contentType, "image/png");
-  assert.equal(attachment?.path, undefined);
-  assert.ok(Buffer.isBuffer(attachment?.content));
-  assert.ok((attachment?.content as Buffer | undefined)?.length);
-  assert.deepEqual(
-    (attachment?.content as Buffer).subarray(0, 8),
-    Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]),
-  );
-  assert.match(visitor.html, /src="cid:barmentech-logo"/);
-  assert.match(visitor.html, /alt="Barmentech"/);
+  assert.equal(attachment, undefined);
+  assert.doesNotMatch(visitor.html, /cid:barmentech-logo/);
 });
 
 test("loads the approved PNG from the compiled module-relative asset location", () => {

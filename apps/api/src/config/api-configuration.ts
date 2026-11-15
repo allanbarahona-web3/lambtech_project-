@@ -88,8 +88,8 @@ export function parsePublicLeadSourceSiteOrigins(
 
     const origin = parseExactPublicOrigin(entry.slice(0, separator).trim());
     const sourceSite = entry.slice(separator + 1).trim();
-    if (sourceSite !== LeadSourceSite.FORMATION && sourceSite !== LeadSourceSite.TECHNOLOGY) {
-      throw new Error("PUBLIC_LEAD_SOURCE_SITE_ORIGINS must map to FORMATION or TECHNOLOGY.");
+    if (sourceSite !== LeadSourceSite.LAMBTECH) {
+      throw new Error("PUBLIC_LEAD_SOURCE_SITE_ORIGINS must map to LAMBTECH.");
     }
     if (!publicWebOrigins.includes(origin)) {
       throw new Error("PUBLIC_LEAD_SOURCE_SITE_ORIGINS origins must also be in PUBLIC_WEB_ORIGINS.");
@@ -100,9 +100,8 @@ export function parsePublicLeadSourceSiteOrigins(
     mappings.set(origin, sourceSite);
   }
 
-  const sourceSites = new Set(mappings.values());
-  if (!sourceSites.has(LeadSourceSite.FORMATION) || !sourceSites.has(LeadSourceSite.TECHNOLOGY)) {
-    throw new Error("PUBLIC_LEAD_SOURCE_SITE_ORIGINS must map both FORMATION and TECHNOLOGY.");
+  if (mappings.size === 0) {
+    throw new Error("PUBLIC_LEAD_SOURCE_SITE_ORIGINS must contain at least one LAMBTECH origin.");
   }
 
   return mappings;

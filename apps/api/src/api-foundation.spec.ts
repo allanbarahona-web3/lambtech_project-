@@ -10,7 +10,7 @@ import { createApiApplication } from "./main";
 import { PrismaService } from "./prisma/prisma.service";
 
 const TEST_PUBLIC_WEB_ORIGINS = "http://localhost:3000,http://localhost:3002";
-const TEST_SOURCE_SITE_ORIGINS = "http://localhost:3000=TECHNOLOGY,http://localhost:3002=FORMATION";
+const TEST_SOURCE_SITE_ORIGINS = "http://localhost:3000=LAMBTECH,http://localhost:3002=LAMBTECH";
 
 test("parses valid public web origins with trimming and de-duplication", () => {
   assert.deepEqual(
@@ -34,21 +34,20 @@ test("rejects public web origins that are not exact safe origins", () => {
   }
 });
 
-test("requires exact, CORS-listed mappings for both public lead source sites", () => {
+test("requires exact, CORS-listed mappings for LAMBTECH public origins", () => {
   const origins = ["https://formation.example.test", "https://technology.example.test"];
   const mappings = parsePublicLeadSourceSiteOrigins(
-    "https://formation.example.test=FORMATION,https://technology.example.test=TECHNOLOGY",
+    "https://formation.example.test=LAMBTECH,https://technology.example.test=LAMBTECH",
     origins,
   );
-  assert.equal(mappings.get("https://formation.example.test"), "FORMATION");
-  assert.equal(mappings.get("https://technology.example.test"), "TECHNOLOGY");
+  assert.equal(mappings.get("https://formation.example.test"), "LAMBTECH");
+  assert.equal(mappings.get("https://technology.example.test"), "LAMBTECH");
 
   for (const value of [
     "https://formation.example.test=FORMATION",
-    "https://formation.example.test=FORMATION,https://technology.example.test=FORMATION",
-    "https://formation.example.test=FORMATION,https://unknown.example.test=TECHNOLOGY",
-    "https://formation.example.test/path=FORMATION,https://technology.example.test=TECHNOLOGY",
-    "https://formation.example.test=FORMATION,https://technology.example.test=OTHER",
+    "https://formation.example.test=LAMBTECH,https://unknown.example.test=LAMBTECH",
+    "https://formation.example.test/path=LAMBTECH,https://technology.example.test=LAMBTECH",
+    "https://formation.example.test=LAMBTECH,https://technology.example.test=OTHER",
   ]) {
     assert.throws(() => parsePublicLeadSourceSiteOrigins(value, origins));
   }
@@ -89,7 +88,7 @@ test("requires secure non-local public origins outside development and test", ()
     getApiConfiguration({
       NODE_ENV: "qa",
       PUBLIC_WEB_ORIGINS: "https://formation-qa.example.test,https://technology-qa.example.test",
-      PUBLIC_LEAD_SOURCE_SITE_ORIGINS: "https://formation-qa.example.test=FORMATION,https://technology-qa.example.test=TECHNOLOGY",
+      PUBLIC_LEAD_SOURCE_SITE_ORIGINS: "https://formation-qa.example.test=LAMBTECH,https://technology-qa.example.test=LAMBTECH",
       TRUST_PROXY: "loopback",
     }).trustProxy,
     "loopback",

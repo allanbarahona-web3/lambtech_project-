@@ -1226,6 +1226,147 @@ picture.public-media-frame > img {
   font-size: 0.875rem;
 }
 
+.contact-form__consent {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.contact-form__consent label {
+  align-items: flex-start;
+  display: flex;
+  gap: 0.35rem;
+}
+
+.contact-form__consent input {
+  accent-color: var(--color-accent);
+  flex: 0 0 auto;
+  margin-top: 0.3rem;
+}
+
+.contact-confirmation {
+  background: #fff;
+  border: 1px solid rgb(51 56 66 / 14%);
+  border-radius: 1rem;
+  box-sizing: border-box;
+  color: #333842;
+  inset: 0;
+  margin: auto;
+  max-height: calc(100dvh - 2rem);
+  overflow: auto;
+  padding: 0;
+  position: fixed;
+  width: min(26.25rem, calc(100vw - 2rem));
+  box-shadow: 0 1rem 2.75rem rgb(17 24 39 / 20%);
+}
+
+.contact-confirmation[open] {
+  animation: contact-confirmation-enter 180ms ease-out;
+}
+
+.contact-confirmation::backdrop {
+  background: rgb(51 56 66 / 35%);
+}
+
+.contact-confirmation__panel {
+  padding: 2rem;
+  position: relative;
+  text-align: center;
+}
+
+.contact-confirmation__close {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  color: #333842;
+  cursor: pointer;
+  display: inline-flex;
+  height: 2rem;
+  justify-content: center;
+  padding: 0;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  width: 2rem;
+}
+
+.contact-confirmation__close:hover {
+  background: rgb(51 56 66 / 8%);
+}
+
+.contact-confirmation__close:focus-visible {
+  outline: 2px solid #007e80;
+  outline-offset: 2px;
+}
+
+.contact-confirmation__close svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+.contact-confirmation__success-icon {
+  align-items: center;
+  background: rgb(0 126 128 / 10%);
+  border-radius: 50%;
+  color: #007e80;
+  display: inline-flex;
+  height: 2.75rem;
+  justify-content: center;
+  width: 2.75rem;
+}
+
+.contact-confirmation__success-icon svg {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.contact-confirmation h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  margin-top: 1rem;
+}
+
+.contact-confirmation p {
+  color: rgb(51 56 66 / 82%);
+  font-size: 0.975rem;
+  line-height: 1.6;
+  margin: 0.875rem auto 0;
+  max-width: 22rem;
+}
+
+.contact-confirmation .button-link {
+  margin-top: 1.5rem;
+  min-height: 2.5rem;
+  padding: 0.625rem 1.125rem;
+}
+
+@keyframes contact-confirmation-enter {
+  from {
+    opacity: 0;
+    transform: translateY(0.375rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-confirmation[open] {
+    animation: none;
+  }
+}
+
+@media (max-width: 39.99rem) {
+  .contact-confirmation__panel {
+    padding: 1.5rem;
+  }
+}
+
 .site-footer {
   padding-block: clamp(var(--space-8), 7vw, var(--space-9)) var(--space-6);
   background: #252a32;

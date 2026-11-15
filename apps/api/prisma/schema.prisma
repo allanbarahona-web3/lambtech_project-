@@ -9,8 +9,7 @@ datasource db {
 }
 
 enum LeadSourceSite {
-  FORMATION
-  TECHNOLOGY
+  LAMBTECH
 
   @@map("lead_source_site")
 }
@@ -23,13 +22,9 @@ enum LeadLocale {
 }
 
 enum LeadInterest {
-  COMPANY_FORMATION
-  TAX_SERVICES
-  ANNUAL_COMPLIANCE
-  BANKING_AND_PAYMENTS
-  TECHNOLOGY_AND_DIGITAL
-  IN_PERSON_WORKSHOP
-  OTHER
+  MANUFACTURER_INQUIRY
+  TECHNOLOGY_SOURCING
+  GENERAL_INQUIRY
 
   @@map("lead_interest")
 }
@@ -106,8 +101,11 @@ model Lead {
   fullName                   String              @map("full_name") @db.VarChar(160)
   email                      String              @map("email") @db.VarChar(320)
   phone                      String?             @map("phone") @db.VarChar(40)
-  country                    String              @map("country") @db.VarChar(100)
+  country                    String?             @map("country") @db.VarChar(100)
   company                    String?             @map("company") @db.VarChar(160)
+  companyWebsite             String?             @map("company_website") @db.VarChar(2048)
+  technologyContext          String?             @map("technology_context") @db.VarChar(1000)
+  marketOrProject            String?             @map("market_or_project") @db.VarChar(1000)
   message                    String              @map("message") @db.VarChar(2000)
   privacyConsentAt           DateTime            @map("privacy_consent_at") @db.Timestamptz(3)
   campaign                   String?             @map("campaign") @db.VarChar(255)

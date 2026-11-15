@@ -53,9 +53,9 @@ async function clearTestData(prisma: PrismaClient): Promise<void> {
 async function createLead(prisma: Pick<PrismaClient, "lead">, email: string) {
   return prisma.lead.create({
     data: {
-      sourceSite: LeadSourceSite.FORMATION,
+      sourceSite: LeadSourceSite.LAMBTECH,
       locale: LeadLocale.EN,
-      interest: LeadInterest.COMPANY_FORMATION,
+      interest: LeadInterest.MANUFACTURER_INQUIRY,
       fullName: "Integration Test",
       email,
       country: "Test country",
@@ -163,10 +163,10 @@ test("PostgreSQL integration: claims, leases, transactions, idempotency, and rec
       fullName: "Integration Test",
       email,
       country: "Test country",
-      interest: LeadInterest.COMPANY_FORMATION,
+      interest: LeadInterest.MANUFACTURER_INQUIRY,
       message: "Integration test record only.",
       locale: LeadLocale.EN,
-      sourceSite: LeadSourceSite.FORMATION,
+      sourceSite: LeadSourceSite.LAMBTECH,
       privacyAccepted: true,
     };
     const key = `integration-${randomUUID()}`;

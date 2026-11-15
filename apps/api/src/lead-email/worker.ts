@@ -1,7 +1,10 @@
 import { NestFactory } from "@nestjs/core";
 
+import { loadLocalEnvironment } from "../config/load-local-environment";
 import { LeadEmailWorkerModule } from "./lead-email-worker.module";
 import { LeadEmailWorkerService } from "./lead-email-worker.service";
+
+loadLocalEnvironment();
 
 type LifecycleEvent = {
   event: string;

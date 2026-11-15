@@ -11,7 +11,6 @@ import {
   escapeEmailHtml,
   type EmailLocale,
 } from "../lead-email/lead-email-templates";
-import { createLeadEmailLogoAttachment } from "../lead-email/lead-email-logo";
 
 type PrivacyRequestEmail = Pick<
   TransactionalEmail,
@@ -116,11 +115,10 @@ export function createInternalPrivacyRequestTemplate(
   );
   return {
     subject: spanish
-      ? "Nueva solicitud de privacidad | Barmentech Formation"
-      : "New privacy request | Barmentech Formation",
+      ? "Nueva solicitud de privacidad | LAMBTECH"
+      : "New privacy request | LAMBTECH",
     text,
     html,
-    attachments: [createLeadEmailLogoAttachment()],
   };
 }
 
@@ -148,10 +146,9 @@ export function createVisitorPrivacyRequestTemplate(
   );
   return {
     subject: spanish
-      ? "Recibimos tu solicitud de privacidad | Barmentech"
-      : "We received your privacy request | Barmentech",
+      ? "Recibimos tu solicitud de privacidad | LAMBTECH"
+      : "We received your privacy request | LAMBTECH",
     text,
     html,
-    attachments: [createLeadEmailLogoAttachment()],
   };
 }

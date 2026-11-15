@@ -17,8 +17,8 @@ import {
 import { PublicLeadsService } from "./public-leads.service";
 
 const sourceSiteOrigins = new Map<string, LeadSourceSite>([
-  ["https://formation.example.test", LeadSourceSite.FORMATION],
-  ["https://technology.example.test", LeadSourceSite.TECHNOLOGY],
+  ["https://formation.example.test", LeadSourceSite.LAMBTECH],
+  ["https://technology.example.test", LeadSourceSite.LAMBTECH],
 ]);
 
 function createPrismaHarness() {
@@ -69,11 +69,11 @@ const formationPayload = {
   fullName: "Test Visitor",
   email: "test.visitor@example.test",
   country: "Costa Rica",
-  interest: "COMPANY_FORMATION",
+  interest: "MANUFACTURER_INQUIRY",
   locale: "EN",
   message: "I need help forming a company.",
   privacyAccepted: true,
-  sourceSite: "FORMATION",
+  sourceSite: "LAMBTECH",
   website: "",
 };
 
@@ -133,7 +133,7 @@ test("accepts the Formation payload with Idempotency-Key and replays it without 
   }
 });
 
-test("resolves the site from an exact recognized Origin and rejects absent, unknown, or contradictory claims", async () => {
+test("resolves the LAMBTECH site from an exact recognized Origin and rejects absent or unknown origins", async () => {
   const harness = createPrismaHarness();
   const app = await NestFactory.create(createModule(harness.prisma), { logger: false });
   app.useGlobalPipes(new ValidationPipe({ disableErrorMessages: true, forbidNonWhitelisted: true, transform: true, whitelist: true }));
@@ -146,7 +146,7 @@ test("resolves the site from an exact recognized Origin and rejects absent, unkn
     const endpoint = `http://127.0.0.1:${address.port}/public/leads`;
 
     const technology = await fetch(endpoint, {
-      body: JSON.stringify({ ...formationPayload, interest: "TECHNOLOGY_AND_DIGITAL", sourceSite: "TECHNOLOGY" }),
+      body: JSON.stringify({ ...formationPayload, interest: "TECHNOLOGY_SOURCING", sourceSite: "LAMBTECH" }),
       headers: { "Content-Type": "application/json", "Idempotency-Key": randomUUID(), Origin: "https://technology.example.test" },
       method: "POST",
     });
@@ -155,7 +155,6 @@ test("resolves the site from an exact recognized Origin and rejects absent, unkn
     const rejectedRequests: Array<{ body: string; headers: Record<string, string> }> = [
       { body: JSON.stringify(formationPayload), headers: { "Content-Type": "application/json", "Idempotency-Key": randomUUID() } },
       { body: JSON.stringify(formationPayload), headers: { "Content-Type": "application/json", "Idempotency-Key": randomUUID(), Origin: "https://unknown.example.test" } },
-      { body: JSON.stringify({ ...formationPayload, sourceSite: "TECHNOLOGY" }), headers: { "Content-Type": "application/json", "Idempotency-Key": randomUUID(), Origin: "https://formation.example.test" } },
     ];
     for (const request of rejectedRequests) {
       const response = await fetch(endpoint, {

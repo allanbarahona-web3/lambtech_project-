@@ -1,14 +1,19 @@
 import { ConflictException, Injectable, InternalServerErrorException, Logger } from "@nestjs/common";
-import { EmailDeliveryStatus, LeadEmailTaskType, LeadStatus, Prisma } from "@prisma/client";
+import { EmailDeliveryStatus, LeadEmailTaskType, LeadSourceSite, LeadStatus, Prisma } from "@prisma/client";
 import { createHash } from "node:crypto";
 
 import { PrismaService } from "../prisma/prisma.service";
 import { CreatePublicLeadDto } from "./dto/create-public-lead.dto";
 
 export type PublicLeadSubmissionResponse = { success: true; leadId: null };
+export type ResolvedPublicLead = CreatePublicLeadDto;
 
-function hashLead(lead: CreatePublicLeadDto): string {
-  return createHash("sha256").update(JSON.stringify({ campaign: lead.campaign ?? null, company: lead.company ?? null, country: lead.country, email: lead.email, fullName: lead.fullName, interest: lead.interest, locale: lead.locale, message: lead.message, phone: lead.phone ?? null, privacyAccepted: lead.privacyAccepted, sourceSite: lead.sourceSite })).digest("hex");
+function sourceSiteFor(lead: ResolvedPublicLead): LeadSourceSite {
+  return lead.sourceSite ?? LeadSourceSite.LAMBTECH;
+}
+
+function hashLead(lead: ResolvedPublicLead): string {
+  return createHash("sha256").update(JSON.stringify({ campaign: lead.campaign ?? null, company: lead.company ?? null, companyWebsite: lead.companyWebsite ?? null, country: lead.country ?? null, email: lead.email, fullName: lead.fullName, interest: lead.interest, locale: lead.locale, marketOrProject: lead.marketOrProject ?? null, message: lead.message, phone: lead.phone ?? null, privacyAccepted: lead.privacyAccepted, sourceSite: sourceSiteFor(lead), technologyContext: lead.technologyContext ?? null })).digest("hex");
 }
 
 function isUniqueViolation(error: unknown): boolean {
@@ -21,7 +26,7 @@ export class PublicLeadsService {
 
   constructor(private readonly prisma: PrismaService) {}
 
-  async replayIfKnown(lead: CreatePublicLeadDto, idempotencyKey: string, correlationId: string): Promise<PublicLeadSubmissionResponse | undefined> {
+  async replayIfKnown(lead: ResolvedPublicLead, idempotencyKey: string, correlationId: string): Promise<PublicLeadSubmissionResponse | undefined> {
     let existing: { contentHash: string } | null;
     try {
       existing = await this.prisma.leadSubmission.findUnique({ where: { idempotencyKey }, select: { contentHash: true } });
@@ -33,7 +38,7 @@ export class PublicLeadsService {
   }
 
   async submit(
-    lead: CreatePublicLeadDto, idempotencyKey = "legacy-test-idempotency-key", correlationId = "legacy-test",
+    lead: ResolvedPublicLead, idempotencyKey = "legacy-test-idempotency-key", correlationId = "legacy-test",
   ): Promise<PublicLeadSubmissionResponse> {
     if (lead.website) {
       return { success: true, leadId: null };
@@ -47,9 +52,11 @@ export class PublicLeadsService {
         data: {
           idempotencyKey, contentHash,
           lead: { create: {
-            sourceSite: lead.sourceSite, locale: lead.locale, interest: lead.interest, status: LeadStatus.NEW,
-            fullName: lead.fullName, email: lead.email, phone: lead.phone ?? null, country: lead.country,
-            company: lead.company ?? null, message: lead.message, privacyConsentAt: new Date(), campaign: lead.campaign ?? null,
+            sourceSite: sourceSiteFor(lead), locale: lead.locale, interest: lead.interest, status: LeadStatus.NEW,
+            fullName: lead.fullName, email: lead.email, phone: lead.phone ?? null, country: lead.country ?? null,
+            company: lead.company ?? null, companyWebsite: lead.companyWebsite ?? null,
+            technologyContext: lead.technologyContext ?? null, marketOrProject: lead.marketOrProject ?? null,
+            message: lead.message, privacyConsentAt: new Date(), campaign: lead.campaign ?? null,
             internalNotificationStatus: EmailDeliveryStatus.PENDING, visitorConfirmationStatus: EmailDeliveryStatus.PENDING,
             emailTasks: { create: [{ type: LeadEmailTaskType.INTERNAL_NOTIFICATION }, { type: LeadEmailTaskType.VISITOR_CONFIRMATION }] },
           } },

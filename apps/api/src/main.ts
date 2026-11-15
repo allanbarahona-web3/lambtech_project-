@@ -8,7 +8,10 @@ import {
   type ApiConfiguration,
   getApiConfiguration,
 } from "./config/api-configuration";
+import { loadLocalEnvironment } from "./config/load-local-environment";
 import { PublicExceptionFilter } from "./http/public-exception.filter";
+
+loadLocalEnvironment();
 
 export async function createApiApplication(
   configuration: ApiConfiguration,

@@ -54,7 +54,7 @@ export class PublicLeadsController {
       return { success: true, leadId: null };
     }
 
-    const sourceSite = this.sourceSiteResolver.resolve(origin, lead.sourceSite);
+    const sourceSite = this.sourceSiteResolver.resolve(origin);
     const resolvedLead = { ...lead, sourceSite };
 
     if (!idempotencyKey || !IDEMPOTENCY_KEY.test(idempotencyKey)) {

@@ -12,7 +12,7 @@ export class PublicLeadSourceSiteResolver {
     private readonly sourceSiteOrigins: ReadonlyMap<string, LeadSourceSite>,
   ) {}
 
-  resolve(originHeader: string | undefined, claimedSourceSite: LeadSourceSite): LeadSourceSite {
+  resolve(originHeader: string | undefined): LeadSourceSite {
     if (!originHeader) {
       throw new BadRequestException("A recognized Origin header is required.");
     }
@@ -25,8 +25,8 @@ export class PublicLeadSourceSiteResolver {
     }
 
     const resolvedSourceSite = this.sourceSiteOrigins.get(origin);
-    if (!resolvedSourceSite || resolvedSourceSite !== claimedSourceSite) {
-      throw new BadRequestException("Origin and source site do not match.");
+    if (!resolvedSourceSite) {
+      throw new BadRequestException("A recognized Origin header is required.");
     }
 
     return resolvedSourceSite;

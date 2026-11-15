@@ -27,13 +27,15 @@
   "details": { "email": "Correo electrónico", "phone": "Teléfono", "fax": "Fax", "address": "Dirección postal", "whatsapp": "Conversar por WhatsApp" },
   "form": {
     "title": "Inicie una consulta estructurada",
-    "notice": "El formulario en línea aún no está habilitado. Puede comunicarse con nosotros por correo electrónico, teléfono o WhatsApp.",
-    "name": "Nombre", "lastName": "Apellido", "company": "Empresa", "email": "Correo laboral", "phone": "Teléfono", "country": "País o mercado", "message": "Mensaje", "required": "Obligatorio", "checkFields": "Revisar campos obligatorios", "inactive": "El envío del formulario aún no está disponible. Utilice los datos de contacto proporcionados.",
-    "validationSummary": "Complete los campos obligatorios para revisar su consulta.",
+    "notice": "Cuéntenos sobre su consulta y nuestro equipo la revisará.",
+    "name": "Nombre", "lastName": "Apellido", "company": "Empresa", "email": "Correo laboral", "phone": "Teléfono", "country": "País o mercado", "message": "Mensaje", "required": "Obligatorio", "checkFields": "Enviar consulta", "inactive": "Los envíos en línea no están disponibles en este momento. Utilice los datos de contacto proporcionados.",
+    "validationSummary": "Complete los campos obligatorios y acepte el Aviso de privacidad.",
     "errors": { "name": "Ingrese su nombre.", "email": "Ingrese un correo laboral válido.", "message": "Ingrese un mensaje." },
     "honeypot": "Deje este campo vacío",
     "inquiryType": "Tipo de consulta",
     "inquiryTypes": { "manufacturer": "Consulta de fabricante", "customer": "Búsqueda de tecnología", "general": "Consulta general" },
-    "technologyContext": "Tecnología, área de producto o aplicación", "marketOrProject": "Mercados de América Latina de interés o detalles del proyecto", "website": "Sitio web de la empresa"
+    "technologyContext": "Tecnología, área de producto o aplicación", "marketOrProject": "Mercados de América Latina de interés o detalles del proyecto", "website": "Sitio web de la empresa",
+    "privacyAcceptance": "He leído y acepto el", "privacyLink": "Aviso de privacidad", "sending": "Enviando su consulta…", "submitError": "No pudimos enviar su consulta. Inténtelo de nuevo o utilice los datos de contacto proporcionados.",
+    "confirmation": { "title": "Consulta recibida", "message": "Gracias por contactar a LAMBTECH. Revisaremos su consulta y nos comunicaremos mediante los datos que proporcionó.", "close": "Entendido", "closeLabel": "Cerrar diálogo de confirmación" }
   }
 }

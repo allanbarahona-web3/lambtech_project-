@@ -7,6 +7,7 @@ import {
   IsNotEmpty,
   IsOptional,
   IsString,
+  IsUrl,
   Matches,
   MaxLength,
   MinLength,
@@ -47,6 +48,17 @@ function normalizeHoneypot(value: unknown): unknown {
     : trimmedValue;
 }
 
+function normalizeCompanyWebsite(value: unknown): unknown {
+  const normalizedValue = trimOptionalString(value);
+  if (typeof normalizedValue !== "string") {
+    return normalizedValue;
+  }
+
+  return /^https?:\/\//iu.test(normalizedValue)
+    ? normalizedValue
+    : `https://${normalizedValue}`;
+}
+
 export class CreatePublicLeadDto {
   @Transform(({ value }) => trimString(value))
   @IsString()
@@ -70,12 +82,12 @@ export class CreatePublicLeadDto {
   @Matches(NO_CONTROL_CHARACTERS)
   phone?: string;
 
-  @Transform(({ value }) => trimString(value))
+  @Transform(({ value }) => trimOptionalString(value))
+  @IsOptional()
   @IsString()
-  @IsNotEmpty()
   @MaxLength(MAX_COUNTRY_LENGTH)
   @Matches(NO_CONTROL_CHARACTERS)
-  country!: string;
+  country?: string;
 
   @Transform(({ value }) => trimOptionalString(value))
   @IsOptional()
@@ -83,6 +95,27 @@ export class CreatePublicLeadDto {
   @MaxLength(MAX_COMPANY_LENGTH)
   @Matches(NO_CONTROL_CHARACTERS)
   company?: string;
+
+  @Transform(({ value }) => normalizeCompanyWebsite(value))
+  @IsOptional()
+  @IsString()
+  @MaxLength(2_048)
+  @IsUrl({ protocols: ["http", "https"], require_protocol: true })
+  companyWebsite?: string;
+
+  @Transform(({ value }) => trimOptionalString(value))
+  @IsOptional()
+  @IsString()
+  @MaxLength(1_000)
+  @Matches(NO_UNSAFE_MESSAGE_CONTROL_CHARACTERS)
+  technologyContext?: string;
+
+  @Transform(({ value }) => trimOptionalString(value))
+  @IsOptional()
+  @IsString()
+  @MaxLength(1_000)
+  @Matches(NO_UNSAFE_MESSAGE_CONTROL_CHARACTERS)
+  marketOrProject?: string;
 
   @Transform(({ value }) => trimString(value))
   @IsString()
@@ -106,12 +139,11 @@ export class CreatePublicLeadDto {
   @IsEnum(LeadLocale)
   locale!: LeadLocale;
 
-  @Transform(({ value }) => trimString(value))
-  @IsString()
-  @IsNotEmpty()
-  @MaxLength(32)
+  // The controller derives the persisted source from Origin. Keeping this
+  // optional accepts older clients without trusting their claimed value.
+  @IsOptional()
   @IsEnum(LeadSourceSite)
-  sourceSite!: LeadSourceSite;
+  sourceSite?: LeadSourceSite;
 
   @Transform(({ value }) => trimOptionalString(value))
   @IsOptional()

@@ -34,7 +34,7 @@ function localDiagnosticDatabaseUrl(variable: "DATABASE_URL" | "MIGRATION_DATABA
   return url.protocol === "postgresql:"
     && url.hostname === "127.0.0.1"
     && url.port === "5432"
-    && url.pathname === "/barmentech_dev"
+    && url.pathname === "/lambtech"
     ? value
     : undefined;
 }
@@ -50,9 +50,7 @@ function diagnosticLead(
     fullName: "Local diagnostic",
     email,
     country: "Costa Rica",
-    interest: sourceSite === LeadSourceSite.TECHNOLOGY
-      ? LeadInterest.TECHNOLOGY_AND_DIGITAL
-      : LeadInterest.COMPANY_FORMATION,
+    interest: LeadInterest.TECHNOLOGY_SOURCING,
     locale: LeadLocale.EN,
     message: "Local diagnostic lead submission only.",
     privacyAccepted: true,
@@ -74,7 +72,7 @@ test("local runtime role persists public leads and the durable outbox", { skip: 
   await cleanupPrisma.$connect();
   try {
     const service = new PublicLeadsService(prisma as unknown as PrismaService);
-    const technology = diagnosticLead(technologyEmail, LeadSourceSite.TECHNOLOGY);
+    const technology = diagnosticLead(technologyEmail, LeadSourceSite.LAMBTECH);
 
     assert.deepEqual(
       await service.submit(technology, technologyKey, "local-diagnostic"),
@@ -95,7 +93,7 @@ test("local runtime role persists public leads and the durable outbox", { skip: 
       ConflictException,
     );
 
-    const formation = diagnosticLead(formationEmail, LeadSourceSite.FORMATION);
+    const formation = diagnosticLead(formationEmail, LeadSourceSite.LAMBTECH);
     assert.deepEqual(
       await service.submit(formation, formationKey, "local-diagnostic-formation"),
       { success: true, leadId: null },
