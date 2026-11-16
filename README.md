@@ -35,6 +35,23 @@ pnpm build
 - `apps/api` is deployed separately on DigitalOcean. Its deployment does not
   control the website's metadata, robots policy, sitemap, or indexing state.
 
+## Production security configuration
+
+- The public web application is a Vercel deployment. Configure only public
+  frontend values there: `NEXT_PUBLIC_SITE_ENV=production`,
+  `NEXT_PUBLIC_API_BASE_URL`, and `NEXT_PUBLIC_MEDIA_BASE_URL`. Never put
+  database or email credentials in Vercel public variables.
+- The DigitalOcean API requires `NODE_ENV=production`, `PORT`,
+  `PUBLIC_WEB_ORIGINS`, `PUBLIC_LEAD_SOURCE_SITE_ORIGINS`, `DATABASE_URL`, and
+  `MIGRATION_DATABASE_URL`. The separate email worker also requires
+  `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, and `LEADS_NOTIFICATION_TO`.
+- Use a dedicated LAMBTECH database role with only the application privileges
+  it needs; use a separate migration role for `MIGRATION_DATABASE_URL`. Require
+  TLS in both PostgreSQL URLs and never disable certificate verification.
+- Run the API and worker as separate DigitalOcean processes. Restrict database
+  ingress to their private network or fixed deployment egress, and maintain
+  tested backups and recovery procedures outside this repository.
+
 ## API local
 
 El API se ejecuta con `pnpm dev:api` en `http://localhost:3001/v1`.

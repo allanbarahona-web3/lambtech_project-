@@ -37,6 +37,7 @@ function requireValidEmail(value: string, variableName: string): string {
 
 export function getLeadEmailConfiguration(
   environment: NodeJS.ProcessEnv = process.env,
+  { required = false }: { required?: boolean } = {},
 ): LeadEmailConfiguration | null {
   const apiKey = readOptionalValue(environment, "RESEND_API_KEY");
   const fromEmail = readOptionalValue(environment, "RESEND_FROM_EMAIL");
@@ -46,6 +47,11 @@ export function getLeadEmailConfiguration(
   );
 
   if (!apiKey && !fromEmail && !notificationTo) {
+    if (required) {
+      throw new Error(
+        "RESEND_API_KEY, RESEND_FROM_EMAIL, and LEADS_NOTIFICATION_TO are required.",
+      );
+    }
     return null;
   }
 

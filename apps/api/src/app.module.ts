@@ -15,7 +15,7 @@ export class AppModule {
         HealthModule,
         PrismaModule,
         PublicLeadsModule.register(configuration.publicLeadSourceSiteOrigins),
-        PrivacyRequestsModule,
+        PrivacyRequestsModule.register(configuration.publicLeadSourceSiteOrigins),
       ],
     };
   }

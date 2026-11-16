@@ -4,6 +4,7 @@ import { test } from "node:test";
 import { NestFactory } from "@nestjs/core";
 
 import { PrismaService } from "../prisma/prisma.service";
+import { LeadSourceSite } from "@prisma/client";
 import { PrivacyRequestsService } from "./privacy-requests.service";
 import { PrivacyRequestsModule } from "./privacy-requests.module";
 
@@ -21,7 +22,9 @@ test("resolves privacy requests without direct email delivery dependencies", asy
   });
   let app: Awaited<ReturnType<typeof NestFactory.createApplicationContext>> | undefined;
   try {
-    const context = await NestFactory.createApplicationContext(PrivacyRequestsModule, {
+    const context = await NestFactory.createApplicationContext(PrivacyRequestsModule.register(new Map([
+      ["http://localhost:3000", LeadSourceSite.LAMBTECH],
+    ])), {
       logger: false,
     });
     app = context;

@@ -2,6 +2,7 @@ import { Logger, ValidationPipe } from "@nestjs/common";
 import { randomUUID } from "node:crypto";
 import { NestFactory } from "@nestjs/core";
 import type { NestExpressApplication } from "@nestjs/platform-express";
+import helmet from "helmet";
 
 import { AppModule } from "./app.module";
 import {
@@ -9,6 +10,7 @@ import {
   getApiConfiguration,
 } from "./config/api-configuration";
 import { loadLocalEnvironment } from "./config/load-local-environment";
+import { apiSecurityHeaders } from "./http/api-security-headers";
 import { PublicExceptionFilter } from "./http/public-exception.filter";
 
 loadLocalEnvironment();
@@ -18,6 +20,10 @@ export async function createApiApplication(
 ) {
   const app = await NestFactory.create<NestExpressApplication>(AppModule.register(configuration));
 
+  // Register before any routes or other middleware so every API response,
+  // including parser and CORS failures, receives the security headers.
+  app.use(helmet(apiSecurityHeaders(configuration.nodeEnv)));
+  app.disable("x-powered-by");
   app.setGlobalPrefix("v1");
   app.set("trust proxy", configuration.trustProxy);
   const logger = new Logger("PublicRequest");
@@ -31,12 +37,11 @@ export async function createApiApplication(
   });
   app.use((_: unknown, response: { setHeader(name: string, value: string): void }, next: () => void) => {
     response.setHeader("Cache-Control", "no-store");
-    response.setHeader("Referrer-Policy", "no-referrer");
-    response.setHeader("X-Content-Type-Options", "nosniff");
-    response.setHeader("X-Frame-Options", "DENY");
+    response.setHeader("Permissions-Policy", "camera=(), geolocation=(), microphone=(), payment=()");
     next();
   });
   app.useBodyParser("json", { limit: "16kb" });
+  app.useBodyParser("urlencoded", { extended: false, limit: "16kb" });
   app.useGlobalPipes(
     new ValidationPipe({
       disableErrorMessages: true,

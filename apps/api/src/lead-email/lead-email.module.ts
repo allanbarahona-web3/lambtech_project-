@@ -18,7 +18,7 @@ import { LeadNotificationsService } from "./lead-notifications.service";
     {
       provide: LEAD_EMAIL_CONFIGURATION,
       useFactory: (): LeadEmailConfiguration | null =>
-        getLeadEmailConfiguration(),
+        getLeadEmailConfiguration(process.env, { required: process.env.NODE_ENV === "production" }),
     },
     ResendEmailDeliveryService,
     {

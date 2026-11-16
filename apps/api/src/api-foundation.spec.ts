@@ -131,7 +131,31 @@ test("serves the minimal health response at the versioned route", async () => {
     assert.equal(response.headers.get("referrer-policy"), "no-referrer");
     assert.equal(response.headers.get("x-content-type-options"), "nosniff");
     assert.equal(response.headers.get("x-frame-options"), "DENY");
+    assert.equal(response.headers.get("x-powered-by"), null);
+    assert.match(response.headers.get("content-security-policy") ?? "", /default-src 'none'/);
+    assert.equal(response.headers.get("permissions-policy"), "camera=(), geolocation=(), microphone=(), payment=()");
     assert.deepEqual(await response.json(), { status: "ok" });
+
+    const preflight = await fetch(`http://127.0.0.1:${address.port}/v1/public/leads`, {
+      headers: {
+        "Access-Control-Request-Headers": "content-type,idempotency-key",
+        "Access-Control-Request-Method": "POST",
+        Origin: "http://localhost:3000",
+      },
+      method: "OPTIONS",
+    });
+    assert.equal(preflight.status, 204);
+    assert.equal(preflight.headers.get("access-control-allow-origin"), "http://localhost:3000");
+
+    const foreignPreflight = await fetch(`http://127.0.0.1:${address.port}/v1/public/leads`, {
+      headers: {
+        "Access-Control-Request-Headers": "content-type,idempotency-key",
+        "Access-Control-Request-Method": "POST",
+        Origin: "https://untrusted.example.test",
+      },
+      method: "OPTIONS",
+    });
+    assert.notEqual(foreignPreflight.headers.get("access-control-allow-origin"), "https://untrusted.example.test");
 
     const invalidResponse = await fetch(
       `http://127.0.0.1:${address.port}/v1/public/leads`,

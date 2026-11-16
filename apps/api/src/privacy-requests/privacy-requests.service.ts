@@ -38,13 +38,24 @@ function isUniqueViolation(error: unknown): boolean {
 export class PrivacyRequestsService {
   constructor(private readonly prisma: PrismaService) {}
 
+  async replayIfKnown(
+    input: CreatePrivacyRequestDto,
+    idempotencyKey: string,
+  ): Promise<PrivacyRequestSubmissionResponse | undefined> {
+    return this.replayIfKnownForHash(
+      this.prisma as unknown as PrivacyOutboxPrisma,
+      idempotencyKey,
+      hashPrivacyRequest(input),
+    );
+  }
+
   async submit(input: CreatePrivacyRequestDto, idempotencyKey?: string): Promise<PrivacyRequestSubmissionResponse> {
     if (input.website) return { success: true, requestId: null };
     const client = this.prisma as unknown as PrivacyOutboxPrisma;
     const contentHash = hashPrivacyRequest(input);
 
     if (idempotencyKey) {
-      const replay = await this.replayIfKnown(client, idempotencyKey, contentHash);
+      const replay = await this.replayIfKnownForHash(client, idempotencyKey, contentHash);
       if (replay) return replay;
     }
 
@@ -73,14 +84,14 @@ export class PrivacyRequestsService {
       return { success: true, requestId: null };
     } catch (error) {
       if (idempotencyKey && isUniqueViolation(error)) {
-        const replay = await this.replayIfKnown(client, idempotencyKey, contentHash);
+        const replay = await this.replayIfKnownForHash(client, idempotencyKey, contentHash);
         if (replay) return replay;
       }
       throw new InternalServerErrorException("Unable to process your request.");
     }
   }
 
-  private async replayIfKnown(
+  private async replayIfKnownForHash(
     client: PrivacyOutboxPrisma,
     idempotencyKey: string,
     contentHash: string,

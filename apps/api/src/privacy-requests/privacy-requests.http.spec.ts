@@ -1,11 +1,17 @@
 import { strict as assert } from "node:assert";
+import { randomUUID } from "node:crypto";
 import { test } from "node:test";
 
 import { Module, ValidationPipe } from "@nestjs/common";
 import { NestFactory } from "@nestjs/core";
+import { LeadSourceSite } from "@prisma/client";
 
 import { PublicExceptionFilter } from "../http/public-exception.filter";
 import { PrismaService } from "../prisma/prisma.service";
+import {
+  PUBLIC_LEAD_SOURCE_SITE_ORIGINS,
+  PublicLeadSourceSiteResolver,
+} from "../public-leads/public-lead-source-site.resolver";
 import { PrivacyRequestRateLimiterService } from "./privacy-request-rate-limiter.service";
 import { PrivacyRequestsController } from "./privacy-requests.controller";
 import { PrivacyRequestsService } from "./privacy-requests.service";
@@ -17,6 +23,10 @@ const payload = {
   requestType: "ACCESS",
   website: "",
 };
+
+const sourceSiteOrigins = new Map<string, LeadSourceSite>([
+  ["https://lambtech.example.test", LeadSourceSite.LAMBTECH],
+]);
 
 function createModule() {
   const created: unknown[] = [];
@@ -45,6 +55,8 @@ function createModule() {
     providers: [
       PrivacyRequestsService,
       PrivacyRequestRateLimiterService,
+      PublicLeadSourceSiteResolver,
+      { provide: PUBLIC_LEAD_SOURCE_SITE_ORIGINS, useValue: sourceSiteOrigins },
       { provide: PrismaService, useValue: prisma },
     ],
   })
@@ -67,11 +79,11 @@ test("returns Retry-After after the privacy-request rate limit without persisten
     const body = JSON.stringify(payload);
 
     for (let index = 0; index < 3; index += 1) {
-      const response = await fetch(endpoint, { body, headers: { "Content-Type": "application/json" }, method: "POST" });
+      const response = await fetch(endpoint, { body, headers: { "Content-Type": "application/json", "Idempotency-Key": randomUUID(), Origin: "https://lambtech.example.test" }, method: "POST" });
       assert.equal(response.status, 201);
     }
 
-    const limited = await fetch(endpoint, { body, headers: { "Content-Type": "application/json" }, method: "POST" });
+    const limited = await fetch(endpoint, { body, headers: { "Content-Type": "application/json", "Idempotency-Key": randomUUID(), Origin: "https://lambtech.example.test" }, method: "POST" });
     assert.equal(limited.status, 429);
     assert.equal(limited.headers.get("Retry-After"), "900");
     assert.equal(harness.created.length, 3);
@@ -97,6 +109,35 @@ test("acknowledges a privacy-request honeypot without persistence", async () => 
     });
     assert.equal(response.status, 201);
     assert.deepEqual(await response.json(), { success: true, requestId: null });
+    assert.equal(harness.created.length, 0);
+  } finally {
+    await app.close();
+  }
+});
+
+test("requires a recognized Origin and an idempotency key for privacy requests", async () => {
+  const harness = createModule();
+  const app = await NestFactory.create(harness.module, { logger: false });
+  app.useGlobalPipes(new ValidationPipe({ disableErrorMessages: true, forbidNonWhitelisted: true, transform: true, whitelist: true }));
+  app.useGlobalFilters(new PublicExceptionFilter());
+
+  try {
+    await app.listen(0, "127.0.0.1");
+    const address = app.getHttpServer().address();
+    assert.ok(address && typeof address !== "string");
+    const endpoint = `http://127.0.0.1:${address.port}/public/privacy-requests`;
+    const body = JSON.stringify(payload);
+
+    const rejectedHeaders: Array<Record<string, string>> = [
+      { "Content-Type": "application/json", "Idempotency-Key": randomUUID() },
+      { "Content-Type": "application/json", "Idempotency-Key": randomUUID(), Origin: "https://unknown.example.test" },
+      { "Content-Type": "application/json", Origin: "https://lambtech.example.test" },
+    ];
+    for (const headers of rejectedHeaders) {
+      const response = await fetch(endpoint, { body, headers, method: "POST" });
+      assert.equal(response.status, 400);
+      assert.deepEqual(await response.json(), { message: "Invalid request.", statusCode: 400 });
+    }
     assert.equal(harness.created.length, 0);
   } finally {
     await app.close();
