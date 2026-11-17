@@ -15,7 +15,7 @@ export function SiteStructuredData() {
         faxNumber: publicCompany.fax.e164,
         legalName: publicCompany.name,
         name: publicCompany.name,
-        sameAs,
+        ...(sameAs.length > 0 ? { sameAs } : {}),
         telephone: publicCompany.phone.e164,
         url: publicCompany.website,
       },

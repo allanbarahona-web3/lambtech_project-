@@ -1,9 +1,6 @@
 export type SocialPlatform = "facebook" | "instagram" | "linkedin" | "tiktok";
 
-/**
- * Intentionally public LAMBTECH profile. Keep this versioned with the site;
- * credentials and deployment configuration do not belong here.
- */
+/** Official LAMBTECH profiles only. Leave unverified platforms undefined. */
 export const publicCompany = {
   address: "30 N Gould St #69234, Sheridan, WY 82801, USA",
   costaRicaAddress: [
@@ -17,9 +14,9 @@ export const publicCompany = {
   name: "LAMBTECH LLC",
   phone: { display: "+(506) 8404-7638", e164: "+50684047638" },
   social: {
-    facebook: "https://www.facebook.com/corderaguas#",
-    instagram: "https://www.instagram.com/corderaguas",
-    linkedin: "https://www.linkedin.com/company/corderaguas/posts/?feedView=all&viewAsMember=true",
+    facebook: undefined,
+    instagram: undefined,
+    linkedin: undefined,
     tiktok: undefined,
   } satisfies Record<SocialPlatform, string | undefined>,
   website: "https://lambtech.us",
