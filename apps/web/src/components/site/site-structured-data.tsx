@@ -1,10 +1,12 @@
 import { publicCompany, publicSiteUrl } from "@/config/public-company";
+import type { SocialPlatform } from "@/config/public-company";
 
 const organizationId = publicSiteUrl("/#organization");
 const websiteId = publicSiteUrl("/#website");
 
 export function SiteStructuredData() {
-  const sameAs = Object.values(publicCompany.social).filter((url): url is string => Boolean(url));
+  const socialProfiles: Record<SocialPlatform, string | undefined> = publicCompany.social;
+  const sameAs = Object.values(socialProfiles).filter((url): url is string => Boolean(url));
   const data = {
     "@context": "https://schema.org",
     "@graph": [
